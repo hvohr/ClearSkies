@@ -1,0 +1,21 @@
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255,255,255,0.3);
+}
+
+.nav-title {
+  font-size: 45px;
+  margin: 10px;
+  color:azure
+}
+
+.home-button,
+.daily-button,
+.hourly-button {
+  text-decoration: none;
+  font-size: 20px;
+  color:rgb(0, 0, 0);
+  margin: 10px;
+}
