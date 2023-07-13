@@ -1,10 +1,14 @@
 import './App.css';
-import { NavLink, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Home from '../../pages/Home'
 import { fetchWeather, fetchLongLat, fetchCityName } from '../apiCall'
 import { useState, useEffect } from 'react'
 
 function App() {
+  const [currentLat, setCurrentLat] = useState('')
+  const [currentLong, setCurrentLong] = useState('')
+  const [currentCity, setCurrentCity] = useState('')
+
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(success, error);
   } else {
@@ -17,21 +21,19 @@ function App() {
     setCurrentLong(longitude)
   }
   useEffect(() => {
+    console.log(currentLat)
     fetchCityName(currentLat, currentLong).then(
       data => setCurrentCity(data[0].name)
     )
-  })
+  }, [currentLat, currentLong])
   function error() {
     console.log("Unable to retrieve your location, please allow location services");
   }
-  const [currentLat, setCurrentLat] = useState('')
-  const [currentLong, setCurrentLong] = useState('')
-  const [currentCity, setCurrentCity] = useState('')
   return (
-    <section className>
+    <section>
       <Routes>
-          <Route path ='/' element={<Home currentCity={currentCity}/>}/>
-          <Route path ='/home' element={<Home />}/>
+        <Route path='/' element={<Home currentCity={currentCity} />} />
+        <Route path='/home' element={<Home currentCity={currentCity} />} />
       </Routes>
     </section>
   );
