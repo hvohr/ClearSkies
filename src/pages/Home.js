@@ -1,4 +1,5 @@
 import NavBar from './NavBar'
+import './pages.css'
 
 function Home(props) {
   const dateBuilder = (d) => {
@@ -15,9 +16,10 @@ function Home(props) {
   return (
     <div className='home-container'>
       <NavBar />
-      <main>
-        <h2>{props.currentCity}</h2>
-        <p>{dateBuilder(new Date())}</p>
+      <main className='main-container'>
+        {!props.currentCity && <h2 className='loading-data'>Loading Location Data...</h2>}
+        <h2 className='current-city'>{props.currentCity}{','} {props.currentState}</h2>
+        <p className='current-date'>{dateBuilder(new Date())}</p>
       </main>
     </div>
   )

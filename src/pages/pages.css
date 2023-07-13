@@ -11,6 +11,23 @@
   color:azure
 }
 
+.main-container {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+}
+
+.current-city,
+.current-date {
+  font-size: 20px;
+  margin: 5px;
+}
+
+.loading-data {
+  font-style:italic;
+  font-size: 15px;
+}
+
 .home-button,
 .daily-button,
 .hourly-button {

@@ -8,6 +8,8 @@ function App() {
   const [currentLat, setCurrentLat] = useState('')
   const [currentLong, setCurrentLong] = useState('')
   const [currentCity, setCurrentCity] = useState('')
+  const [currentState, setCurrentState] = useState('')
+
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(success, error);
@@ -20,20 +22,29 @@ function App() {
     setCurrentLat(latitude)
     setCurrentLong(longitude)
   }
-  useEffect(() => {
-    console.log(currentLat)
+
+  function fetchCity() {
+    if (!currentLong || !currentLat) {
+      //figure out how to make below work
+      return <h2 className='loading-data'>Loading Location Data...</h2>
+    } else
     fetchCityName(currentLat, currentLong).then(
-      data => setCurrentCity(data[0].name)
+      data => (setCurrentCity(data[0].name), setCurrentState(data[0].state))
     )
+  }
+
+  useEffect(() => {
+    fetchCity()
   }, [currentLat, currentLong])
+  
   function error() {
     console.log("Unable to retrieve your location, please allow location services");
   }
   return (
     <section>
       <Routes>
-        <Route path='/' element={<Home currentCity={currentCity} />} />
-        <Route path='/home' element={<Home currentCity={currentCity} />} />
+        <Route path='/' element={<Home currentCity={currentCity} currentState= {currentState} />} />
+        <Route path='/home' element={<Home currentCity={currentCity} currentState= {currentState} />} />
       </Routes>
     </section>
   );
