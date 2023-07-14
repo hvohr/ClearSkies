@@ -17,10 +17,27 @@
   align-items: center;
 }
 
+.user-information {
+  display: flex;
+  width: 100%;
+  justify-content: space-between
+}
+
 .current-city,
 .current-date {
-  font-size: 20px;
-  margin: 5px;
+  font-size: 18px;
+  font-style:italic;
+  margin: 10px;
+}
+
+.current-weather-container {
+  background-color:rgb(240, 248, 255, 0.4);
+  border: 20px solid rgba(247, 98, 5, 0.2);
+  width: 50vw;
+  height: 50vh;
+  margin: 40px;
+  text-align: center;
+
 }
 
 .loading-data {

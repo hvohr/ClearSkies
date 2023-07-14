@@ -11,15 +11,20 @@ function Home(props) {
     let month = months[d.getMonth()];
     let year = d.getFullYear();
 
-    return `${day} ${date} ${month} ${year}`
+    return `${day}, ${date} ${month}, ${year}`
   }
   return (
     <div className='home-container'>
       <NavBar />
       <main className='main-container'>
-        {!props.currentCity && <h2 className='loading-data'>Loading Location Data...</h2>}
-        <h2 className='current-city'>{props.currentCity}{','} {props.currentState}</h2>
-        <p className='current-date'>{dateBuilder(new Date())}</p>
+        <section className='user-information'>
+          {!props.currentCity && <h3 className='loading-data'>Loading Location Data...</h3>}
+          <h3 className='current-city'>Your Current Location: {props.currentCity} {props.currentState}</h3>
+          <h3 className='current-date'>{dateBuilder(new Date())}</h3>
+        </section>
+        <section className='current-weather-container'>
+          <h1 className='front-card-title'>Today's Forecast for {props.currentCity}</h1>
+        </section>
       </main>
     </div>
   )
