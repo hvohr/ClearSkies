@@ -1,9 +1,8 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom'
 import Home from '../../pages/Home'
-import { fetchWeather, fetchLongLat, fetchCityName } from '../apiCall'
+import { fetchCityName } from '../apiCall'
 import { useState, useEffect } from 'react'
-import WeatherCard from '../WeatherCard/WeatherCard'
 
 
 function App() {
@@ -43,7 +42,7 @@ function App() {
   return (
     <section>
       <Routes>
-        <Route path='/' element={<Home currentCity={currentCity} currentState={currentState} />} />
+        <Route path='/' element={<Home currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong} />} />
         <Route path='/home' element={<Home currentCity={currentCity} currentState={currentState} />} />
       </Routes>
     </section>

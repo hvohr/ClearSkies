@@ -8,7 +8,7 @@
 .nav-title {
   font-size: 45px;
   margin: 10px;
-  color:azure
+  color:rgba(25, 4, 108)
 }
 
 .main-container {
@@ -32,9 +32,9 @@
 
 .current-weather-container {
   background-color:rgb(240, 248, 255, 0.4);
-  border: 20px solid rgba(247, 98, 5, 0.2);
-  width: 50vw;
-  height: 50vh;
+  border: 15px solid rgba(25, 4, 108, 0.2);
+  width: 40vw;
+  height: 40vh;
   margin: 40px;
   text-align: center;
 
@@ -50,6 +50,6 @@
 .hourly-button {
   text-decoration: none;
   font-size: 20px;
-  color:rgb(0, 0, 0);
+  color:rgba(25, 4, 108);
   margin: 10px;
 }
