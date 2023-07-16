@@ -41,8 +41,9 @@
 .current-weather-container {
   background-color:rgb(240, 248, 255, 0.4);
   border: 15px solid rgba(25, 4, 108, 0.2);
-  width: 40vw;
-  height: 40vh;
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
   margin: 40px;
   text-align: center;
 

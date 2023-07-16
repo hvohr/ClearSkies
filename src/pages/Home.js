@@ -1,11 +1,14 @@
 import NavBar from './NavBar'
 import './pages.css'
-import { fetchWeather } from '../components/apiCall'
+import { fetchWeather, fetchLongLat } from '../components/apiCall'
 import { useEffect, useState } from 'react'
 import HomeWeatherCard from '../components/WeatherCard/HomeWeatherCard'
+import Form from '../components/Form/Form'
 
 function Home(props) {
   const [currentTemp, setCurrentTemp] = useState('')
+  const [changedCity, setChangedCity] = useState('')
+  const [changedState, setChangedState] = useState('')
   const [currentDescription, setCurrentDescription] = useState('')
   const [currentUVI, setCurrentUVI] = useState('')
   const [currentWindSpeed, setCurrentWindSpeed] = useState('')
@@ -25,13 +28,24 @@ function Home(props) {
       fetchWeather(props.currentLat, props.currentLong).then(
         data => {
           setCurrentTemp(data.current.temp)
+          setCurrentDescription(data.current.weather[0].description)
+          setCurrentCloudCover(data.current.cloud)
+          setCurrentUVI(data.current.uvi)
+          setCurrentFeelsLike(data.current.feelslike)
+          setCurrentWindSpeed(data.current.wind)
         }
       )
   }
 
+
+
   useEffect(() => {
     fetchCityWeather()
   })
+
+  function addNewCity(newCity) {
+    setChangedCity(newCity)
+  }
 
   const dateBuilder = (d) => {
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -55,9 +69,11 @@ function Home(props) {
           </div>
           <h3 className='current-date'>{dateBuilder(new Date())}</h3>
         </section>
+        <Form />
         <section className='current-weather-container'>
           <h1 className='front-card-title'>Current Weather for {props.currentCity}</h1>
-          <HomeWeatherCard currentTemp={currentTemp} />
+          <HomeWeatherCard currentTemp={currentTemp} currentDescription={currentDescription} currentWindSpeed={currentWindSpeed}
+          currentCloudCover={currentCloudCover} currentUVI ={currentUVI} currentFeelsLike={currentFeelsLike} />
         </section>
       </main>
     </div>

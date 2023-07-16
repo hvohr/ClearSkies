@@ -40,12 +40,14 @@ function App() {
     console.log("Unable to retrieve your location, please allow location services");
   }
   return (
-    <section>
-      <Routes>
-        <Route path='/' element={<Home currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong} />} />
-        <Route path='/home' element={<Home currentCity={currentCity} currentState={currentState} />} />
-      </Routes>
-    </section>
+    <div>
+      <section>
+        <Routes>
+          <Route path='/' element={<Home currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong} />} />
+          <Route path='/home' element={<Home currentCity={currentCity} currentState={currentState} />} />
+        </Routes>
+      </section>
+    </div>
   );
 }
 
