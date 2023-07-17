@@ -7,8 +7,9 @@ import Form from '../components/Form/Form'
 
 function Home(props) {
   const [currentTemp, setCurrentTemp] = useState('')
-  const [changedCity, setChangedCity] = useState('')
+  const [changedCity, setChangedCity] = useState('Denver')
   const [changedState, setChangedState] = useState('')
+  const [changed, setChanged] = useState(false)
   const [currentDescription, setCurrentDescription] = useState('')
   const [currentUVI, setCurrentUVI] = useState('')
   const [currentWindSpeed, setCurrentWindSpeed] = useState('')
@@ -20,7 +21,8 @@ function Home(props) {
     if (!props.currentLong || !props.currentLat) {
       //figure out how to make below work
       return <h2 className='loading-data'>Loading Location Data...</h2>
-    } else
+    } else if (changed === false) {
+      setChangedCity(props.currentCity)
       fetchWeather(props.currentLat, props.currentLong).then(
         data => {
           setCurrentTemp(data.current.temp)
@@ -30,15 +32,39 @@ function Home(props) {
           setCurrentFeelsLike(data.current.feels_like)
           setCurrentWindSpeed(data.current.wind_speed)
           setCurrentWeatherIcon(data.current.weather[0].icon)
+
         }
       )
+    }
   }
+  function findLongLat() {
+    console.log(changedCity)
+    if (!changedCity && changed === false) {
+      return <h1>Loading...</h1>
+    }
+    fetchLongLat(changedCity).then(
+      data => console.log(data))
+  }
+
+  useEffect(() => {
+    findLongLat()
+  })
+
   useEffect(() => {
     fetchCityWeather()
   })
 
-  function addNewCity(newCity) {
-    setChangedCity(newCity)
+  function checkChange() {
+    setChanged(true)
+  }
+
+  // function listCities(city, state) {
+  //   setChangedCity(city)
+  //   setChangedState(state)
+  // }
+
+  function submitCity(newCity) {
+    setChangedCity(newCity.city)
   }
 
   const dateBuilder = (d) => {
@@ -63,11 +89,11 @@ function Home(props) {
           </div>
           <h3 className='current-date'>{dateBuilder(new Date())}</h3>
         </section>
-        <Form />
+        <Form submitCity={submitCity} checkChange={checkChange} />
         <section className='current-weather-container'>
-          <h1 style={{textDecoration:'underline'}} className='front-card-title'>Current Weather for {props.currentCity}</h1>
+          <h1 style={{ textDecoration: 'underline' }} className='front-card-title'>Current Weather for {changedCity}</h1>
           <HomeWeatherCard currentWeatherIcon={currentWeatherIcon} currentTemp={currentTemp} currentDescription={currentDescription} currentWindSpeed={currentWindSpeed}
-          currentCloudCover={currentCloudCover} currentUVI ={currentUVI} currentFeelsLike={currentFeelsLike} />
+            currentCloudCover={currentCloudCover} currentUVI={currentUVI} currentFeelsLike={currentFeelsLike} />
         </section>
       </main>
     </div>

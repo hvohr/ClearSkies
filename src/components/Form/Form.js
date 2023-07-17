@@ -11,7 +11,7 @@ function Form(props) {
       id: Date.now(),
       city
     }
-    props.addNewCity(newCity)
+    props.submitCity(newCity)
     clearInput()
   }
   function clearInput() {
@@ -19,8 +19,12 @@ function Form(props) {
   }
   return (
     <form>
-      <input type='text' placeholder='Enter a city name' name='current-forecast' value= {city} onChange={event => setCity(event.target.value)}/>
-      <button onClick={event => submitCity(event)}>Change City</button>
+      <input type='text' placeholder='Enter a city name' name='current-forecast' value={city} onChange={event => setCity(event.target.value)} />
+      <button onClick={event => {
+        submitCity(event)
+        props.checkChange()
+      }
+      }>Change City</button>
     </form>
   )
 }

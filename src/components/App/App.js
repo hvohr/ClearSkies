@@ -37,7 +37,7 @@ function App() {
   }, [currentLat, currentLong])
 
   function error() {
-    console.log("Unable to retrieve your location, please allow location services");
+    alert("Unable to retrieve your location, please allow location services");
   }
   return (
     <div>
