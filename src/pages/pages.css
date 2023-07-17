@@ -6,7 +6,7 @@
 }
 
 .nav-title {
-  font-size: 45px;
+  font-size: 55px;
   margin: 10px;
   color:rgba(25, 4, 108)
 }
@@ -24,20 +24,28 @@
 }
 
 .current-city,
-.current-date {
-  font-size: 18px;
+.current-date,
+.loading-data {
+  font-size: 25px;
   font-style:italic;
   margin: 10px;
 }
 
+.loading-data-container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
 .current-weather-container {
-  background-color:rgb(240, 248, 255, 0.4);
-  border: 15px solid rgba(25, 4, 108, 0.2);
-  width: 40vw;
-  height: 40vh;
+  background-color:rgba(255, 255, 255, 0.272);
+  border: 15px solid rgba(25, 4, 108, 0.7);
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
   margin: 40px;
   text-align: center;
-
 }
 
 .loading-data {
@@ -49,7 +57,19 @@
 .daily-button,
 .hourly-button {
   text-decoration: none;
-  font-size: 20px;
+  font-weight:bold;
+  font-size: 25px;
   color:rgba(25, 4, 108);
   margin: 10px;
+}
+
+.current-weather-card,
+.more-information,
+input,
+button {
+  font-size: 20px;
+}
+
+.front-card-title {
+  font-size: 35px;
 }
