@@ -7,7 +7,7 @@ import Form from '../components/Form/Form'
 
 function Home(props) {
   const [currentTemp, setCurrentTemp] = useState('')
-  const [changedCity, setChangedCity] = useState('Denver')
+  const [changedCity, setChangedCity] = useState('')
   const [changedState, setChangedState] = useState('')
   const [changed, setChanged] = useState(false)
   const [currentDescription, setCurrentDescription] = useState('')
@@ -21,10 +21,11 @@ function Home(props) {
     if (!props.currentLong || !props.currentLat) {
       //figure out how to make below work
       return <h2 className='loading-data'>Loading Location Data...</h2>
-    } else if (changed === false) {
+    } else
       setChangedCity(props.currentCity)
       fetchWeather(props.currentLat, props.currentLong).then(
         data => {
+          console.log(data)
           setCurrentTemp(data.current.temp)
           setCurrentDescription(data.current.weather[0].description)
           setCurrentCloudCover(data.current.clouds)
@@ -32,10 +33,7 @@ function Home(props) {
           setCurrentFeelsLike(data.current.feels_like)
           setCurrentWindSpeed(data.current.wind_speed)
           setCurrentWeatherIcon(data.current.weather[0].icon)
-
-        }
-      )
-    }
+    })
   }
   function findLongLat() {
     console.log(changedCity)
@@ -52,7 +50,7 @@ function Home(props) {
 
   useEffect(() => {
     fetchCityWeather()
-  })
+  }, [])
 
   function checkChange() {
     setChanged(true)
