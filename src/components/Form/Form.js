@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import '../../pages/pages.css'
 
 
 function Form(props) {

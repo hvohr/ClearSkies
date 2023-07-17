@@ -16,10 +16,6 @@ function Home(props) {
   const [currentCloudCover, setCurrentCloudCover] = useState('')
   const [currentWeatherIcon, setCurrentWeatherIcon] = useState('')
 
-  // function weatherIcon(id) {
-  //   return <img src={require(`https://openweathermap.org/img/wn/${id}@2x.png`)}></img>
-  // }
-
   function fetchCityWeather() {
     if (!props.currentLong || !props.currentLat) {
       //figure out how to make below work
@@ -29,16 +25,14 @@ function Home(props) {
         data => {
           setCurrentTemp(data.current.temp)
           setCurrentDescription(data.current.weather[0].description)
-          setCurrentCloudCover(data.current.cloud)
+          setCurrentCloudCover(data.current.clouds)
           setCurrentUVI(data.current.uvi)
-          setCurrentFeelsLike(data.current.feelslike)
-          setCurrentWindSpeed(data.current.wind)
+          setCurrentFeelsLike(data.current.feels_like)
+          setCurrentWindSpeed(data.current.wind_speed)
+          setCurrentWeatherIcon(data.current.weather[0].icon)
         }
       )
   }
-
-
-
   useEffect(() => {
     fetchCityWeather()
   })
@@ -71,8 +65,8 @@ function Home(props) {
         </section>
         <Form />
         <section className='current-weather-container'>
-          <h1 className='front-card-title'>Current Weather for {props.currentCity}</h1>
-          <HomeWeatherCard currentTemp={currentTemp} currentDescription={currentDescription} currentWindSpeed={currentWindSpeed}
+          <h1 style={{textDecoration:'underline'}} className='front-card-title'>Current Weather for {props.currentCity}</h1>
+          <HomeWeatherCard currentWeatherIcon={currentWeatherIcon} currentTemp={currentTemp} currentDescription={currentDescription} currentWindSpeed={currentWindSpeed}
           currentCloudCover={currentCloudCover} currentUVI ={currentUVI} currentFeelsLike={currentFeelsLike} />
         </section>
       </main>

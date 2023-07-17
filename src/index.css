@@ -1,10 +1,10 @@
 * {
-  font-family: 'Merriweather', serif;
+  font-family: 'Staatliches', cursive;
 }
 
 html {
   min-height: 100vh;
-  background-image: url('./components/images/clear-skies-background.jpg');
+  background-image: url('./components/images/clear-sky-background.jpeg');
   background-size:cover;
   background-repeat: no-repeat;
 }
