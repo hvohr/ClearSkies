@@ -46,11 +46,7 @@ function Home(props) {
       data => setButtonList(data))
   }
 
-  // function buttonDisplay() {
-  //   if (buttonList.length !== 0) {
-  //     return <CityOptions cityList={buttonList} showedButtons={setShowedButtons}/>
-  //   }
-  // }
+  let buttonDisplay = <CityOptions cityList={buttonList} showedButtons={setShowedButtons}/>
 
   useEffect(() => {
     findLongLat()
@@ -58,7 +54,7 @@ function Home(props) {
 
   useEffect(() => {
     fetchCityWeather()
-  }, [])
+  }, [props.currentCity])
 
   function checkChange() {
     setChanged(true)
@@ -96,8 +92,10 @@ function Home(props) {
           <h3 className='current-date'>{dateBuilder(new Date())}</h3>
         </section>
         <Form submitCity={submitCity} checkChange={checkChange} />
+        {(!showButtons && showButtons) && buttonDisplay}
         <section className='current-weather-container'>
-          <h1 style={{ textDecoration: 'underline' }} className='front-card-title'>Current Weather for {changedCity}</h1>
+          {!changedCity && <h1>Loading...</h1>}
+          {changedCity && <h1 style={{ textDecoration: 'underline' }} className='front-card-title'>Current Weather for {changedCity}</h1>}
           <HomeWeatherCard currentWeatherIcon={currentWeatherIcon} currentTemp={currentTemp} currentDescription={currentDescription} currentWindSpeed={currentWindSpeed}
             currentCloudCover={currentCloudCover} currentUVI={currentUVI} currentFeelsLike={currentFeelsLike} />
         </section>
