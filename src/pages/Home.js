@@ -4,12 +4,15 @@ import { fetchWeather, fetchLongLat } from '../components/apiCall'
 import { useEffect, useState } from 'react'
 import HomeWeatherCard from '../components/WeatherCard/HomeWeatherCard'
 import Form from '../components/Form/Form'
+import CityOptions from '../components/CityOptions/CityOptions'
 
 function Home(props) {
   const [currentTemp, setCurrentTemp] = useState('')
   const [changedCity, setChangedCity] = useState('')
   const [changedState, setChangedState] = useState('')
   const [changed, setChanged] = useState(false)
+  const [buttonList, setButtonList] = useState([])
+  const [showButtons, setShowedButtons] = useState(true)
   const [currentDescription, setCurrentDescription] = useState('')
   const [currentUVI, setCurrentUVI] = useState('')
   const [currentWindSpeed, setCurrentWindSpeed] = useState('')
@@ -25,7 +28,6 @@ function Home(props) {
       setChangedCity(props.currentCity)
       fetchWeather(props.currentLat, props.currentLong).then(
         data => {
-          console.log(data)
           setCurrentTemp(data.current.temp)
           setCurrentDescription(data.current.weather[0].description)
           setCurrentCloudCover(data.current.clouds)
@@ -41,12 +43,18 @@ function Home(props) {
       return <h1>Loading...</h1>
     }
     fetchLongLat(changedCity).then(
-      data => console.log(data))
+      data => setButtonList(data))
   }
+
+  // function buttonDisplay() {
+  //   if (buttonList.length !== 0) {
+  //     return <CityOptions cityList={buttonList} showedButtons={setShowedButtons}/>
+  //   }
+  // }
 
   useEffect(() => {
     findLongLat()
-  })
+  }, [changedCity])
 
   useEffect(() => {
     fetchCityWeather()

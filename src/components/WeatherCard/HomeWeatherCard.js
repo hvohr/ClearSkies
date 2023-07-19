@@ -3,7 +3,6 @@ import { useState } from 'react'
 
 
 function HomeWeatherCard(props) {
-  console.log(props)
   const [moreInfo, setMoreInfo] = useState(true)
   let moreInformation = <section>
     <h3>Feels Like: &nbsp;&nbsp;  {props.currentFeelsLike} F</h3>
