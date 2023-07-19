@@ -12,7 +12,7 @@ function Home(props) {
   const [changedState, setChangedState] = useState('')
   const [changed, setChanged] = useState(false)
   const [buttonList, setButtonList] = useState([])
-  const [showButtons, setShowedButtons] = useState(true)
+  const [showButtons, setShowedButtons] = useState(false)
   const [currentDescription, setCurrentDescription] = useState('')
   const [currentUVI, setCurrentUVI] = useState('')
   const [currentWindSpeed, setCurrentWindSpeed] = useState('')
@@ -23,7 +23,7 @@ function Home(props) {
   function fetchCityWeather() {
     if (!props.currentLong || !props.currentLat) {
       //figure out how to make below work
-      return <h2 className='loading-data'>Loading Location Data...</h2>
+      return false
     } else
       setChangedCity(props.currentCity)
       fetchWeather(props.currentLat, props.currentLong).then(
@@ -38,15 +38,14 @@ function Home(props) {
     })
   }
   function findLongLat() {
-    console.log(changedCity)
     if (!changedCity && changed === false) {
-      return <h1>Loading...</h1>
+      return false
     }
     fetchLongLat(changedCity).then(
-      data => setButtonList(data))
+      data => {
+        setButtonList(data)
+      })
   }
-
-  let buttonDisplay = <CityOptions cityList={buttonList} showedButtons={setShowedButtons}/>
 
   useEffect(() => {
     findLongLat()
@@ -58,6 +57,7 @@ function Home(props) {
 
   function checkChange() {
     setChanged(true)
+    setShowedButtons(true)
   }
 
   // function listCities(city, state) {
@@ -92,7 +92,7 @@ function Home(props) {
           <h3 className='current-date'>{dateBuilder(new Date())}</h3>
         </section>
         <Form submitCity={submitCity} checkChange={checkChange} />
-        {(!showButtons && showButtons) && buttonDisplay}
+        {(showButtons) && <CityOptions cityList={buttonList} showedButtons={setShowedButtons}/>}
         <section className='current-weather-container'>
           {!changedCity && <h1>Loading...</h1>}
           {changedCity && <h1 style={{ textDecoration: 'underline' }} className='front-card-title'>Current Weather for {changedCity}</h1>}

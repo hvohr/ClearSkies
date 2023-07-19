@@ -24,8 +24,7 @@ function App() {
   }
   function fetchCity() {
     if (!currentLong || !currentLat) {
-      //figure out how to make below work
-      return <h2 className='loading-data'>Loading Location Data...</h2>
+      return false
     } else
       fetchCityName(currentLat, currentLong).then(
         data => (setCurrentCity(data[0].name), setCurrentState(data[0].state))

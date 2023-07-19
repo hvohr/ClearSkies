@@ -2,18 +2,31 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(255,255,255,0.3);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* .conditional-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+.conditional {
+  text-align: center;
+  margin-top: 0px;
+
 }
 
 .nav-title {
   font-size: 55px;
   margin: 10px;
-  color:rgba(25, 4, 108)
+  margin-bottom: 0px;
+  color: rgba(25, 4, 108)
 }
 
 .main-container {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -27,7 +40,7 @@
 .current-date,
 .loading-data {
   font-size: 25px;
-  font-style:italic;
+  font-style: italic;
   margin: 10px;
 }
 
@@ -39,7 +52,7 @@
 }
 
 .current-weather-container {
-  background-color:rgba(255, 255, 255, 0.272);
+  background-color: rgba(255, 255, 255, 0.272);
   border: 15px solid rgba(25, 4, 108, 0.7);
   width: fit-content;
   height: fit-content;
@@ -49,7 +62,7 @@
 }
 
 .loading-data {
-  font-style:italic;
+  font-style: italic;
   font-size: 15px;
 }
 
@@ -57,9 +70,9 @@
 .daily-button,
 .hourly-button {
   text-decoration: none;
-  font-weight:bold;
+  font-weight: bold;
   font-size: 25px;
-  color:rgba(25, 4, 108);
+  color: rgba(25, 4, 108);
   margin: 10px;
 }
 
@@ -72,4 +85,14 @@ button {
 
 .front-card-title {
   font-size: 35px;
+}
+
+.city-options-container {
+  margin-top: 20px;
+}
+
+.city-button {
+  margin: 10px;
+  background-color: rgba(25, 4, 108);
+  color: aliceblue
 }
