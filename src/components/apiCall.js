@@ -8,7 +8,7 @@ async function fetchWeather(lat, lon) {
 }
 
 async function fetchLongLat(cityname) {
-  let response = await fetch (`http://api.openweathermap.org/geo/1.0/direct?q=${cityname}&limit=5&appid=d8adc478c0760c8921ea232122e47253`)
+  let response = await fetch (`http://api.openweathermap.org/geo/1.0/direct?q=${cityname}&limit=10&appid=d8adc478c0760c8921ea232122e47253`)
   if (!response.ok) {
     throw new Error(response.statusText)
   }

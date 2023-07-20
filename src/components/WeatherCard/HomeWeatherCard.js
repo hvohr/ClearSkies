@@ -21,7 +21,7 @@ function HomeWeatherCard(props) {
   return (
     <div>
       <section className='current-weather-card'>
-        <img src={(`https://openweathermap.org/img/wn/${props.currentWeatherIcon}@2x.png`)}></img>
+       {props.currentWeatherIcon && <img src={(`https://openweathermap.org/img/wn/${props.currentWeatherIcon}@2x.png`)}></img>}
         <h3>{props.currentTemp} F</h3>
         <h3>{props.currentDescription}</h3>
       </section>
