@@ -1,7 +1,6 @@
 import './HomeWeatherCard.css'
 import { useState } from 'react'
 
-
 function HomeWeatherCard(props) {
   const [moreInfo, setMoreInfo] = useState(true)
   let moreInformation = <section>
@@ -21,14 +20,15 @@ function HomeWeatherCard(props) {
   return (
     <div>
       <section className='current-weather-card'>
-       {props.currentWeatherIcon && <img src={(`https://openweathermap.org/img/wn/${props.currentWeatherIcon}@2x.png`)}></img>}
-        <h3>{props.currentTemp} F</h3>
-        <h3>{props.currentDescription}</h3>
+       {(props.currentWeatherIcon && (props.changedState === "...") === false) && <img src={(`https://openweathermap.org/img/wn/${props.currentWeatherIcon}@2x.png`)}></img>}
+       {props.changedState === "..." && <img className='loading-icon' src={require('../images/loading.png')}></img>}
+       {(props.changedState === "...") === false && <h3>{props.currentTemp} F</h3>}
+       {(props.changedState === "...") === false &&  <h3>{props.currentDescription}</h3>}
       </section>
       <section className='more-information'>
         {!moreInfo && moreInformation}
-        {moreInfo && <button onClick={clickedButtonMoreInfo}>More Info</button>}
-        {!moreInfo && <button onClick={clickedButtonLessInfo}>Less Info</button>}
+        {moreInfo && <button className='more-info-buttons' onClick={clickedButtonMoreInfo}>More Info</button>}
+        {!moreInfo && <button className='more-info-buttons' onClick={clickedButtonLessInfo}>Less Info</button>}
       </section>
     </div>
   )

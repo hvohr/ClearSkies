@@ -19,8 +19,8 @@ function Form(props) {
   }
   return (
     <form>
-      <input type='text' placeholder='Enter a city name' name='current-forecast' value={city} onChange={event => setCity(event.target.value)} />
-      <button onClick={event => {
+      <input className='form-input' type='text' placeholder='Enter a city name' name='current-forecast' value={city} onChange={event => setCity(event.target.value)} />
+      <button className='form-button' onClick={event => {
         submitCity(event)
         props.checkChange()
       }
