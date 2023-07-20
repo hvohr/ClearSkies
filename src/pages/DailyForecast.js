@@ -36,12 +36,14 @@ function DailyForecast(props) {
   useEffect(() => {
     fetchCityDailyWeather()
   }, [props.currentCity, props.currentState])
-  
+
   return (
     <section>
       <NavBar />
-      <h1 className='daily-forecast-title'>Daily Forecast For {changedCity}, {changedState}</h1>
-      <Form />
+      <div className='daily-top-container'>
+        <h1 className='daily-forecast-title'>5 Day Forecast For {changedCity}, {changedState}</h1>
+        <Form />
+      </div>
     </section>
   )
 }
