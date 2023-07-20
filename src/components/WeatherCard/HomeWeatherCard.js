@@ -4,10 +4,10 @@ import { useState } from 'react'
 function HomeWeatherCard(props) {
   const [moreInfo, setMoreInfo] = useState(true)
   let moreInformation = <section>
-    <h3>Feels Like: &nbsp;&nbsp;  {props.currentFeelsLike} F</h3>
-    <h3>Cloud Cover:  &nbsp;&nbsp; {props.currentCloudCover}%</h3>
-    <h3>UV Index:  &nbsp;&nbsp; {props.currentUVI}</h3>
-    <h3>Wind Speed:  &nbsp;&nbsp; {props.currentWindSpeed} mph</h3>
+    {(props.changedState === "...") === false && <h3>Feels Like: &nbsp;&nbsp;  {props.currentFeelsLike} F</h3>}
+    {(props.changedState === "...") === false && <h3>Cloud Cover:  &nbsp;&nbsp; {props.currentCloudCover}%</h3>}
+    {(props.changedState === "...") === false && <h3>UV Index:  &nbsp;&nbsp; {props.currentUVI}</h3>}
+    {(props.changedState === "...") === false && <h3>Wind Speed:  &nbsp;&nbsp; {props.currentWindSpeed} mph</h3>}
   </section>
 
   function clickedButtonMoreInfo() {
