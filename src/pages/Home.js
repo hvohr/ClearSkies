@@ -24,7 +24,6 @@ function Home(props) {
 
   function fetchCityWeather() {
     if (!props.currentLong || !props.currentLat) {
-      //figure out how to make below work
       return false
     } else
       setChangedCity(props.currentCity)
@@ -94,7 +93,7 @@ function Home(props) {
 
   function submitCity(newCity) {
     setChangedCity(newCity.city)
-    setChangedState("...?")
+    setChangedState("...")
   }
 
   const dateBuilder = (d) => {
@@ -124,7 +123,7 @@ function Home(props) {
         <section className='current-weather-container'>
           {!changedCity && <h1>Loading...</h1>}
           {changedCity && <h1 style={{ textDecoration: 'underline' }} className='front-card-title'>Current Weather for {changedCity}, {changedState}</h1>}
-          <HomeWeatherCard currentWeatherIcon={currentWeatherIcon} currentTemp={currentTemp} currentDescription={currentDescription} currentWindSpeed={currentWindSpeed}
+          <HomeWeatherCard changedState= {changedState} currentWeatherIcon={currentWeatherIcon} currentTemp={currentTemp} currentDescription={currentDescription} currentWindSpeed={currentWindSpeed}
             currentCloudCover={currentCloudCover} currentUVI={currentUVI} currentFeelsLike={currentFeelsLike} />
         </section>
       </main>
