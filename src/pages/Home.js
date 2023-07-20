@@ -4,11 +4,17 @@ import { fetchWeather, fetchLongLat } from '../components/apiCall'
 import { useEffect, useState } from 'react'
 import HomeWeatherCard from '../components/WeatherCard/HomeWeatherCard'
 import Form from '../components/Form/Form'
+import CityOptions from '../components/CityOptions/CityOptions'
 
 function Home(props) {
   const [currentTemp, setCurrentTemp] = useState('')
   const [changedCity, setChangedCity] = useState('')
   const [changedState, setChangedState] = useState('')
+  const [changedLat, setChangedLat] = useState('')
+  const [changedLong, setChangedLong] = useState('')
+  const [changed, setChanged] = useState(false)
+  const [buttonList, setButtonList] = useState([])
+  const [showButtons, setShowedButtons] = useState(false)
   const [currentDescription, setCurrentDescription] = useState('')
   const [currentUVI, setCurrentUVI] = useState('')
   const [currentWindSpeed, setCurrentWindSpeed] = useState('')
@@ -19,9 +25,56 @@ function Home(props) {
   function fetchCityWeather() {
     if (!props.currentLong || !props.currentLat) {
       //figure out how to make below work
-      return <h2 className='loading-data'>Loading Location Data...</h2>
+      return false
     } else
-      fetchWeather(props.currentLat, props.currentLong).then(
+      setChangedCity(props.currentCity)
+    setChangedState(props.currentState)
+    fetchWeather(props.currentLat, props.currentLong).then(
+      data => {
+        setCurrentTemp(data.current.temp)
+        setCurrentDescription(data.current.weather[0].description)
+        setCurrentCloudCover(data.current.clouds)
+        setCurrentUVI(data.current.uvi)
+        setCurrentFeelsLike(data.current.feels_like)
+        setCurrentWindSpeed(data.current.wind_speed)
+        setCurrentWeatherIcon(data.current.weather[0].icon)
+      })
+  }
+  function findLongLat() {
+    if (!changedCity && changed === false) {
+      return false
+    }
+    fetchLongLat(changedCity).then(
+      data => {
+        let filter = data.filter((d) => d.country === "US")
+        setButtonList(filter)
+      })
+  }
+
+  useEffect(() => {
+    findLongLat()
+    fetchNewWeather()
+  }, [changedCity])
+
+  useEffect(() => {
+    console.log(changedLat)
+    fetchNewWeather()
+  }, [changedLong, changedLat])
+
+  useEffect(() => {
+    fetchCityWeather()
+  }, [props.currentCity])
+
+  function checkChange() {
+    setChanged(true)
+    setShowedButtons(true)
+  }
+
+  function fetchNewWeather() {
+    if (!changedLong || !changedLat) {
+      return false
+    } else
+      fetchWeather(changedLat, changedLong).then(
         data => {
           setCurrentTemp(data.current.temp)
           setCurrentDescription(data.current.weather[0].description)
@@ -30,15 +83,18 @@ function Home(props) {
           setCurrentFeelsLike(data.current.feels_like)
           setCurrentWindSpeed(data.current.wind_speed)
           setCurrentWeatherIcon(data.current.weather[0].icon)
-        }
-      )
+        })
   }
-  useEffect(() => {
-    fetchCityWeather()
-  })
 
-  function addNewCity(newCity) {
-    setChangedCity(newCity)
+  function getNewCoordinates(longitude, latitude, state) {
+    setChangedLat(latitude)
+    setChangedLong(longitude)
+    setChangedState(state)
+  }
+
+  function submitCity(newCity) {
+    setChangedCity(newCity.city)
+    setChangedState("...?")
   }
 
   const dateBuilder = (d) => {
@@ -63,11 +119,13 @@ function Home(props) {
           </div>
           <h3 className='current-date'>{dateBuilder(new Date())}</h3>
         </section>
-        <Form />
+        <Form submitCity={submitCity} checkChange={checkChange} />
+        {(showButtons) && <CityOptions cityList={buttonList} showedButtons={setShowedButtons} getNewCoordinates={getNewCoordinates} />}
         <section className='current-weather-container'>
-          <h1 style={{textDecoration:'underline'}} className='front-card-title'>Current Weather for {props.currentCity}</h1>
+          {!changedCity && <h1>Loading...</h1>}
+          {changedCity && <h1 style={{ textDecoration: 'underline' }} className='front-card-title'>Current Weather for {changedCity}, {changedState}</h1>}
           <HomeWeatherCard currentWeatherIcon={currentWeatherIcon} currentTemp={currentTemp} currentDescription={currentDescription} currentWindSpeed={currentWindSpeed}
-          currentCloudCover={currentCloudCover} currentUVI ={currentUVI} currentFeelsLike={currentFeelsLike} />
+            currentCloudCover={currentCloudCover} currentUVI={currentUVI} currentFeelsLike={currentFeelsLike} />
         </section>
       </main>
     </div>

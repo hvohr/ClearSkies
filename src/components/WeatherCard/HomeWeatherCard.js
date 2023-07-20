@@ -3,7 +3,6 @@ import { useState } from 'react'
 
 
 function HomeWeatherCard(props) {
-  console.log(props)
   const [moreInfo, setMoreInfo] = useState(true)
   let moreInformation = <section>
     <h3>Feels Like: &nbsp;&nbsp;  {props.currentFeelsLike} F</h3>
@@ -22,7 +21,7 @@ function HomeWeatherCard(props) {
   return (
     <div>
       <section className='current-weather-card'>
-        <img src={(`https://openweathermap.org/img/wn/${props.currentWeatherIcon}@2x.png`)}></img>
+       {props.currentWeatherIcon && <img src={(`https://openweathermap.org/img/wn/${props.currentWeatherIcon}@2x.png`)}></img>}
         <h3>{props.currentTemp} F</h3>
         <h3>{props.currentDescription}</h3>
       </section>
