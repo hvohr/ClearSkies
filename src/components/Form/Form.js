@@ -17,7 +17,6 @@ function Form(props) {
   function clearInput() {
     setCity('')
   }
-
   return (
     <form>
       <input className='form-input' type='text' placeholder='Enter a city name' name='current-forecast' value={city} onChange={event => {
