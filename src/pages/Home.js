@@ -13,8 +13,8 @@ function Home(props) {
   const [changedLat, setChangedLat] = useState('')
   const [changedLong, setChangedLong] = useState('')
   const [changed, setChanged] = useState(false)
-  const [buttonList, setButtonList] = useState([])
   const [showButtons, setShowedButtons] = useState(false)
+  const [buttonList, setButtonList] = useState([])
   const [currentDescription, setCurrentDescription] = useState('')
   const [currentUVI, setCurrentUVI] = useState('')
   const [currentWindSpeed, setCurrentWindSpeed] = useState('')
@@ -25,8 +25,8 @@ function Home(props) {
   function fetchCityWeather() {
     if (!props.currentLong || !props.currentLat) {
       return false
-    } else
-      setChangedCity(props.currentCity)
+    }
+    setChangedCity(props.currentCity)
     setChangedState(props.currentState)
     fetchWeather(props.currentLat, props.currentLong).then(
       data => {
@@ -40,23 +40,25 @@ function Home(props) {
       })
   }
   function findLongLat() {
-    if (!changedCity && changed === false) {
+    if ((!changedCity && changed === false)) {
       return false
     }
     fetchLongLat(changedCity).then(
       data => {
         let filter = data.filter((d) => d.country === "US")
-        setButtonList(filter)
+        if (changed === true) {
+          setButtonList(filter)
+        }
       })
   }
 
   useEffect(() => {
     findLongLat()
     fetchNewWeather()
+    console.log(buttonList)
   }, [changedCity])
 
   useEffect(() => {
-    console.log(changedLat)
     fetchNewWeather()
   }, [changedLong, changedLat])
 
@@ -72,17 +74,17 @@ function Home(props) {
   function fetchNewWeather() {
     if (!changedLong || !changedLat) {
       return false
-    } else
-      fetchWeather(changedLat, changedLong).then(
-        data => {
-          setCurrentTemp(data.current.temp)
-          setCurrentDescription(data.current.weather[0].description)
-          setCurrentCloudCover(data.current.clouds)
-          setCurrentUVI(data.current.uvi)
-          setCurrentFeelsLike(data.current.feels_like)
-          setCurrentWindSpeed(data.current.wind_speed)
-          setCurrentWeatherIcon(data.current.weather[0].icon)
-        })
+    }
+    fetchWeather(changedLat, changedLong).then(
+      data => {
+        setCurrentTemp(data.current.temp)
+        setCurrentDescription(data.current.weather[0].description)
+        setCurrentCloudCover(data.current.clouds)
+        setCurrentUVI(data.current.uvi)
+        setCurrentFeelsLike(data.current.feels_like)
+        setCurrentWindSpeed(data.current.wind_speed)
+        setCurrentWeatherIcon(data.current.weather[0].icon)
+      })
   }
 
   function getNewCoordinates(longitude, latitude, state) {
@@ -119,11 +121,11 @@ function Home(props) {
           <h3 className='current-date'>{dateBuilder(new Date())}</h3>
         </section>
         <Form submitCity={submitCity} checkChange={checkChange} />
-        {(showButtons) && <CityOptions cityList={buttonList} showedButtons={setShowedButtons} getNewCoordinates={getNewCoordinates} />}
+        {(showButtons === true && changed === true) && <CityOptions changed={changed} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
         <section className='current-weather-container'>
           {!changedCity && <h1>Loading...</h1>}
-          {changedCity && <h1 style={{ textDecoration: 'underline' }} className='front-card-title'>Current Weather for {changedCity}, {changedState}</h1>}
-          <HomeWeatherCard changedState= {changedState} currentWeatherIcon={currentWeatherIcon} currentTemp={currentTemp} currentDescription={currentDescription} currentWindSpeed={currentWindSpeed}
+          {(changedCity && changedState !== '...') && <h1 style={{ textDecoration: 'underline' }} className='front-card-title'>Current Weather for {changedCity}, {changedState}</h1>}
+          <HomeWeatherCard changedState={changedState} currentWeatherIcon={currentWeatherIcon} currentTemp={currentTemp} currentDescription={currentDescription} currentWindSpeed={currentWindSpeed}
             currentCloudCover={currentCloudCover} currentUVI={currentUVI} currentFeelsLike={currentFeelsLike} />
         </section>
       </main>
