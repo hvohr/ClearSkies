@@ -2,7 +2,7 @@ import NavBar from '../pages/NavBar'
 import Form from '../components/Form/Form'
 import { fetchWeather, fetchLongLat } from '../components/apiCall'
 import CityOptions from '../components/CityOptions/CityOptions'
-import HomeWeatherCard from '../components/WeatherCard/HomeWeatherCard'
+import DailyWeatherCard from '../components/WeatherCard/DailyWeatherCard'
 import { useState, useEffect } from 'react'
 
 function DailyForecast(props) {
@@ -10,39 +10,34 @@ function DailyForecast(props) {
   const [changedState, setChangedState] = useState('')
   const [changedLat, setChangedLat] = useState('')
   const [changedLong, setChangedLong] = useState('')
-  const [changed, setChanged] = useState(false)
-  const [showButtons, setShowedButtons] = useState(false)
-  const [buttonList, setButtonList] = useState([])
-  const [dailyDescription, setCurrentDescription] = useState('')
-  const [dailyUVI, setCurrentUVI] = useState('')
-  const [dailyWindSpeed, setCurrentWindSpeed] = useState('')
-  const [dailyTemp, setCurrentTemp] = useState('')
-  const [dailyFeelsLike, setCurrentFeelsLike] = useState('')
-  const [dailyCloudCover, setCurrentCloudCover] = useState('')
-  const [dailyWeatherIcon, setCurrentWeatherIcon] = useState('')
+  const [daily, setDaily] = useState([])
 
   function fetchCityDailyWeather() {
-    if (!props.currentLong || !props.currentLat) {
+    if (!props.currentLat || !props.currentLong) {
       return false
     }
     setChangedCity(props.currentCity)
     setChangedState(props.currentState)
     fetchWeather(props.currentLat, props.currentLong).then(
       data => {
-        console.log(data)
+        setDaily(data.daily)
+        setChangedCity(props.currentCity)
       })
   }
 
   useEffect(() => {
     fetchCityDailyWeather()
-  }, [props.currentCity, props.currentState])
+  }, [props.currentCity])
 
   return (
     <section>
       <NavBar />
       <div className='daily-top-container'>
-        <h1 className='daily-forecast-title'>5 Day Forecast For {changedCity}, {changedState}</h1>
+        <h1 className='daily-forecast-title'>Next 8 Day Forecast</h1>
         <Form />
+      </div>
+      <div>
+        <DailyWeatherCard changedCity={changedCity} changedState={changedState} daily={daily} />
       </div>
     </section>
   )
