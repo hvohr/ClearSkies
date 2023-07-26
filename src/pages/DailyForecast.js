@@ -38,7 +38,7 @@ function DailyForecast(props) {
 
   useEffect(() => {
     fetchCityDailyWeather()
-  }, [props.currentCity])
+  }, [])
 
   return (
     <section>
