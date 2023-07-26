@@ -12,6 +12,17 @@ function DailyForecast(props) {
   const [changedLong, setChangedLong] = useState('')
   const [daily, setDaily] = useState([])
 
+  const dateBuilder = (d) => {
+    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    let day = days[d.getDay()];
+    let date = d.getDate();
+    let month = months[d.getMonth()];
+
+    return `${day}, ${month} ${date}`
+  }
+
   function fetchCityDailyWeather() {
     if (!props.currentLat || !props.currentLong) {
       return false
@@ -37,7 +48,7 @@ function DailyForecast(props) {
         <Form />
       </div>
       <div>
-        <DailyWeatherCard changedCity={changedCity} changedState={changedState} daily={daily} />
+        <DailyWeatherCard date={dateBuilder(new Date())} changedCity={changedCity} changedState={changedState} daily={daily} />
       </div>
     </section>
   )
