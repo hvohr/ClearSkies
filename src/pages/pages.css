@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.296);
 }
 
 .conditional {
@@ -27,18 +27,18 @@
 .daily-small-container {
   width: fit-content;
   text-align: center;
-  background-color: rgba(154, 152, 161, 0.233);
+  background-color: rgba(255, 255, 255, 0.4);
   font-size: 25px;
   box-sizing: border-box;
-  border: 3px solid black;
-  padding: 10px;
+  padding: 20px;
+  border: 3px solid rgba(25, 4, 108);
 }
 
 .nav-title {
   font-size: 55px;
   margin: 10px;
   margin-bottom: 0px;
-  color: rgba(25, 4, 108)
+  color: rgb(255, 255, 255)
 }
 
 .main-container {
@@ -69,8 +69,8 @@
 }
 
 .current-weather-container {
-  background-color: rgba(255, 255, 255, 0.272);
-  border: 8px solid rgba(25, 4, 108, 0.7);
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 8px solid rgb(0, 0, 0);
   width: fit-content;
   height: fit-content;
   padding: 20px;
@@ -86,10 +86,10 @@
 .home-button,
 .daily-button {
   text-align: center;
-  text-decoration: underline;
   font-weight: bold;
+  text-decoration: none;
   font-size: 25px;
-  color: rgba(25, 4, 108);
+  color: rgb(0, 0, 0);
   margin: 10px;
   margin-right: 20px;
   cursor: pointer;
@@ -98,7 +98,7 @@
 
 .home-button:hover,
 .daily-button:hover {
-  transform: scale(1.1);
+  transform: scale(1.5);
 }
 
 .current-weather-card,
@@ -168,8 +168,4 @@ h3 {
   font-size: 30px;
   margin-bottom: 20px;
   font-style: italic
-}
-.weather-icons {
-  background-color:rgba(25, 4, 108, 0.25);
-  border-radius: 50px;
 }
