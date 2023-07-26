@@ -20,7 +20,7 @@ function HomeWeatherCard(props) {
   return (
     <div>
       <section className='current-weather-card'>
-       {(props.currentWeatherIcon && (props.changedState === "...") === false) && <img src={(`https://openweathermap.org/img/wn/${props.currentWeatherIcon}@2x.png`)}></img>}
+       {(props.currentWeatherIcon && (props.changedState === "...") === false) && <img className='weather-icons' src={(`https://openweathermap.org/img/wn/${props.currentWeatherIcon}@2x.png`)}></img>}
        {props.changedState === "..." && <img className='loading-icon' src={require('../images/loading.png')}></img>}
        {(props.changedState === "...") === false && <h3>{props.currentTemp} F</h3>}
        {(props.changedState === "...") === false &&  <h3>{props.currentDescription}</h3>}

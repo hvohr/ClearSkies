@@ -27,7 +27,7 @@
 .daily-small-container {
   width: fit-content;
   text-align: center;
-  background-color: rgba(25, 4, 108, 0.2);
+  background-color: rgba(154, 152, 161, 0.233);
   font-size: 25px;
   box-sizing: border-box;
   border: 3px solid black;
@@ -168,4 +168,8 @@ h3 {
   font-size: 30px;
   margin-bottom: 20px;
   font-style: italic
+}
+.weather-icons {
+  background-color:rgba(25, 4, 108, 0.25);
+  border-radius: 50px;
 }

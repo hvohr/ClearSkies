@@ -8,7 +8,7 @@ function DailyWeatherCard(props) {
       <section className='daily-small-container'>
         <h1>{props.changedCity}, {props.changedState}</h1>
         <h3>{dayname}</h3>
-        <img src={(`https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`)}></img>
+        <img className='weather-icons' src={(`https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`)}></img>
       </section>
     )
   })
