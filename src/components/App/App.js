@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import Home from '../../pages/Home'
 import { fetchCityName } from '../apiCall'
 import { useState, useEffect } from 'react'
+import DailyForecast from '../../pages/DailyForecast';
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong} />} />
           <Route path='/home' element={<Home currentCity={currentCity} currentState={currentState} />} />
+          <Route path='/dailyforecast' element={<DailyForecast currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong}/>} />
         </Routes>
       </section>
     </div>
