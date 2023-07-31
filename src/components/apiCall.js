@@ -8,7 +8,7 @@ async function fetchWeather(lat, lon) {
 }
 
 async function fetchLongLat(cityname) {
-  let response = await fetch (`http://api.openweathermap.org/geo/1.0/direct?q=${cityname}&limit=10&appid=d8adc478c0760c8921ea232122e47253`)
+  let response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityname}&limit=10&appid=d8adc478c0760c8921ea232122e47253`)
   if (!response.ok) {
     throw new Error(response.statusText)
   }
@@ -17,7 +17,21 @@ async function fetchLongLat(cityname) {
 }
 
 async function fetchCityName(lat, lon) {
-  let response = await fetch (`http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=d8adc478c0760c8921ea232122e47253`)
+  let response = await fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=d8adc478c0760c8921ea232122e47253`)
+  if (!response.ok) {
+    throw new Error(response.statusText)
+  }
+  let data = await response.json()
+  return data
+}
+
+async function fetchEvents(lat, lon) {
+  const response = await fetch(`https://api.predicthq.com/v1/events/?location_around.origin=${lat},${lon}?category=concerts,festivals,sports`, {
+    method: "GET",
+    headers: {
+      "Authorization": 'Bearer TW0c0kaokUkgPralTFAAJubb6uep975yPPhUkEZo'
+    }
+  })
   if (!response.ok) {
     throw new Error(response.statusText)
   }
@@ -26,4 +40,4 @@ async function fetchCityName(lat, lon) {
 }
 
 
-export { fetchWeather, fetchLongLat, fetchCityName }
+export { fetchWeather, fetchLongLat, fetchCityName, fetchEvents }

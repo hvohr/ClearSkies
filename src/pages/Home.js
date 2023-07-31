@@ -1,6 +1,6 @@
 import NavBar from './NavBar'
 import './pages.css'
-import { fetchWeather, fetchLongLat } from '../components/apiCall'
+import { fetchWeather, fetchLongLat, fetchEvents } from '../components/apiCall'
 import { useEffect, useState } from 'react'
 import HomeWeatherCard from '../components/WeatherCard/HomeWeatherCard'
 import Form from '../components/Form/Form'
@@ -10,6 +10,7 @@ function Home(props) {
   const [currentTemp, setCurrentTemp] = useState('')
   const [changedCity, setChangedCity] = useState('')
   const [changedState, setChangedState] = useState('')
+  const [alert, setAlert] = useState('')
   const [changedLat, setChangedLat] = useState('')
   const [changedLong, setChangedLong] = useState('')
   const [changed, setChanged] = useState(false)
@@ -53,6 +54,12 @@ function Home(props) {
   }
 
   useEffect(() => {
+    fetchEvents(props.currentLat, props.currentLong).then(
+      data => console.log(data)
+    )
+  }, [props.currentLat])
+
+  useEffect(() => {
     findLongLat()
     fetchNewWeather()
   }, [changedCity])
@@ -76,6 +83,11 @@ function Home(props) {
     }
     fetchWeather(changedLat, changedLong).then(
       data => {
+        if (data.alerts) {
+          setAlert(data.alerts[0].description)
+        } else {
+          setAlert('')
+        }
         setCurrentTemp(data.current.temp)
         setCurrentDescription(data.current.weather[0].description)
         setCurrentCloudCover(data.current.clouds)
@@ -121,10 +133,11 @@ function Home(props) {
         </section>
         <Form submitCity={submitCity} checkChange={checkChange} />
         {(showButtons === true && changed === true) && <CityOptions changed={changed} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
+        <h3 style={{border: "2px solid red"}} className='weather-alert'>{alert}</h3>
         <section className='current-weather-container'>
           {!changedCity && <h1>Loading...</h1>}
           {(changedCity && changedState !== '...') && <h1 style={{ textDecoration: 'underline' }} className='front-card-title'>Current Weather for {changedCity}, {changedState}</h1>}
-          <HomeWeatherCard changedState={changedState} currentWeatherIcon={currentWeatherIcon} currentTemp={currentTemp} currentDescription={currentDescription} currentWindSpeed={currentWindSpeed}
+          <HomeWeatherCard changedState={changedState} alert={alert} currentWeatherIcon={currentWeatherIcon} currentTemp={currentTemp} currentDescription={currentDescription} currentWindSpeed={currentWindSpeed}
             currentCloudCover={currentCloudCover} currentUVI={currentUVI} currentFeelsLike={currentFeelsLike} />
         </section>
       </main>
