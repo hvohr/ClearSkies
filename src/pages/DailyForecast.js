@@ -50,7 +50,7 @@ function DailyForecast(props) {
     }
     fetchWeather(changedLat, changedLong).then(
       data => {
-        setButtonList(data)
+        setDaily(data.daily)
       })
   }
 
