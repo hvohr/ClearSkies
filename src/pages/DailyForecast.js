@@ -50,9 +50,14 @@ function DailyForecast(props) {
     }
     fetchWeather(changedLat, changedLong).then(
       data => {
-        console.log('data', data)
+        setButtonList(data)
       })
   }
+
+  useEffect(() => {
+    findLongLat()
+    fetchNewDailyWeather()
+  }, [changedCity])
 
   useEffect(() => {
     fetchNewDailyWeather()
