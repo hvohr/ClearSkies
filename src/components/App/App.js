@@ -5,7 +5,6 @@ import { fetchCityName } from '../apiCall'
 import { useState, useEffect } from 'react'
 import DailyForecast from '../../pages/DailyForecast';
 
-
 function App() {
   const [currentLat, setCurrentLat] = useState('')
   const [currentLong, setCurrentLong] = useState('')
