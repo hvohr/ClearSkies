@@ -53,11 +53,19 @@ function Home(props) {
       })
   }
 
-  useEffect(() => {
-    fetchEvents(props.currentLat, props.currentLong).then(
-      data => console.log(data)
+  function fetchCityEvents() {
+    if (!props.currentLong || !props.currentLat) {
+      return false
+    } else {
+      fetchEvents(props.currentLat, props.currentLong).then(
+        data => console.log(data)
     )
-  }, [props.currentLat])
+  }
+}
+
+  useEffect(() => {
+    fetchCityEvents()
+  }, [props.currentLong, props.currentLat])
 
   useEffect(() => {
     findLongLat()
@@ -133,11 +141,11 @@ function Home(props) {
         </section>
         <Form submitCity={submitCity} checkChange={checkChange} />
         {(showButtons === true && changed === true) && <CityOptions changed={changed} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
-        <h3 style={{border: "2px solid red"}} className='weather-alert'>{alert}</h3>
+        {alert && <h3 style={{border: "2px solid red"}} className='weather-alert'>{alert}</h3>}
         <section className='current-weather-container'>
           {!changedCity && <h1>Loading...</h1>}
           {(changedCity && changedState !== '...') && <h1 style={{ textDecoration: 'underline' }} className='front-card-title'>Current Weather for {changedCity}, {changedState}</h1>}
-          <HomeWeatherCard changedState={changedState} alert={alert} currentWeatherIcon={currentWeatherIcon} currentTemp={currentTemp} currentDescription={currentDescription} currentWindSpeed={currentWindSpeed}
+          <HomeWeatherCard changedState={changedState} currentWeatherIcon={currentWeatherIcon} currentTemp={currentTemp} currentDescription={currentDescription} currentWindSpeed={currentWindSpeed}
             currentCloudCover={currentCloudCover} currentUVI={currentUVI} currentFeelsLike={currentFeelsLike} />
         </section>
       </main>
