@@ -1,5 +1,5 @@
 import NavBar from '../pages/NavBar'
-import Form from '../components/Form/Form'
+import DailyForm from '../components/DailyForm/DailyForm'
 import { fetchWeather, fetchLongLat } from '../components/apiCall'
 import CityOptions from '../components/CityOptions/CityOptions'
 import DailyWeatherCard from '../components/WeatherCard/DailyWeatherCard'
@@ -8,6 +8,9 @@ import { useState, useEffect } from 'react'
 function DailyForecast(props) {
   const [changedCity, setChangedCity] = useState('')
   const [changedState, setChangedState] = useState('')
+  const [changed, setChanged] = useState(false)
+  const [showButtons, setShowedButtons] = useState(false)
+  const [buttonList, setButtonList] = useState([])
   const [changedLat, setChangedLat] = useState('')
   const [changedLong, setChangedLong] = useState('')
   const [daily, setDaily] = useState([])
@@ -23,6 +26,11 @@ function DailyForecast(props) {
     return `${day}, ${month} ${date}`
   }
 
+  function submitDailyCity(newCity) {
+    setChangedCity(newCity.city)
+    setChangedState("...")
+  }
+
   function fetchCityDailyWeather() {
     if (!props.currentLat || !props.currentLong) {
       return false
@@ -36,16 +44,56 @@ function DailyForecast(props) {
       })
   }
 
+  function fetchNewDailyWeather() {
+    if (!changedLong || !changedLat) {
+      return false
+    }
+    fetchWeather(changedLat, changedLong).then(
+      data => {
+        console.log('data', data)
+      })
+  }
+
   useEffect(() => {
+    fetchNewDailyWeather()
+  }, [changedLong, changedLat])
+
+  function checkChange() {
+    setChanged(true)
+    setShowedButtons(true)
+  }
+
+  function findLongLat() {
+    if ((!changedCity && changed === false)) {
+      return false
+    }
+    fetchLongLat(changedCity).then(
+      data => {
+        let filter = data.filter((d) => d.country === "US")
+        if (changed === true) {
+          setButtonList(filter)
+        }
+      })
+  }
+
+  function getNewCoordinates(longitude, latitude, state) {
+    setChangedLat(latitude)
+    setChangedLong(longitude)
+    setChangedState(state)
+  }
+
+  useEffect(() => {
+    findLongLat()
     fetchCityDailyWeather()
-  }, [])
+  }, [props.currentCity])
 
   return (
     <section>
       <NavBar />
       <div className='daily-top-container'>
         <h1 className='daily-forecast-title'>Next 8 Day Forecast</h1>
-        <Form />
+        <DailyForm submitDailyCity={submitDailyCity} checkChange={checkChange}/>
+        {(showButtons === true && changed === true) && <CityOptions changed={changed} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
       </div>
       <div>
         <DailyWeatherCard date={dateBuilder(new Date())} changedCity={changedCity} changedState={changedState} daily={daily} />

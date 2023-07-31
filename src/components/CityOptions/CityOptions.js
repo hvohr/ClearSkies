@@ -1,5 +1,5 @@
 function CityOptions(props) {
-  console.log(props.cityList.length)
+  console.log(props)
   return (
     <section className='city-options-container'>
       {(props.cityList && props.changed === true) && props.cityList.map((city) => <button onClick={() => {

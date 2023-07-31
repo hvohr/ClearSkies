@@ -2,9 +2,7 @@ import '../../pages/pages.css'
 import { useState } from 'react'
 
 function DailyWeatherCard(props) {
-
   let filterDays = props.daily.map((day) => {
-    console.log(day)
     var dayname = new Date(day.dt * 1000).toLocaleDateString()
     return (
       <section className='daily-small-container'>

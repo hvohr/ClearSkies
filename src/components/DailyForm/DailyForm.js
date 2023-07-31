@@ -2,7 +2,7 @@ import { useState } from 'react'
 import '../../pages/pages.css'
 
 
-function Form(props) {
+function DailyForm(props) {
   const [city, setCity] = useState('')
 
   function submitCity(event) {
@@ -11,7 +11,7 @@ function Form(props) {
       id: Date.now(),
       city
     }
-    props.submitCity(newCity)
+    props.submitDailyCity(newCity)
     clearInput()
   }
   function clearInput() {
@@ -38,4 +38,4 @@ function Form(props) {
   )
 }
 
-export default Form
+export default DailyForm

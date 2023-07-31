@@ -55,7 +55,6 @@ function Home(props) {
   useEffect(() => {
     findLongLat()
     fetchNewWeather()
-    console.log(buttonList)
   }, [changedCity])
 
   useEffect(() => {
