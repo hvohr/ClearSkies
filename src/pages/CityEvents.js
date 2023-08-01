@@ -5,6 +5,7 @@ import { fetchEvents } from '../components/apiCall'
 function CityEvents(props) {
   const [lowercase, setLowercase] = useState('concerts,sports,community,expos,festivals,performing-arts')
   let filteredEvents = props.events.map((list) => {
+    console.log(list)
     let d = new Date(list.start)
     return (
       <section className='event-information-container'>

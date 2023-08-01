@@ -26,7 +26,7 @@ async function fetchCityName(lat, lon) {
 }
 
 async function fetchEvents(lat, lon, category) {
-  const response = await fetch(`https://api.predicthq.com/v1/events/?location_around.origin=${lat},${lon}&category=${category}&limit=50&active.gte=2023-08-03`, {
+  const response = await fetch(`https://api.predicthq.com/v1/events/?location_around.origin=${lat},${lon}&category=${category}&limit=20&active.gte=2023-08-03&within=50mi@${lat},${lon}`, {
     method: "GET",
     headers: {
       "Authorization": 'Bearer TW0c0kaokUkgPralTFAAJubb6uep975yPPhUkEZo'

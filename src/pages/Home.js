@@ -8,7 +8,6 @@ import CityOptions from '../components/CityOptions/CityOptions'
 import { Link } from 'react-router-dom'
 
 function Home(props) {
-  console.log(props)
   const [currentTemp, setCurrentTemp] = useState('')
   const [changedCity, setChangedCity] = useState('')
   const [changedState, setChangedState] = useState('')
