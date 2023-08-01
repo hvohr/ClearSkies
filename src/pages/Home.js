@@ -12,7 +12,7 @@ function Home(props) {
   const [currentTemp, setCurrentTemp] = useState('')
   const [changedCity, setChangedCity] = useState('')
   const [changedState, setChangedState] = useState('')
-  const [alert, setAlert] = useState('')
+  const [alert, setAlert] = useState([])
   const [changedLat, setChangedLat] = useState('')
   const [changedLong, setChangedLong] = useState('')
   const [changed, setChanged] = useState(false)
@@ -31,6 +31,8 @@ function Home(props) {
       return false
     }
     setChangedCity(props.currentCity)
+    setChangedLat(props.currentLat)
+    setChangedLong(props.currentLong)
     setChangedState(props.currentState)
     fetchWeather(props.currentLat, props.currentLong).then(
       data => {
@@ -57,18 +59,20 @@ function Home(props) {
   }
 
   function fetchCityEvents() {
-    if (!props.currentLong || !props.currentLat) {
+    if (!changedLat || !changedLong) {
       return false
     } else {
-      fetchEvents(props.currentLat, props.currentLong).then(
-        data => setEventList(data.results)
+      fetchEvents(changedLat, changedLong).then(
+        data => {
+          setEventList(data.results)
+        }
       )
     }
   }
 
   useEffect(() => {
     fetchCityEvents()
-  }, [props.currentLong, props.currentLat])
+  }, [changedLat, changedLong])
 
   useEffect(() => {
     findLongLat()
@@ -95,9 +99,10 @@ function Home(props) {
     fetchWeather(changedLat, changedLong).then(
       data => {
         if (data.alerts) {
-          setAlert(data.alerts[0].description)
+          console.log(data)
+          setAlert(data)
         } else {
-          setAlert('')
+          setAlert([])
         }
         setCurrentTemp(data.current.temp)
         setCurrentDescription(data.current.weather[0].description)
@@ -144,11 +149,13 @@ function Home(props) {
         </section>
         <Form submitCity={submitCity} checkChange={checkChange} />
         {(showButtons === true && changed === true) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
-        {alert && <h3 style={{ border: "2px solid red" }} className='weather-alert'>{alert}</h3>}
+        <div className='alert-container'>
+          {(alert.length !== 0 && !showButtons) && alert.alerts.map((a) => <h3 style={{ border: "2px solid red" }} className='weather-alert'>{a.event}</h3>)}
+        </div>
         <section>
-          {(props.currentCity && !showButtons) && <Link className='events-button' to='/cityevents'>
+          {(changedCity && !showButtons) && <Link className='events-button' to='/cityevents'>
             <button onClick={() => props.setEvents(eventList)}>View Events in {changedCity}</button>
-            </Link>}
+          </Link>}
         </section>
         <section className='current-weather-container'>
           {!changedCity && <h1>Loading...</h1>}
