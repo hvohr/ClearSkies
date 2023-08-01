@@ -11,6 +11,7 @@ function App() {
   const [currentLong, setCurrentLong] = useState('')
   const [currentCity, setCurrentCity] = useState('')
   const [currentState, setCurrentState] = useState('')
+  const [events, setEvents] = useState([])
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(success, error);
@@ -43,10 +44,10 @@ function App() {
     <div>
       <section>
         <Routes>
-          <Route path='/' element={<Home currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong} />} />
-          <Route path='/home' element={<Home currentCity={currentCity} currentState={currentState} />} />
+          <Route path='/' element={<Home currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong} setEvents={setEvents} />} />
+          <Route path='/home' element={<Home currentCity={currentCity} currentState={currentState} setEvents={setEvents} />} />
           <Route path='/dailyforecast' element={<DailyForecast currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong}/>} />
-          <Route path='/cityevents' element={<CityEvents />} />
+          <Route path='/cityevents' element={<CityEvents events={events}/>} />
         </Routes>
       </section>
     </div>

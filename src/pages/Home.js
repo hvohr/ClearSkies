@@ -5,9 +5,10 @@ import { useEffect, useState } from 'react'
 import HomeWeatherCard from '../components/WeatherCard/HomeWeatherCard'
 import Form from '../components/Form/Form'
 import CityOptions from '../components/CityOptions/CityOptions'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function Home(props) {
+  console.log(props)
   const [currentTemp, setCurrentTemp] = useState('')
   const [changedCity, setChangedCity] = useState('')
   const [changedState, setChangedState] = useState('')
@@ -23,6 +24,7 @@ function Home(props) {
   const [currentFeelsLike, setCurrentFeelsLike] = useState('')
   const [currentCloudCover, setCurrentCloudCover] = useState('')
   const [currentWeatherIcon, setCurrentWeatherIcon] = useState('')
+  const [eventList, setEventList] = useState([])
 
   function fetchCityWeather() {
     if (!props.currentLong || !props.currentLat) {
@@ -59,7 +61,7 @@ function Home(props) {
       return false
     } else {
       fetchEvents(props.currentLat, props.currentLong).then(
-        data => console.log(data)
+        data => setEventList(data.results)
       )
     }
   }
@@ -144,7 +146,9 @@ function Home(props) {
         {(showButtons === true && changed === true) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
         {alert && <h3 style={{ border: "2px solid red" }} className='weather-alert'>{alert}</h3>}
         <section>
-          {(props.currentCity && !showButtons) && <NavLink className='events-button' to='/events'>{changedCity} Events</NavLink>}
+          {(props.currentCity && !showButtons) && <Link className='events-button' to='/cityevents'>
+            <button onClick={() => props.setEvents(eventList)}>View Events in {changedCity}</button>
+            </Link>}
         </section>
         <section className='current-weather-container'>
           {!changedCity && <h1>Loading...</h1>}
