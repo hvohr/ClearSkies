@@ -24,8 +24,6 @@ function Home(props) {
   const [currentFeelsLike, setCurrentFeelsLike] = useState('')
   const [currentCloudCover, setCurrentCloudCover] = useState('')
   const [currentWeatherIcon, setCurrentWeatherIcon] = useState('')
-  const [eventList, setEventList] = useState([])
-  const [category, setCategory] = useState('')
 
   function fetchCityWeather() {
     if (!props.currentLong || !props.currentLat) {
@@ -59,23 +57,11 @@ function Home(props) {
       })
   }
 
-  function fetchCityEvents() {
-    if (!changedLat || !changedLong) {
-      return false
-    } else {
-      fetchEvents(changedLat, changedLong, props.category).then(
-        data => {
-          setEventList(data.results)
-        }
-      )
-    }
-  }
 
   useEffect(() => {
     props.setNewLat(changedLat)
     props.setNewLong(changedLong)
-    fetchCityEvents()
-  }, [changedLat, changedLong, props.category])
+  }, [changedLat, changedLong])
 
   useEffect(() => {
     findLongLat()
@@ -153,7 +139,7 @@ function Home(props) {
         {(showButtons === true && changed === true) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
         <section>
           {(changedCity && !showButtons) && <Link to='/cityevents'>
-            <button className='events-button' onClick={() => props.setEvents(eventList)}>View Events in {changedCity}</button>
+            <button className='events-button'>View Events in {changedCity}</button>
           </Link>}
         </section>
         <div className='alert-container'>
