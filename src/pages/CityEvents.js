@@ -19,7 +19,7 @@ function CityEvents(props) {
     <section>
       <NavBar />
       <h1 className='event-title'>Upcoming Events</h1>
-      <div>
+      <div className='radio-container'>
         <input type="radio" name="radio" id="radio1" />
         <label for="radio1">Concerts</label>
         <input type="radio" name="radio" id="radio2" />
