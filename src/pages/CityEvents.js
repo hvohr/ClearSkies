@@ -47,7 +47,7 @@ function CityEvents(props) {
       <NavBar />
       <h1 className='event-title'>Upcoming Events</h1>
       <div className='radio-container'>
-        <div onChange={event => onChangeValue(event)}>
+        <div className='radio-background-container' onChange={event => onChangeValue(event)}>
           <input type="radio" value="Concerts" name="category" /> Concerts
           <input type="radio" value="Community" name="category" /> Community
           <input type="radio" value="Expos" name="category" /> Expos
