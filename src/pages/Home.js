@@ -8,7 +8,6 @@ import CityOptions from '../components/CityOptions/CityOptions'
 import { Link } from 'react-router-dom'
 
 function Home(props) {
-  console.log(props)
   const [currentTemp, setCurrentTemp] = useState('')
   const [changedCity, setChangedCity] = useState('')
   const [changedState, setChangedState] = useState('')
@@ -99,7 +98,6 @@ function Home(props) {
     fetchWeather(changedLat, changedLong).then(
       data => {
         if (data.alerts) {
-          console.log(data)
           setAlert(data)
         } else {
           setAlert([])
@@ -149,14 +147,14 @@ function Home(props) {
         </section>
         <Form submitCity={submitCity} checkChange={checkChange} />
         {(showButtons === true && changed === true) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
+        <section>
+          {(changedCity && !showButtons) && <Link to='/cityevents'>
+            <button className='events-button' onClick={() => props.setEvents(eventList)}>View Events in {changedCity}</button>
+          </Link>}
+        </section>
         <div className='alert-container'>
           {(alert.length !== 0 && !showButtons) && alert.alerts.map((a) => <h3 style={{ border: "2px solid red" }} className='weather-alert'>{a.event}</h3>)}
         </div>
-        <section>
-          {(changedCity && !showButtons) && <Link className='events-button' to='/cityevents'>
-            <button onClick={() => props.setEvents(eventList)}>View Events in {changedCity}</button>
-          </Link>}
-        </section>
         <section className='current-weather-container'>
           {!changedCity && <h1>Loading...</h1>}
           {(changedCity && changedState !== '...') && <h1 style={{ textDecoration: 'underline' }} className='front-card-title'>Current Weather for {changedCity}, {changedState}</h1>}

@@ -2,10 +2,11 @@ import NavBar from './NavBar'
 
 function CityEvents(props) {
   let filteredEvents = props.events.map((list) => {
+    console.log(list)
     return (
       <div>
-        <h2 key={list.id}>{list.category} : {list.title}</h2>
-        <h3>{list.entities[0].type} : {list.entities[0].name}</h3>
+        <h2>{list.category} : {list.title}</h2>
+        {list.entities.map((l) => <h3>{l.type}: {l.name}</h3>)}
       </div>
     )
   })
