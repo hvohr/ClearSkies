@@ -138,15 +138,15 @@ function Home(props) {
         {(showButtons === true && changed === true) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
         <section>
           {(changedCity && !showButtons) && <Link to='/cityevents'>
-            <img className='event-logo' src={require('../components/images/marker.png')}/>
+            <img className='event-logo' src={require('../components/images/marker.png')} />
             <button className='events-button'>View Events in {changedCity}</button>
           </Link>}
         </section>
-        <div className='alert-container'>
-          {(alert.length !== 0 && !showButtons) && alert.alerts.map((a) => <h3 style={{ border: "2px solid red" }} className='weather-alert'>{a.event}</h3>)}
-        </div>
         <section className='current-weather-container'>
           {!changedCity && <h1>Loading...</h1>}
+          <div className='alert-container'>
+            {(alert.length !== 0 && !showButtons) && alert.alerts.map((a) => <h3 style={{ border: "2px solid red" }} className='weather-alert'>{a.event}</h3>)}
+          </div>
           {(changedCity && changedState !== '...') && <h1 style={{ textDecoration: 'underline' }} className='front-card-title'>Current Weather for {changedCity}, {changedState}</h1>}
           <HomeWeatherCard changedState={changedState} currentWeatherIcon={currentWeatherIcon} currentTemp={currentTemp} currentDescription={currentDescription} currentWindSpeed={currentWindSpeed}
             currentCloudCover={currentCloudCover} currentUVI={currentUVI} currentFeelsLike={currentFeelsLike} />
