@@ -95,6 +95,16 @@
   justify-content: center;
 }
 
+.event-logo {
+  height: 20px;
+  width: 20px;
+}
+
+.events-button {
+  background: none;
+  border: none;
+}
+
 .event-date {
   display: flex;
   text-decoration:solid underline white;

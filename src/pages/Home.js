@@ -139,6 +139,7 @@ function Home(props) {
         {(showButtons === true && changed === true) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
         <section>
           {(changedCity && !showButtons) && <Link to='/cityevents'>
+            <img className='event-logo' src={require('../components/images/marker.png')}/>
             <button className='events-button'>View Events in {changedCity}</button>
           </Link>}
         </section>

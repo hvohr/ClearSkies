@@ -13,6 +13,7 @@ function CityEvents(props) {
           <h3 className='event-date'>{d.toDateString()}</h3>
         </div>
         <div>
+          {list.entities.length === 0 && <h3>No Available Information</h3>}
           {list.entities.map((l) => <div><h3>{l.type}: {l.name}</h3><h3>{l.formatted_address}</h3></div>)}
         </div>
       </section >
