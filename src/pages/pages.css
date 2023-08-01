@@ -14,6 +14,14 @@
   margin-left: 0px;
 }
 
+.alert-container {
+  display: flex;
+}
+
+.events-button {
+  margin: 10px;
+}
+
 .daily-card-container {
   padding: 20px;
   display: grid;
@@ -28,6 +36,7 @@
   text-align: center;
   font-style:italic;
   color: rgb(0, 0, 0);
+  padding: 5px;
 }
 
 .daily-small-container {
@@ -60,8 +69,69 @@
   justify-content: space-around;
 }
 
+.radio-container {
+  text-align: center;
+  font-size: 25px;
+  background-color:rgba(240, 248, 255, 0.733);
+  padding: 5px;
+}
+
+.loading-events {
+  font-size: 30px;
+  text-align: center;
+}
+
+.event-information-container {
+  font-size: 20px;
+}
+
+.event-title-container {
+  display: flex;
+  text-align: center;
+  margin: 40px;
+  background-color:rgba(204, 204, 214, 0.428);
+  border: 2px solid white;
+  border-radius: 20px;
+  justify-content: center;
+}
+
+.event-logo {
+  height: 20px;
+  width: 20px;
+}
+
+.events-button {
+  background: none;
+  border: none;
+}
+
+.event-date {
+  display: flex;
+  text-decoration:solid underline white;
+  padding: 5px;
+  align-items: center;
+}
+
+.filtered-events {
+  text-align:center;
+}
+
+input {
+  margin-left: 50px;
+}
+
+label {
+  margin: 5px;
+}
+
 h5 {
   margin: 5px;
+}
+
+.event-title {
+  font-size: 40px;
+  text-align: center;
+  margin: 20px 15px 15px 0
 }
 
 .user-information {
@@ -92,7 +162,7 @@ h5 {
   width: fit-content;
   height: fit-content;
   padding: 20px;
-  margin: 40px;
+  margin: 0px 40px 40px 40px;
   text-align: center;
 }
 

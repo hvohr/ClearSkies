@@ -5,12 +5,13 @@ import { useEffect, useState } from 'react'
 import HomeWeatherCard from '../components/WeatherCard/HomeWeatherCard'
 import Form from '../components/Form/Form'
 import CityOptions from '../components/CityOptions/CityOptions'
+import { Link } from 'react-router-dom'
 
 function Home(props) {
   const [currentTemp, setCurrentTemp] = useState('')
   const [changedCity, setChangedCity] = useState('')
   const [changedState, setChangedState] = useState('')
-  const [alert, setAlert] = useState('')
+  const [alert, setAlert] = useState([])
   const [changedLat, setChangedLat] = useState('')
   const [changedLong, setChangedLong] = useState('')
   const [changed, setChanged] = useState(false)
@@ -28,6 +29,8 @@ function Home(props) {
       return false
     }
     setChangedCity(props.currentCity)
+    setChangedLat(props.currentLat)
+    setChangedLong(props.currentLong)
     setChangedState(props.currentState)
     fetchWeather(props.currentLat, props.currentLong).then(
       data => {
@@ -53,11 +56,11 @@ function Home(props) {
       })
   }
 
+
   useEffect(() => {
-    fetchEvents(props.currentLat, props.currentLong).then(
-      data => console.log(data)
-    )
-  }, [props.currentLat])
+    props.setNewLat(changedLat)
+    props.setNewLong(changedLong)
+  }, [changedLat, changedLong])
 
   useEffect(() => {
     findLongLat()
@@ -84,9 +87,9 @@ function Home(props) {
     fetchWeather(changedLat, changedLong).then(
       data => {
         if (data.alerts) {
-          setAlert(data.alerts[0].description)
+          setAlert(data)
         } else {
-          setAlert('')
+          setAlert([])
         }
         setCurrentTemp(data.current.temp)
         setCurrentDescription(data.current.weather[0].description)
@@ -132,12 +135,20 @@ function Home(props) {
           <h3 className='current-date'>{dateBuilder(new Date())}</h3>
         </section>
         <Form submitCity={submitCity} checkChange={checkChange} />
-        {(showButtons === true && changed === true) && <CityOptions changed={changed} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
-        <h3 style={{border: "2px solid red"}} className='weather-alert'>{alert}</h3>
+        {(showButtons === true && changed === true) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
+        <section>
+          {(changedCity && !showButtons) && <Link to='/cityevents'>
+            <img className='event-logo' src={require('../components/images/marker.png')}/>
+            <button className='events-button'>View Events in {changedCity}</button>
+          </Link>}
+        </section>
+        <div className='alert-container'>
+          {(alert.length !== 0 && !showButtons) && alert.alerts.map((a) => <h3 style={{ border: "2px solid red" }} className='weather-alert'>{a.event}</h3>)}
+        </div>
         <section className='current-weather-container'>
           {!changedCity && <h1>Loading...</h1>}
           {(changedCity && changedState !== '...') && <h1 style={{ textDecoration: 'underline' }} className='front-card-title'>Current Weather for {changedCity}, {changedState}</h1>}
-          <HomeWeatherCard changedState={changedState} alert={alert} currentWeatherIcon={currentWeatherIcon} currentTemp={currentTemp} currentDescription={currentDescription} currentWindSpeed={currentWindSpeed}
+          <HomeWeatherCard changedState={changedState} currentWeatherIcon={currentWeatherIcon} currentTemp={currentTemp} currentDescription={currentDescription} currentWindSpeed={currentWindSpeed}
             currentCloudCover={currentCloudCover} currentUVI={currentUVI} currentFeelsLike={currentFeelsLike} />
         </section>
       </main>
