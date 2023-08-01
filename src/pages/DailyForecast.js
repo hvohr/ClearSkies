@@ -98,7 +98,7 @@ function DailyForecast(props) {
       <div className='daily-top-container'>
         <h1 className='daily-forecast-title'>Next 8 Day Forecast</h1>
         <DailyForm submitDailyCity={submitDailyCity} checkChange={checkChange}/>
-        {daily.length === 0 && <h1>Loading...</h1>}
+        {(daily.length === 0 && props.changedState === "...") && <h1>Loading...</h1>}
         {(showButtons === true && changed === true) && <CityOptions changed={changed} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
       </div>
       <div>
