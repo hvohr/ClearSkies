@@ -24,6 +24,7 @@ function Home(props) {
   const [currentCloudCover, setCurrentCloudCover] = useState('')
   const [currentWeatherIcon, setCurrentWeatherIcon] = useState('')
   const [eventList, setEventList] = useState([])
+  const [category, setCategory] = useState('concerts,sports,community,expos,festivals,performing-arts')
 
   function fetchCityWeather() {
     if (!props.currentLong || !props.currentLat) {
@@ -61,7 +62,7 @@ function Home(props) {
     if (!changedLat || !changedLong) {
       return false
     } else {
-      fetchEvents(changedLat, changedLong).then(
+      fetchEvents(changedLat, changedLong, category).then(
         data => {
           setEventList(data.results)
         }
@@ -149,6 +150,7 @@ function Home(props) {
         {(showButtons === true && changed === true) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
         <section>
           {(changedCity && !showButtons) && <Link to='/cityevents'>
+            {setCategory}
             <button className='events-button' onClick={() => props.setEvents(eventList)}>View Events in {changedCity}</button>
           </Link>}
         </section>

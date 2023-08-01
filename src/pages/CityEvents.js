@@ -15,21 +15,22 @@ function CityEvents(props) {
       </section >
     )
   })
+  function onChangeValue(event) {
+    props.setCategory(event.target.value)
+  }
   return (
     <section>
       <NavBar />
       <h1 className='event-title'>Upcoming Events</h1>
       <div className='radio-container'>
-        <input type="radio" name="radio" id="radio1" />
-        <label for="radio1">Concerts</label>
-        <input type="radio" name="radio" id="radio2" />
-        <label for="radio2">Expos</label>
-        <input type="radio" name="radio" id="radio3" />
-        <label for="radio3">Preforming Arts</label>
-        <input type="radio" name="radio" id="radio4" />
-        <label for="radio4">Sports</label>
-        <input type="radio" name="radio" id="radio5" />
-        <label for="radio5">Community</label>
+        <div onChange={event => onChangeValue(event)}>
+          <input type="radio" value="Concerts" name="category" /> Concerts
+          <input type="radio" value="Community" name="category" /> Community
+          <input type="radio" value="Expos" name="category" /> Expos
+          <input type="radio" value="Festivals" name="category" /> Festivals
+          <input type="radio" value="Sports" name="category" /> Sports
+          <input type="radio" value="Performing-Arts" name="category" /> Performing Arts
+        </div>
       </div>
       <section>
         {filteredEvents}
