@@ -12,6 +12,8 @@ function App() {
   const [currentCity, setCurrentCity] = useState('')
   const [currentState, setCurrentState] = useState('')
   const [events, setEvents] = useState([])
+  const [category, setCategory] = useState('concerts,sports,community,expos,festivals,performing-arts')
+
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(success, error);
@@ -44,10 +46,10 @@ function App() {
     <div>
       <section>
         <Routes>
-          <Route path='/' element={<Home currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong} setEvents={setEvents} />} />
-          <Route path='/home' element={<Home currentCity={currentCity} currentState={currentState} setEvents={setEvents} />} />
+          <Route path='/' element={<Home currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong} setEvents={setEvents} category={category} />} />
+          <Route path='/home' element={<Home currentCity={currentCity} currentState={currentState} setEvents={setEvents} category={category}/>} />
           <Route path='/dailyforecast' element={<DailyForecast currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong}/>} />
-          <Route path='/cityevents' element={<CityEvents events={events}/>} />
+          <Route path='/cityevents' element={<CityEvents events={events} setCategory={setCategory}/>} />
         </Routes>
       </section>
     </div>
