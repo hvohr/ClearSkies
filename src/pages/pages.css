@@ -76,6 +76,36 @@
   padding: 5px;
 }
 
+.loading-events {
+  font-size: 30px;
+  text-align: center;
+}
+
+.event-information-container {
+  font-size: 20px;
+}
+
+.event-title-container {
+  display: flex;
+  text-align: center;
+  margin: 40px;
+  background-color:rgba(204, 204, 214, 0.428);
+  border: 2px solid white;
+  border-radius: 20px;
+  justify-content: center;
+}
+
+.event-date {
+  display: flex;
+  text-decoration:solid underline white;
+  padding: 5px;
+  align-items: center;
+}
+
+.filtered-events {
+  text-align:center;
+}
+
 input {
   margin-left: 50px;
 }

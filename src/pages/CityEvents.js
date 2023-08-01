@@ -9,8 +9,8 @@ function CityEvents(props) {
     return (
       <section className='event-information-container'>
         <div className='event-title-container'>
-          <h2>{list.category} : {list.title} </h2>
-          <h3>{d.toDateString()}</h3>
+          <h2 className='event-list-title'>{list.category} : {list.title} </h2>
+          <h3 className='event-date'>{d.toDateString()}</h3>
         </div>
         <div>
           {list.entities.map((l) => <div><h3>{l.type}: {l.name}</h3><h3>{l.formatted_address}</h3></div>)}
@@ -40,10 +40,6 @@ function CityEvents(props) {
     setLowercase(lowercase)
   }
 
-  // useEffect(() => {
-  //   props.setCategory(lowercase)
-  // }, [lowercase])
-
   return (
     <section>
       <NavBar />
@@ -57,7 +53,8 @@ function CityEvents(props) {
           <input type="radio" value="Sports" name="category" /> Sports
           <input type="radio" value="Performing-Arts" name="category" /> Performing Arts</div>
       </div>
-      <section>
+      {!props.events.length && <h1 className='loading-events'>Loading Events....</h1>}
+      <section className='filtered-events'>
         {filteredEvents}
       </section>
     </section>
