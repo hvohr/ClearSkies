@@ -8,6 +8,7 @@ import CityOptions from '../components/CityOptions/CityOptions'
 import { Link } from 'react-router-dom'
 
 function Home(props) {
+  console.log(props)
   const [currentTemp, setCurrentTemp] = useState('')
   const [changedCity, setChangedCity] = useState('')
   const [changedState, setChangedState] = useState('')
@@ -24,6 +25,7 @@ function Home(props) {
   const [currentCloudCover, setCurrentCloudCover] = useState('')
   const [currentWeatherIcon, setCurrentWeatherIcon] = useState('')
   const [eventList, setEventList] = useState([])
+  const [category, setCategory] = useState('')
 
   function fetchCityWeather() {
     if (!props.currentLong || !props.currentLat) {
@@ -70,8 +72,10 @@ function Home(props) {
   }
 
   useEffect(() => {
+    props.setNewLat(changedLat)
+    props.setNewLong(changedLong)
     fetchCityEvents()
-  }, [changedLat, changedLong])
+  }, [changedLat, changedLong, props.category])
 
   useEffect(() => {
     findLongLat()

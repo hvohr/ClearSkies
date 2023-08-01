@@ -1,7 +1,9 @@
 import NavBar from './NavBar'
+import { useEffect, useState } from 'react'
+import { fetchEvents } from '../components/apiCall'
 
 function CityEvents(props) {
-  console.log(props)
+  const [lowercase, setLowercase] = useState('concerts,sports,community,expos,festivals,performing-arts')
   let filteredEvents = props.events.map((list) => {
     let d = new Date(list.start)
     return (
@@ -16,9 +18,32 @@ function CityEvents(props) {
       </section >
     )
   })
-  function onChangeValue(event) {
-    props.setCategory(event.target.value)
+
+  function fetchFilteredCityEvents() {
+    if (!props.newLat || !props.newLong || !lowercase) {
+      return false
+    } else {
+      fetchEvents(props.newLat, props.newLong, lowercase).then(
+        data => {
+          props.setEvents(data.results)
+        }
+      )
+    }
   }
+
+  useEffect(() => {
+    fetchFilteredCityEvents()
+  }, [lowercase])
+
+  function onChangeValue(event) {
+    let lowercase = event.target.value.toLowerCase()
+    setLowercase(lowercase)
+  }
+
+  // useEffect(() => {
+  //   props.setCategory(lowercase)
+  // }, [lowercase])
+
   return (
     <section>
       <NavBar />
@@ -29,9 +54,8 @@ function CityEvents(props) {
           <input type="radio" value="Community" name="category" /> Community
           <input type="radio" value="Expos" name="category" /> Expos
           <input type="radio" value="Festivals" name="category" /> Festivals
-          <input type="radio" value="Sports" name="category"/> Sports
-          <input type="radio" value="Performing-Arts" name="category" /> Performing Arts
-        </div>
+          <input type="radio" value="Sports" name="category" /> Sports
+          <input type="radio" value="Performing-Arts" name="category" /> Performing Arts</div>
       </div>
       <section>
         {filteredEvents}

@@ -13,7 +13,8 @@ function App() {
   const [currentState, setCurrentState] = useState('')
   const [events, setEvents] = useState([])
   const [category, setCategory] = useState('concerts,sports,community,expos,festivals,performing-arts')
-
+  const [newLat, setNewLat] = useState('')
+  const [newLong, setNewLong] = useState('')
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(success, error);
@@ -35,6 +36,15 @@ function App() {
       )
   }
 
+  const lowercase = () => {
+    let newCategory = category.toLowerCase()
+    setCategory(newCategory)
+  }
+
+  useEffect(() => {
+    lowercase()
+  }, [category])
+
   useEffect(() => {
     fetchCity()
   }, [currentLat, currentLong])
@@ -46,10 +56,10 @@ function App() {
     <div>
       <section>
         <Routes>
-          <Route path='/' element={<Home currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong} setEvents={setEvents} category={category} />} />
-          <Route path='/home' element={<Home currentCity={currentCity} currentState={currentState} setEvents={setEvents} category={category}/>} />
+          <Route path='/' element={<Home currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong} setEvents={setEvents} category={category} setNewLat={setNewLat} setNewLong={setNewLong} />} />
+          <Route path='/home' element={<Home currentCity={currentCity} currentState={currentState} setEvents={setEvents} category={category} setNewLat={setNewLat} setNewLong={setNewLong}/>} />
           <Route path='/dailyforecast' element={<DailyForecast currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong}/>} />
-          <Route path='/cityevents' element={<CityEvents events={events} setCategory={setCategory}/>} />
+          <Route path='/cityevents' element={<CityEvents events={events} setEvents={setEvents} newLong={newLong} newLat={newLat}/>} />
         </Routes>
       </section>
     </div>
