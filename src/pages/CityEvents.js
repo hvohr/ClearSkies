@@ -6,6 +6,12 @@ function CityEvents(props) {
   const [lowercase, setLowercase] = useState('concerts,sports,community,expos,festivals,performing-arts')
   const [fetchError, setFetchError] = useState({ error: false, response: '' })
 
+  useEffect(() => {
+    window.onbeforeunload = function() {
+      return props.reload()
+    }
+  })
+
   let filteredEvents = props.events.map((list) => {
     let d = new Date(list.start)
     return (
@@ -45,7 +51,7 @@ function CityEvents(props) {
 
   return (
     <section>
-      {!fetchError && <section>
+      {!fetchError.error && <section>
         <NavBar />
         <h1 className='event-title'>Upcoming Events</h1>
         <div className='radio-container'>

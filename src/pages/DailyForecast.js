@@ -27,6 +27,12 @@ function DailyForecast(props) {
     return `${day}, ${month} ${date}`
   }
 
+  useEffect(() => {
+    window.onbeforeunload = function() {
+      return props.reload()
+    }
+  })
+
   function submitDailyCity(newCity) {
     setChangedCity(newCity.city)
     setChangedState("...")
