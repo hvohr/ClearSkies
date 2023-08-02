@@ -8,7 +8,6 @@ function CityOptions(props) {
           props.getNewCoordinates(city.lon, city.lat, city.state)
           props.setButtonList([])
       }} key={Date.now() + props.cityList.indexOf(city)} className='city-button'>{city.name}, {city.state}</button>)}
-      {(props.cityList.length === 0) && <h1>Loading...</h1>}
     </section>
   )
 }

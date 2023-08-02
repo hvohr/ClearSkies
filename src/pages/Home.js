@@ -23,6 +23,7 @@ function Home(props) {
   const [currentFeelsLike, setCurrentFeelsLike] = useState('')
   const [currentCloudCover, setCurrentCloudCover] = useState('')
   const [currentWeatherIcon, setCurrentWeatherIcon] = useState('')
+  const [invalid, setInvalid] = useState(false)
 
   function fetchCityWeather() {
     if (!props.currentLong || !props.currentLat) {
@@ -44,14 +45,18 @@ function Home(props) {
       })
   }
   function findLongLat() {
+    console.log(changedCity)
     if ((!changedCity && changed === false)) {
       return false
     }
     fetchLongLat(changedCity).then(
       data => {
         let filter = data.filter((d) => d.country === "US")
-        if (changed === true) {
+        if (filter.length === 0) {
+          setInvalid(true)
+        } else if (changed === true) {
           setButtonList(filter)
+          setInvalid(false)
         }
       })
   }
@@ -134,7 +139,8 @@ function Home(props) {
           <h3 className='current-date'>{dateBuilder(new Date())}</h3>
         </section>
         <Form submitCity={submitCity} checkChange={checkChange} />
-        {(showButtons === true && changed === true) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
+        {invalid && <h2 className='empty-error'>Please enter a valid city</h2>}
+        {(showButtons === true && changed === true && !invalid) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
         <section>
           {(changedCity && !showButtons) && <Link to='/cityevents'>
             <img className='event-logo' src={require('../components/images/marker.png')} />
