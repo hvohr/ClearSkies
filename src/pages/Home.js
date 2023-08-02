@@ -157,7 +157,7 @@ function Home(props) {
             currentCloudCover={currentCloudCover} currentUVI={currentUVI} currentFeelsLike={currentFeelsLike} />}
         </section>
       </main>}
-      {fetchError.error && <div className='fetch-failed-container'><h1 className='fetch-failed-response'>{`${fetchError.response}`}</h1><img className='fetch-failed-image' src={require('../components/images/4714220.jpg')}></img></div>}
+      {fetchError.error && <div className='fetch-failed-container'><h1 className='fetch-failed-response'>{`${fetchError.response}`}</h1><img className='fetch-failed-image' src={require('../components/images/sad_cloud.png')}></img></div>}
     </div>
   )
 }

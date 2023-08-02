@@ -105,9 +105,18 @@
   font-style: italic;
 }
 
-.error-container,
+.error-container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 82vh;
+  background-color:rgba(39, 40, 73, 0.688)
+}
+
 .fetch-failed-container {
   display: flex;
+  flex-direction: column;
   align-content: center;
   justify-content: center;
   align-items: center;
@@ -117,15 +126,20 @@
 
 .fetch-failed-response {
   font-size: 40px;
-  margin-right: 40px;
+  margin: 40px;
   color:#fffcfc;
   padding: 10px;
   border: 2px solid red;
 }
 
-.error-icon,
-.fetch-failed-image {
+.error-icon {
   height: 80vh;
+  border: 2px solid white;
+}
+
+.fetch-failed-image {
+  height: 50vh;
+  border: 2px solid white;
 }
 
 .event-logo {
