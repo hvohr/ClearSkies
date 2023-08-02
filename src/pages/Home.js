@@ -56,7 +56,6 @@ function Home(props) {
       })
   }
 
-
   useEffect(() => {
     props.setNewLat(changedLat)
     props.setNewLong(changedLong)
