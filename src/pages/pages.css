@@ -21,10 +21,6 @@
   justify-content: center;
 }
 
-.events-button {
-  margin-top: 30px;
-}
-
 .daily-card-container {
   padding: 20px;
   display: grid;
@@ -115,6 +111,7 @@
 }
 
 .events-button {
+  margin-top: 30px;
   background: none;
   border: none;
 }
@@ -238,13 +235,24 @@ button {
   align-items: center;
 }
 
-.form-input,
-.form-button {
+.form-input{
   padding: 5px;
   margin-top: 5px;
+  border: none;
   border-radius: 10px;
   font-size: 25px;
-  border-color: rgba(25, 4, 108);
+  border: 1px solid black;
+}
+
+.form-button,
+.more-info-buttons {
+  background-color: rgba(255, 255, 255, 0.869);
+  color: rgb(9, 9, 9);
+  border: none;
+  margin: 5px 0px 0px 5px;
+  border-radius: 10px;
+  padding: 5px;
+  border: 1px solid black;
 }
 
 .loading-icon {
@@ -261,14 +269,6 @@ button {
 
 button {
   cursor: pointer;
-}
-
-.form-button,
-.more-info-buttons {
-  background-color: rgb(228, 230, 241);
-  color: rgb(0, 0, 0);
-  border-radius: 10px;
-  font-size: 25px;
 }
 
 .daily-form {
@@ -292,22 +292,30 @@ button {
   margin-left: 0px;
 }
 
-.more-info-buttons {
-  padding: 5px;
-}
-
 h3 {
   margin: 12px;
 }
 
 .city-options-container {
   margin-top: 20px;
+  display: flex;
+  align-content: center;
 }
 
 .city-button {
   margin: 10px;
   background-color: rgba(255, 255, 255, 0.869);
-  color: rgba(25, 4, 108);
+  color: rgb(9, 9, 9);
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  border: 1px solid black;
+  transition: all .2s ease-in-out;
+
+}
+
+.city-button:hover {
+  transform: scale(1.1);
 }
 
 .daily-forecast-title {
