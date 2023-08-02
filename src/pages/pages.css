@@ -254,7 +254,7 @@ button {
   font-size: 25px;
 }
 
-form {
+.display-form {
   display: flex;
 }
 
