@@ -1,5 +1,4 @@
 import '../../pages/pages.css'
-import { useState } from 'react'
 
 function DailyWeatherCard(props) {
   let filterDays = props.daily.map((day) => {

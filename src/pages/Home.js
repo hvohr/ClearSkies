@@ -1,6 +1,6 @@
 import NavBar from './NavBar'
 import './pages.css'
-import { fetchWeather, fetchLongLat, fetchEvents } from '../components/apiCall'
+import { fetchWeather, fetchLongLat } from '../components/apiCall'
 import { useEffect, useState } from 'react'
 import HomeWeatherCard from '../components/WeatherCard/HomeWeatherCard'
 import Form from '../components/Form/Form'
@@ -157,7 +157,7 @@ function Home(props) {
             currentCloudCover={currentCloudCover} currentUVI={currentUVI} currentFeelsLike={currentFeelsLike} />}
         </section>
       </main>}
-      {fetchError.error && <div className='fetch-failed-container'><h1 className='fetch-failed-response'>{`${fetchError.response}`}</h1><img className='fetch-failed-image' src={require('../components/images/sad_cloud.png')}></img></div>}
+      {fetchError.error && <div className='fetch-failed-container'><h1 className='fetch-failed-response'>{`${fetchError.response}`}</h1><img alt="sad cloud raining inside a blue box" className='fetch-failed-image' src={require('../components/images/sad_cloud.png')}></img></div>}
     </div>
   )
 }
