@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(255, 255, 255, 0.296);
+  background-color: rgba(55, 60, 205, 0.197);
 }
 
 .conditional {
@@ -38,6 +38,7 @@
   font-style:italic;
   color: rgb(0, 0, 0);
   padding: 5px;
+  margin-top: 0px;
 }
 
 .daily-small-container {
@@ -96,6 +97,14 @@
   border: 2px solid white;
   border-radius: 20px;
   justify-content: center;
+}
+
+.empty-error {
+  text-align: center;
+  margin: 5px;
+  font-size: 22px;
+  color:rgb(0, 0, 0);
+  font-style: italic;
 }
 
 .event-logo {
@@ -157,6 +166,7 @@ h5 {
   align-content: center;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .current-weather-container {
@@ -171,7 +181,6 @@ h5 {
 
 .loading-data {
   font-style: italic;
-  font-size: 15px;
 }
 
 .home-button,
@@ -244,6 +253,11 @@ button {
 }
 
 form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section {
   display: flex;
 }
 

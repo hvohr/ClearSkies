@@ -129,7 +129,7 @@ function Home(props) {
       <main className='main-container'>
         <section className='user-information'>
           <div className='loading-data-container'>
-            <h3 className='current-city'>Your Current Location: {props.currentCity} {props.currentState}</h3>
+            <h3 className='current-city'>{props.currentCity} {props.currentState}</h3>
             {!props.currentCity && <h3 className='loading-data'>Loading Location Data...</h3>}
           </div>
           <h3 className='current-date'>{dateBuilder(new Date())}</h3>
