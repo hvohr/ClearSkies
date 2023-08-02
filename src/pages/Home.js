@@ -136,6 +136,7 @@ function Home(props) {
             <h3 className='current-city'>{props.currentCity} {props.currentState}</h3>
             {!props.currentCity && <h3 className='current-city'>Loading Location Data...</h3>}
           </div>
+          {fetchError.error && <div className='fetch-failed-container'><h1 className='fetch-failed-response'>{`${fetchError.response}`}</h1><img className='fetch-failed-image' src={require('../components/images/4714220.jpg')}></img></div>}
           <h3 className='current-date'>{dateBuilder(new Date())}</h3>
         </section>
         <Form submitCity={submitCity} checkChange={checkChange} />
