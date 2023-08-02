@@ -105,7 +105,8 @@
   font-style: italic;
 }
 
-.error-container {
+.error-container,
+.fetch-failed-container {
   display: flex;
   align-content: center;
   justify-content: center;
@@ -114,7 +115,16 @@
   background-color:rgba(39, 40, 73, 0.688)
 }
 
-.error-icon {
+.fetch-failed-response {
+  font-size: 40px;
+  margin-right: 40px;
+  color:#fffcfc;
+  padding: 10px;
+  border: 2px solid red;
+}
+
+.error-icon,
+.fetch-failed-image {
   height: 80vh;
 }
 

@@ -24,7 +24,7 @@ function Home(props) {
   const [currentCloudCover, setCurrentCloudCover] = useState('')
   const [currentWeatherIcon, setCurrentWeatherIcon] = useState('')
   const [invalid, setInvalid] = useState(false)
-  const [fetchError, setFetchError] = useState({error: false, response:''})
+  const [fetchError, setFetchError] = useState({ error: false, response: '' })
 
   function fetchCityWeather() {
     if (!props.currentLong || !props.currentLat) {
@@ -43,7 +43,7 @@ function Home(props) {
         setCurrentFeelsLike(data.current.feels_like)
         setCurrentWindSpeed(data.current.wind_speed)
         setCurrentWeatherIcon(data.current.weather[0].icon)
-      }).catch(error => setFetchError({error: true, response: error}))
+      }).catch(error => setFetchError({ error: true, response: error }))
   }
   function findLongLat() {
     if ((!changedCity && changed === false)) {
@@ -58,7 +58,7 @@ function Home(props) {
           setButtonList(filter)
           setInvalid(false)
         }
-      }).catch(error => setFetchError({error: true, response: error}))
+      }).catch(error => setFetchError({ error: true, response: error }))
   }
 
   useEffect(() => {
@@ -102,7 +102,7 @@ function Home(props) {
         setCurrentFeelsLike(data.current.feels_like)
         setCurrentWindSpeed(data.current.wind_speed)
         setCurrentWeatherIcon(data.current.weather[0].icon)
-      }).catch(error => setFetchError({error: true, response: error}))
+      }).catch(error => setFetchError({ error: true, response: error }))
   }
 
   function getNewCoordinates(longitude, latitude, state) {
@@ -130,13 +130,12 @@ function Home(props) {
   return (
     <div className='home-container'>
       <NavBar />
-      <main className='main-container'>
+      {!fetchError && <main className='main-container'>
         <section className='user-information'>
           <div className='loading-data-container'>
             <h3 className='current-city'>{props.currentCity} {props.currentState}</h3>
             {!props.currentCity && <h3 className='current-city'>Loading Location Data...</h3>}
           </div>
-          {fetchError.error && <div className='fetch-failed-container'><h1 className='fetch-failed-response'>{`${fetchError.response}`}</h1><img className='fetch-failed-image' src={require('../components/images/4714220.jpg')}></img></div>}
           <h3 className='current-date'>{dateBuilder(new Date())}</h3>
         </section>
         <Form submitCity={submitCity} checkChange={checkChange} />
@@ -144,7 +143,7 @@ function Home(props) {
         {(showButtons === true && changed === true && !invalid) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
         <section>
           {(changedCity && !showButtons) && <Link to='/cityevents'>
-            <img className='event-logo' alt ="small map icon" src={require('../components/images/marker.png')} />
+            <img className='event-logo' alt="small map icon" src={require('../components/images/marker.png')} />
             <button className='events-button'>View Events in {changedCity}</button>
           </Link>}
         </section>
@@ -154,10 +153,11 @@ function Home(props) {
             {(alert.length !== 0 && !showButtons) && alert.alerts.map((a) => <h3 key={Date.now() + alert.alerts.indexOf(a)} style={{ border: "2px solid red" }} className='weather-alert'>{a.event}</h3>)}
           </div>
           {(changedCity && changedState !== '...') && <h1 style={{ textDecoration: 'underline' }} className='front-card-title'>Current Weather for {changedCity}, {changedState}</h1>}
-          <HomeWeatherCard showButtons ={showButtons} invalid={invalid} changedState={changedState} currentWeatherIcon={currentWeatherIcon} currentTemp={currentTemp} currentDescription={currentDescription} currentWindSpeed={currentWindSpeed}
-            currentCloudCover={currentCloudCover} currentUVI={currentUVI} currentFeelsLike={currentFeelsLike} />
+          {<HomeWeatherCard showButtons={showButtons} invalid={invalid} changedState={changedState} currentWeatherIcon={currentWeatherIcon} currentTemp={currentTemp} currentDescription={currentDescription} currentWindSpeed={currentWindSpeed}
+            currentCloudCover={currentCloudCover} currentUVI={currentUVI} currentFeelsLike={currentFeelsLike} />}
         </section>
-      </main>
+      </main>}
+      {fetchError.error && <div className='fetch-failed-container'><h1 className='fetch-failed-response'>{`${fetchError.response}`}</h1><img className='fetch-failed-image' src={require('../components/images/4714220.jpg')}></img></div>}
     </div>
   )
 }
