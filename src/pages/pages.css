@@ -7,7 +7,7 @@
 
 .conditional {
   font-size: 20px;
-  color:aliceblue;
+  color: aliceblue;
   text-align: center;
   margin-top: 0px;
 }
@@ -37,7 +37,7 @@
 
 .weather-alert {
   text-align: center;
-  font-style:italic;
+  font-style: italic;
   color: rgb(0, 0, 0);
   padding: 5px;
   margin-top: 0px;
@@ -76,7 +76,7 @@
 .radio-container {
   text-align: center;
   font-size: 25px;
-  background-color:rgba(240, 248, 255, 0.733);
+  background-color: rgba(240, 248, 255, 0.733);
   padding: 5px;
 }
 
@@ -88,14 +88,14 @@
 .event-information-container {
   font-size: 20px;
   padding: 10px;
-  background-color:rgba(255, 255, 255, 0.291);
+  background-color: rgba(255, 255, 255, 0.291);
 }
 
 .event-title-container {
   display: flex;
   text-align: center;
   margin: 40px;
-  background-color:rgba(204, 204, 214, 0.428);
+  background-color: rgba(204, 204, 214, 0.428);
   border: 2px solid white;
   border-radius: 20px;
   justify-content: center;
@@ -105,7 +105,7 @@
   text-align: center;
   margin: 5px;
   font-size: 22px;
-  color:rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
   font-style: italic;
 }
 
@@ -121,13 +121,13 @@
 
 .event-date {
   display: flex;
-  text-decoration:solid underline white;
+  text-decoration: solid underline white;
   padding: 5px;
   align-items: center;
 }
 
 .filtered-events {
-  text-align:center;
+  text-align: center;
 }
 
 input {
@@ -195,12 +195,29 @@ h5 {
   margin: 10px;
   margin-right: 20px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  position: relative;
 }
 
-.home-button:hover,
-.daily-button:hover {
-  transform: scale(1.5);
+.home-button:after,
+.daily-button:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color:
+    #ffffff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.home-button:hover:after,
+.daily-button:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .current-weather-card,
@@ -212,7 +229,7 @@ button {
 
 .front-card-title {
   font-size: 35px;
-  margin:5px
+  margin: 5px
 }
 
 .daily-top-container {
@@ -254,7 +271,7 @@ button {
   font-size: 25px;
 }
 
-.display-form {
+.daily-form {
   display: flex;
 }
 
