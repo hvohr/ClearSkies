@@ -26,8 +26,8 @@ function HomeWeatherCard(props) {
        {(props.changedState === "...") === false &&  <h3>{props.currentDescription}</h3>}
       </section>
       <section className='more-information'>
-        {!moreInfo && moreInformation}
-        {moreInfo && <button className='more-info-buttons' onClick={clickedButtonMoreInfo}>More Info</button>}
+        {(!moreInfo) && moreInformation}
+        {(!props.showButtons && !props.invalid && moreInfo) && <button className='more-info-buttons' onClick={clickedButtonMoreInfo}>More Info</button>}
         {!moreInfo && <button className='more-info-buttons' onClick={clickedButtonLessInfo}>Less Info</button>}
       </section>
     </div>
