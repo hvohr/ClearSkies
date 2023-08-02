@@ -130,7 +130,7 @@ function Home(props) {
   return (
     <div className='home-container'>
       <NavBar />
-      {!fetchError && <main className='main-container'>
+      {!fetchError.error && <main className='main-container'>
         <section className='user-information'>
           <div className='loading-data-container'>
             <h3 className='current-city'>{props.currentCity} {props.currentState}</h3>
