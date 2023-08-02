@@ -96,15 +96,18 @@ function DailyForecast(props) {
   return (
     <section>
       <NavBar />
-      <div className='daily-top-container'>
-        <h1 className='daily-forecast-title'>Next 8 Day Forecast</h1>
-        <DailyForm submitDailyCity={submitDailyCity} checkChange={checkChange} />
-        {(daily.length === 0 && props.changedState === "...") && <h1>Loading...</h1>}
-        {(showButtons === true && changed === true) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
-      </div>
-      <div>
-        <DailyWeatherCard date={dateBuilder(new Date())} changedCity={changedCity} changedState={changedState} daily={daily} />
-      </div>
+      {!fetchError.error && <section>
+        <div className='daily-top-container'>
+          <h1 className='daily-forecast-title'>Next 8 Day Forecast</h1>
+          <DailyForm submitDailyCity={submitDailyCity} checkChange={checkChange} />
+          {(daily.length === 0 && props.changedState === "...") && <h1>Loading...</h1>}
+          {(showButtons === true && changed === true) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
+        </div>
+        <div>
+          <DailyWeatherCard date={dateBuilder(new Date())} changedCity={changedCity} changedState={changedState} daily={daily} />
+        </div>
+      </section>}
+      {fetchError.error && <div className='fetch-failed-container'><h1 className='fetch-failed-response'>{`${fetchError.response}`}</h1><img className='fetch-failed-image' src={require('../components/images/sad_cloud.png')}></img></div>}
     </section>
   )
 }
