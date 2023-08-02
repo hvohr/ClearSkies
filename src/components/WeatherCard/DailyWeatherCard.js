@@ -5,8 +5,8 @@ function DailyWeatherCard(props) {
   let filterDays = props.daily.map((day) => {
     var dayname = new Date(day.dt * 1000).toLocaleDateString()
     return (
-      <section className='daily-small-container'>
-        <h1 key = {day.id} className='daily-titles'>{props.changedCity}, {props.changedState}</h1>
+      <section key={Date.now() + props.daily.indexOf(day)} className='daily-small-container'>
+        <h1 className='daily-titles'>{props.changedCity}, {props.changedState}</h1>
         <h3>{dayname}</h3>
         <img className='weather-icons' src={(`https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`)}></img>
         <h3>{day.temp.day} F</h3>
