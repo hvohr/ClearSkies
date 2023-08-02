@@ -14,6 +14,7 @@ function DailyForecast(props) {
   const [changedLat, setChangedLat] = useState('')
   const [changedLong, setChangedLong] = useState('')
   const [daily, setDaily] = useState([])
+  const [fetchError, setFetchError] = useState({ error: false, response: '' })
 
   const dateBuilder = (d) => {
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -41,7 +42,7 @@ function DailyForecast(props) {
       data => {
         setDaily(data.daily)
         setChangedCity(props.currentCity)
-      })
+      }).catch(error => setFetchError({ error: true, response: error }))
   }
 
   function fetchNewDailyWeather() {
@@ -51,7 +52,7 @@ function DailyForecast(props) {
     fetchWeather(changedLat, changedLong).then(
       data => {
         setDaily(data.daily)
-      })
+      }).catch(error => setFetchError({ error: true, response: error }))
   }
 
   useEffect(() => {
@@ -78,7 +79,7 @@ function DailyForecast(props) {
         if (changed === true) {
           setButtonList(filter)
         }
-      })
+      }).catch(error => setFetchError({ error: true, response: error }))
   }
 
   function getNewCoordinates(longitude, latitude, state) {
@@ -97,7 +98,7 @@ function DailyForecast(props) {
       <NavBar />
       <div className='daily-top-container'>
         <h1 className='daily-forecast-title'>Next 8 Day Forecast</h1>
-        <DailyForm submitDailyCity={submitDailyCity} checkChange={checkChange}/>
+        <DailyForm submitDailyCity={submitDailyCity} checkChange={checkChange} />
         {(daily.length === 0 && props.changedState === "...") && <h1>Loading...</h1>}
         {(showButtons === true && changed === true) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
       </div>

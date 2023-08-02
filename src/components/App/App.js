@@ -16,6 +16,7 @@ function App() {
   const [category, setCategory] = useState('concerts,sports,community,expos,festivals,performing-arts')
   const [newLat, setNewLat] = useState('')
   const [newLong, setNewLong] = useState('')
+  const [fetchError, setFetchError] = useState({error: false, response:''})
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(success, error);
@@ -34,7 +35,7 @@ function App() {
     } else
       fetchCityName(currentLat, currentLong).then(
         data => (setCurrentCity(data[0].name), setCurrentState(data[0].state))
-      )
+      ).catch(error => setFetchError({error: true, response: error}))
   }
 
   const lowercase = () => {
@@ -57,7 +58,7 @@ function App() {
     <div>
       <section>
         <Routes>
-          <Route path='/' element={<Home currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong} setEvents={setEvents} category={category} setNewLat={setNewLat} setNewLong={setNewLong} />} />
+          <Route path='/' element={<Home fetchError={fetchError} currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong} setEvents={setEvents} category={category} setNewLat={setNewLat} setNewLong={setNewLong} />} />
           <Route path='/dailyforecast' element={<DailyForecast currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong}/>} />
           <Route path='/cityevents' element={<CityEvents events={events} setEvents={setEvents} newLong={newLong} newLat={newLat}/>} />
           <Route path='*' element={<Error/>} />

@@ -43,10 +43,9 @@ function Home(props) {
         setCurrentFeelsLike(data.current.feels_like)
         setCurrentWindSpeed(data.current.wind_speed)
         setCurrentWeatherIcon(data.current.weather[0].icon)
-      })
+      }).catch(error => setFetchError({error: true, response: error}))
   }
   function findLongLat() {
-    console.log(changedCity)
     if ((!changedCity && changed === false)) {
       return false
     }
@@ -59,7 +58,7 @@ function Home(props) {
           setButtonList(filter)
           setInvalid(false)
         }
-      })
+      }).catch(error => setFetchError({error: true, response: error}))
   }
 
   useEffect(() => {
@@ -103,7 +102,7 @@ function Home(props) {
         setCurrentFeelsLike(data.current.feels_like)
         setCurrentWindSpeed(data.current.wind_speed)
         setCurrentWeatherIcon(data.current.weather[0].icon)
-      })
+      }).catch(error => setFetchError({error: true, response: error}))
   }
 
   function getNewCoordinates(longitude, latitude, state) {

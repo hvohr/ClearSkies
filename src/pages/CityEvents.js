@@ -4,6 +4,8 @@ import { fetchEvents } from '../components/apiCall'
 
 function CityEvents(props) {
   const [lowercase, setLowercase] = useState('concerts,sports,community,expos,festivals,performing-arts')
+  const [fetchError, setFetchError] = useState({error: false, response:''})
+
   let filteredEvents = props.events.map((list) => {
     console.log(list)
     let d = new Date(list.start)
@@ -29,7 +31,7 @@ function CityEvents(props) {
         data => {
           props.setEvents(data.results)
         }
-      )
+      ).catch(error => setFetchError({error: true, response: error}))
     }
   }
 

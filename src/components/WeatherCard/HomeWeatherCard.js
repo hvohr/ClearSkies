@@ -21,7 +21,7 @@ function HomeWeatherCard(props) {
     <div>
       <section className='current-weather-card'>
        {(props.currentWeatherIcon && (props.changedState === "...") === false) && <img alt={`small current weather icon of ${props.currentDescription}`} className='weather-icons' src={(`https://openweathermap.org/img/wn/${props.currentWeatherIcon}@2x.png`)}></img>}
-       {props.changedState === "..." && <img className='loading-icon' src={require('../images/loading.png')}></img>}
+       {props.changedState === "..." && <img className='loading-icon' alt="loading circle icon dashed design" src={require('../images/loading.png')}></img>}
        {(props.changedState === "...") === false && <h3>{props.currentTemp} F</h3>}
        {(props.changedState === "...") === false &&  <h3>{props.currentDescription}</h3>}
       </section>
