@@ -24,6 +24,7 @@ function Home(props) {
   const [currentCloudCover, setCurrentCloudCover] = useState('')
   const [currentWeatherIcon, setCurrentWeatherIcon] = useState('')
   const [invalid, setInvalid] = useState(false)
+  const [fetchError, setFetchError] = useState({error: false, response:''})
 
   function fetchCityWeather() {
     if (!props.currentLong || !props.currentLat) {
@@ -134,7 +135,7 @@ function Home(props) {
         <section className='user-information'>
           <div className='loading-data-container'>
             <h3 className='current-city'>{props.currentCity} {props.currentState}</h3>
-            {!props.currentCity && <h3 className='loading-data'>Loading Location Data...</h3>}
+            {!props.currentCity && <h3 className='current-city'>Loading Location Data...</h3>}
           </div>
           <h3 className='current-date'>{dateBuilder(new Date())}</h3>
         </section>
@@ -143,7 +144,7 @@ function Home(props) {
         {(showButtons === true && changed === true && !invalid) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
         <section>
           {(changedCity && !showButtons) && <Link to='/cityevents'>
-            <img className='event-logo' src={require('../components/images/marker.png')} />
+            <img className='event-logo' alt ="small map icon" src={require('../components/images/marker.png')} />
             <button className='events-button'>View Events in {changedCity}</button>
           </Link>}
         </section>
