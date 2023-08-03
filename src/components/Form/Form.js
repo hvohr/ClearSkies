@@ -22,7 +22,7 @@ function Form(props) {
     <form className='front-form'>
       <div className='form-section'>
         <input className='form-input' type='text' placeholder='Enter a city name' name='current-forecast' value={city} onChange={event => {
-          if (!event.target.value.includes(',') && event.target.value !== '') {
+          if (!event.target.value.includes(',')) {
             setCity(event.target.value)
             setEmpty(false)
           }
