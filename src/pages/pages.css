@@ -303,10 +303,6 @@ button {
   cursor: pointer;
 }
 
-.daily-form {
-  display: flex;
-}
-
 .form-front {
   display: flex;
   flex-direction: column;
