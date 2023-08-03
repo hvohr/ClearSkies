@@ -15,14 +15,14 @@ function CityEvents(props) {
   let filteredEvents = props.events.map((list) => {
     let d = new Date(list.start)
     return (
-      <section className='event-information-container'>
+      <section key={Date.now() + props.events.indexOf(list)} className='event-information-container'>
         <div className='event-title-container'>
           <h2 className='event-list-title'>{list.category} : {list.title} </h2>
           <h3 className='event-date'>{d.toDateString()}</h3>
         </div>
         <div>
           {list.entities.length === 0 && <h3>No Available Information</h3>}
-          {list.entities.map((l) => <div><h3>{l.type}: {l.name}</h3><h3>{l.formatted_address}</h3></div>)}
+          {list.entities.map((l) => <div key={Date.now() + list.entities.indexOf(l)}><h3>{l.type}: {l.name}</h3><h3>{l.formatted_address}</h3></div>)}
         </div>
       </section >
     )
