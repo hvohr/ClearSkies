@@ -14,6 +14,8 @@ function DailyForecast(props) {
   const [changedLat, setChangedLat] = useState('')
   const [changedLong, setChangedLong] = useState('')
   const [daily, setDaily] = useState([])
+  const [fetchError, setFetchError] = useState({ error: false, response: '' })
+  const [invalid, setInvalid] = useState(false)
 
   const dateBuilder = (d) => {
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -25,6 +27,12 @@ function DailyForecast(props) {
 
     return `${day}, ${month} ${date}`
   }
+
+  useEffect(() => {
+    window.onbeforeunload = function() {
+      return props.reload()
+    }
+  })
 
   function submitDailyCity(newCity) {
     setChangedCity(newCity.city)
@@ -41,7 +49,7 @@ function DailyForecast(props) {
       data => {
         setDaily(data.daily)
         setChangedCity(props.currentCity)
-      })
+      }).catch(error => setFetchError({ error: true, response: error }))
   }
 
   function fetchNewDailyWeather() {
@@ -51,13 +59,13 @@ function DailyForecast(props) {
     fetchWeather(changedLat, changedLong).then(
       data => {
         setDaily(data.daily)
-      })
+      }).catch(error => setFetchError({ error: true, response: error }))
   }
 
   useEffect(() => {
     findLongLat()
     fetchNewDailyWeather()
-  }, [changedCity])
+  }, [changedCity, changedState])
 
   useEffect(() => {
     fetchNewDailyWeather()
@@ -75,10 +83,13 @@ function DailyForecast(props) {
     fetchLongLat(changedCity).then(
       data => {
         let filter = data.filter((d) => d.country === "US")
-        if (changed === true) {
+        if (filter.length === 0) {
+          setInvalid(true)
+        } else if (changed === true) {
           setButtonList(filter)
+          setInvalid(false)
         }
-      })
+      }).catch(error => setFetchError({ error: true, response: error }))
   }
 
   function getNewCoordinates(longitude, latitude, state) {
@@ -95,15 +106,19 @@ function DailyForecast(props) {
   return (
     <section>
       <NavBar />
-      <div className='daily-top-container'>
-        <h1 className='daily-forecast-title'>Next 8 Day Forecast</h1>
-        <DailyForm submitDailyCity={submitDailyCity} checkChange={checkChange}/>
-        {(daily.length === 0 && props.changedState === "...") && <h1>Loading...</h1>}
-        {(showButtons === true && changed === true) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
-      </div>
-      <div>
-        <DailyWeatherCard date={dateBuilder(new Date())} changedCity={changedCity} changedState={changedState} daily={daily} />
-      </div>
+      {!fetchError.error && <section>
+        <div className='daily-top-container'>
+          <h1 className='daily-forecast-title'>Next 8 Day Forecast</h1>
+          <DailyForm submitDailyCity={submitDailyCity} checkChange={checkChange} />
+          {invalid && <h2 className='empty-error'>Please enter a valid city</h2>}
+          {(daily.length === 0 && props.changedState === "...") && <h1>Loading...</h1>}
+          {(showButtons === true && changed === true) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
+        </div>
+        <div>
+          <DailyWeatherCard date={dateBuilder(new Date())} changedCity={changedCity} changedState={changedState} daily={daily} />
+        </div>
+      </section>}
+      {fetchError.error && <div className='fetch-failed-container'><h1 className='fetch-failed-response'>{`${fetchError.response}`}</h1><img alt="sad cloud raining inside a blue box" className='fetch-failed-image' src={require('../components/images/sad_cloud.png')}></img></div>}
     </section>
   )
 }

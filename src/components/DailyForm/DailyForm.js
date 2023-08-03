@@ -4,6 +4,7 @@ import '../../pages/pages.css'
 
 function DailyForm(props) {
   const [city, setCity] = useState('')
+  const [empty, setEmpty] = useState(false)
 
   function submitCity(event) {
     event.preventDefault()
@@ -12,28 +13,36 @@ function DailyForm(props) {
       city
     }
     props.submitDailyCity(newCity)
+    setEmpty(false)
     clearInput()
   }
   function clearInput() {
     setCity('')
   }
   return (
-    <form>
-      <input className='form-input' type='text' placeholder='Enter a city name' name='current-forecast' value={city} onChange={event => {
-        if (!event.target.value.includes(',')) {
-          setCity(event.target.value)
+    <form className='front-form'>
+      <div className='form-section'>
+        <input className='form-input' type='text' placeholder='Enter a city name' name='current-forecast' value={city} onChange={event => {
+          if (!event.target.value.includes(',')) {
+            setCity(event.target.value)
+            setEmpty(false)
+          }
+        }} />
+        <button className='form-button' onClick={event => {
+          if (city !== '') {
+            submitCity(event)
+            setEmpty(false)
+            props.checkChange()
+          } else {
+            event.preventDefault()
+            setEmpty(true)
+          }
         }
-      }} />
-      <button className='form-button' onClick={event => {
-        if (city === '') {
-          return <h1 className='empty-input-error'>Please enter a city name</h1>
-        } else {
-          submitCity(event)
-          props.checkChange()
-        }
-      }
-      }>Change City</button>
-
+        }>Change City</button>
+      </div>
+      <div className='error-section'>
+        {empty && <h2 className='empty-error'>Please enter a city name</h2>}
+      </div>
     </form>
   )
 }

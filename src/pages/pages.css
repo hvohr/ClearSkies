@@ -2,10 +2,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(255, 255, 255, 0.296);
+  background-color: rgba(55, 60, 205, 0.197);
 }
 
 .conditional {
+  font-size: 20px;
+  color: aliceblue;
   text-align: center;
   margin-top: 0px;
 }
@@ -16,10 +18,7 @@
 
 .alert-container {
   display: flex;
-}
-
-.events-button {
-  margin: 10px;
+  justify-content: center;
 }
 
 .daily-card-container {
@@ -34,9 +33,10 @@
 
 .weather-alert {
   text-align: center;
-  font-style:italic;
+  font-style: italic;
   color: rgb(0, 0, 0);
   padding: 5px;
+  margin-top: 0px;
 }
 
 .daily-small-container {
@@ -72,7 +72,7 @@
 .radio-container {
   text-align: center;
   font-size: 25px;
-  background-color:rgba(240, 248, 255, 0.733);
+  background-color: rgba(240, 248, 255, 0.733);
   padding: 5px;
 }
 
@@ -83,16 +83,63 @@
 
 .event-information-container {
   font-size: 20px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.291);
 }
 
 .event-title-container {
   display: flex;
   text-align: center;
   margin: 40px;
-  background-color:rgba(204, 204, 214, 0.428);
+  background-color: rgba(204, 204, 214, 0.428);
   border: 2px solid white;
   border-radius: 20px;
   justify-content: center;
+}
+
+.empty-error {
+  text-align: center;
+  margin: 5px;
+  font-size: 22px;
+  color: rgb(0, 0, 0);
+  font-style: italic;
+}
+
+.error-container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 82vh;
+  background-color:rgba(39, 40, 73, 0.688)
+}
+
+.fetch-failed-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 82vh;
+  background-color:rgba(39, 40, 73, 0.688)
+}
+
+.fetch-failed-response {
+  font-size: 40px;
+  margin: 40px;
+  color:#fffcfc;
+  padding: 10px;
+  border: 2px solid red;
+}
+
+.error-icon {
+  height: 80vh;
+  border: 2px solid white;
+}
+
+.fetch-failed-image {
+  height: 50vh;
+  border: 2px solid white;
 }
 
 .event-logo {
@@ -101,19 +148,20 @@
 }
 
 .events-button {
+  margin-top: 30px;
   background: none;
   border: none;
 }
 
 .event-date {
   display: flex;
-  text-decoration:solid underline white;
+  text-decoration: solid underline white;
   padding: 5px;
   align-items: center;
 }
 
 .filtered-events {
-  text-align:center;
+  text-align: center;
 }
 
 input {
@@ -141,19 +189,19 @@ h5 {
 }
 
 .current-city,
-.current-date,
-.loading-data {
+.current-date {
   font-size: 25px;
   font-style: italic;
   margin: 10px;
-
 }
 
 .loading-data-container {
   display: flex;
   align-content: center;
+  text-align: center;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .current-weather-container {
@@ -162,13 +210,8 @@ h5 {
   width: fit-content;
   height: fit-content;
   padding: 20px;
-  margin: 0px 40px 40px 40px;
+  margin: 30px 40px 5px 40px;
   text-align: center;
-}
-
-.loading-data {
-  font-style: italic;
-  font-size: 15px;
 }
 
 .home-button,
@@ -177,16 +220,33 @@ h5 {
   font-weight: bold;
   text-decoration: none;
   font-size: 25px;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 251, 251);
   margin: 10px;
   margin-right: 20px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  position: relative;
 }
 
-.home-button:hover,
-.daily-button:hover {
-  transform: scale(1.5);
+.home-button:after,
+.daily-button:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color:
+    #ffffff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.home-button:hover:after,
+.daily-button:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .current-weather-card,
@@ -198,7 +258,7 @@ button {
 
 .front-card-title {
   font-size: 35px;
-  margin-bottom: 10px;
+  margin: 5px
 }
 
 .daily-top-container {
@@ -207,13 +267,24 @@ button {
   align-items: center;
 }
 
-.form-input,
-.form-button {
-  padding: 10px;
-  margin: 2px;
-  border-radius: 20px;
+.form-input{
+  padding: 5px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 10px;
   font-size: 25px;
-  border-color: rgba(25, 4, 108);
+  border: 1px solid black;
+}
+
+.form-button,
+.more-info-buttons {
+  background-color: rgba(255, 255, 255, 0.869);
+  color: rgb(9, 9, 9);
+  border: none;
+  margin: 5px 0px 0px 5px;
+  border-radius: 10px;
+  padding: 5px;
+  border: 1px solid black;
 }
 
 .loading-icon {
@@ -222,19 +293,31 @@ button {
   margin: 20px;
 }
 
+.weather-icons {
+  height: 100px;
+  width: 100px;
+  margin: -10px;
+}
+
 button {
   cursor: pointer;
 }
 
-.form-button,
-.more-info-buttons {
-  background-color: rgb(228, 230, 241);
-  color: rgb(0, 0, 0);
-  border-radius: 20px;
+.form-front {
+  display: flex;
+  flex-direction: column;
 }
 
-.more-info-buttons {
-  padding: 5px;
+.form-section {
+  display: flex;
+}
+
+.form-input {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-left: 0px;
 }
 
 h3 {
@@ -243,12 +326,24 @@ h3 {
 
 .city-options-container {
   margin-top: 20px;
+  display: flex;
+  align-content: center;
 }
 
 .city-button {
   margin: 10px;
   background-color: rgba(255, 255, 255, 0.869);
-  color: rgba(25, 4, 108);
+  color: rgb(9, 9, 9);
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  border: 1px solid black;
+  transition: all .2s ease-in-out;
+
+}
+
+.city-button:hover {
+  transform: scale(1.1);
 }
 
 .daily-forecast-title {
