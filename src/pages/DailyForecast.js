@@ -15,6 +15,7 @@ function DailyForecast(props) {
   const [changedLong, setChangedLong] = useState('')
   const [daily, setDaily] = useState([])
   const [fetchError, setFetchError] = useState({ error: false, response: '' })
+  const [invalid, setInvalid] = useState(false)
 
   const dateBuilder = (d) => {
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -82,8 +83,11 @@ function DailyForecast(props) {
     fetchLongLat(changedCity).then(
       data => {
         let filter = data.filter((d) => d.country === "US")
-        if (changed === true) {
+        if (filter.length === 0) {
+          setInvalid(true)
+        } else if (changed === true) {
           setButtonList(filter)
+          setInvalid(false)
         }
       }).catch(error => setFetchError({ error: true, response: error }))
   }
@@ -106,6 +110,7 @@ function DailyForecast(props) {
         <div className='daily-top-container'>
           <h1 className='daily-forecast-title'>Next 8 Day Forecast</h1>
           <DailyForm submitDailyCity={submitDailyCity} checkChange={checkChange} />
+          {invalid && <h2 className='empty-error'>Please enter a valid city</h2>}
           {(daily.length === 0 && props.changedState === "...") && <h1>Loading...</h1>}
           {(showButtons === true && changed === true) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
         </div>
