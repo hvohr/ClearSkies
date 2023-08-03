@@ -54,6 +54,7 @@ describe('User should see a home page proper elements', () => {
       .wait('@latLongData')
       .get('form').should('be.visible')
       .get('.form-input').should('be.visible')
+      .get('.event-container').should('be.visible')
       .get('.form-button').should('be.visible')
   })
   it('Should contain current weather front-page elements', () => {
@@ -78,8 +79,10 @@ describe('User should see a home page proper elements', () => {
       .get('.form-input').type('Denver')
       .get('.form-button').click()
       .get('.city-options-container').should('be.visible')
+      .get('.event-container').should('not.be.visible')
       .get('.loading-icon').should('be.visible')
       .get('.city-options-container > :nth-child(4)').click()
+      .get('.event-container').should('be.visible')
       .get('.current-weather-container').invoke('text')
       .should('contain', 'Current Weather for Denver, Pennsylvania')
       .get('.current-weather-card > :nth-child(3), .current-weather-card > :nth-child(2), .current-weather-card > :nth-child(1)').should('be.visible')
