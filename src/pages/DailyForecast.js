@@ -64,7 +64,7 @@ function DailyForecast(props) {
   useEffect(() => {
     findLongLat()
     fetchNewDailyWeather()
-  }, [changedCity])
+  }, [changedCity, changedState])
 
   useEffect(() => {
     fetchNewDailyWeather()
