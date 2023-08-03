@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Denver",
+    "local_names": {
+      "oc": "Denver",
+      "es": "Denver",
+      "fa": "دنور",
+      "bn": "ডেনভার",
+      "zh": "丹佛县 / 丹佛郡",
+      "ur": "ڈینور",
+      "ru": "Денвер",
+      "ko": "덴버",
+      "eo": "Denvero",
+      "mr": "डेन्व्हर",
+      "ps": "ډنور",
+      "te": "డెన్వర్",
+      "el": "Ντένβερ",
+      "en": "Denver",
+      "ta": "டென்வர்",
+      "ar": "دنفر",
+      "pl": "Denver",
+      "ja": "デンバー",
+      "uk": "Денвер",
+      "hi": "डॅनवर"
+    },
+    "lat": 39.7392364,
+    "lon": -104.984862,
+    "country": "US",
+    "state": "Colorado"
+  },
+  {
+    "name": "Denver",
+    "lat": 42.6713752,
+    "lon": -92.3372158,
+    "country": "US",
+    "state": "Iowa"
+  },
+  {
+    "name": "Denver",
+    "lat": 40.8638698,
+    "lon": -86.0775009,
+    "country": "US",
+    "state": "Indiana"
+  },
+  {
+    "name": "Denver",
+    "lat": 40.2331483,
+    "lon": -76.1371684,
+    "country": "US",
+    "state": "Pennsylvania"
+  }
+]
