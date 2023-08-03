@@ -27,13 +27,7 @@ function DailyForecast(props) {
 
     return `${day}, ${month} ${date}`
   }
-
-  useEffect(() => {
-    window.onbeforeunload = function() {
-      return props.reload()
-    }
-  })
-
+  
   function submitDailyCity(newCity) {
     setChangedCity(newCity.city)
     setChangedState("...")
@@ -111,6 +105,7 @@ function DailyForecast(props) {
           <h1 className='daily-forecast-title'>Next 8 Day Forecast</h1>
           <DailyForm submitDailyCity={submitDailyCity} checkChange={checkChange} />
           {invalid && <h2 className='empty-error'>Please enter a valid city</h2>}
+
           {(daily.length === 0 && props.changedState === "...") && <h1>Loading...</h1>}
           {(showButtons === true && changed === true) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
         </div>

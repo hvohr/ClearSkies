@@ -6,11 +6,11 @@ function CityEvents(props) {
   const [lowercase, setLowercase] = useState('concerts,sports,community,expos,festivals,performing-arts')
   const [fetchError, setFetchError] = useState({ error: false, response: '' })
 
-  useEffect(() => {
-    window.onbeforeunload = function() {
-      return props.reload()
-    }
-  })
+  // useEffect(() => {
+  //   window.onbeforeunload = function() {
+  //     return props.reload()
+  //   }
+  // })
 
   let filteredEvents = props.events.map((list) => {
     let d = new Date(list.start)
