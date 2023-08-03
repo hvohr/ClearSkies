@@ -141,7 +141,7 @@ function Home(props) {
         <Form submitCity={submitCity} checkChange={checkChange} />
         {invalid && <h2 className='empty-error'>Please enter a valid city</h2>}
         {(showButtons === true && changed === true && !invalid) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
-        <section>
+        <section className='event-container'>
           {(changedCity && !showButtons) && <Link to='/cityevents'>
             <img className='event-logo' alt="small map icon" src={require('../components/images/marker.png')} />
             <button className='events-button'>View Events in {changedCity}</button>
