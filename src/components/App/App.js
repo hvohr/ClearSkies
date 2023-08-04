@@ -15,6 +15,7 @@ function App() {
   const [newLat, setNewLat] = useState('')
   const [newLong, setNewLong] = useState('')
   const [fetchError, setFetchError] = useState({error: false, response:''})
+  const [alert, setAlert] = useState(false)
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(success, error);
@@ -22,6 +23,7 @@ function App() {
     console.log("Geolocation not supported");
   }
   function success(position) {
+    setAlert(false)
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
     setCurrentLat(latitude)
@@ -51,13 +53,15 @@ function App() {
   }, [currentLat, currentLong])
 
   function error() {
-    alert("Unable to retrieve your location, please allow location services");
+    if (alert === false) {
+      setAlert(true)
+    }
   }
   return (
     <div>
       <section>
         <Routes>
-          <Route path='/' element={<Home fetchError={fetchError} currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong} category={category} setNewLat={setNewLat} setNewLong={setNewLong} />} />
+          <Route path='/' element={<Home alert={alert} setAlert={setAlert} fetchError={fetchError} currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong} category={category} setNewLat={setNewLat} setNewLong={setNewLong} />} />
           <Route path='/dailyforecast' element={<DailyForecast currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong}/>} />
           <Route path='/cityevents' element={<CityEvents currentLat={currentLat} currentLong={currentLong} newLong={newLong} newLat={newLat}/>} />
           <Route path='*' element={<Error/>} />

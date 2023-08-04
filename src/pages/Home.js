@@ -136,10 +136,12 @@ function Home(props) {
         <section className='user-information'>
           <div className='loading-data-container'>
             <h3 className='current-city'>{props.currentCity} {props.currentState}</h3>
-            {!props.currentCity && <h3 className='current-city'>Loading Location Data...</h3>}
+            {(!props.alert &&!props.currentCity) && <h3 className='current-city'>Loading Location Data...</h3>}
+            {props.alert && <h3 className='current-city-loading'>Unable to obtain current location</h3>}
           </div>
           <h3 className='current-date'>{dateBuilder(new Date())}</h3>
         </section>
+        {props.alert && <h1>No current location data available</h1>}
         <Form submitCity={submitCity} checkChange={checkChange} />
         {invalid && <h2 className='empty-error'>Please enter a valid city</h2>}
         {(showButtons === true && changed === true && !invalid) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
@@ -150,11 +152,11 @@ function Home(props) {
           </Link>}
         </section>
         <section className='current-weather-container'>
-          {!changedCity && <h1>Loading...</h1>}
+          {(!props.alert && !changedCity) && <h1>Loading...</h1>}
           <div className='alert-container'>
             {(alert.length !== 0 && !showButtons) && alert.alerts.map((a) => <h3 key={Date.now() + alert.alerts.indexOf(a)} style={{ border: "2px solid red" }} className='weather-alert'>{a.event}</h3>)}
           </div>
-          {(changedCity && changedState !== '...') && <h1 style={{ textDecoration: 'underline' }} className='front-card-title'>Current Weather for {changedCity}, {changedState}</h1>}
+          {(changedCity && changedState !== '...') && <h1 className='front-card-title'>Current Weather for {changedCity}, {changedState}</h1>}
           <HomeWeatherCard showButtons={showButtons} invalid={invalid} changedState={changedState} currentWeatherIcon={currentWeatherIcon} currentTemp={currentTemp} currentDescription={currentDescription} currentWindSpeed={currentWindSpeed}
             currentCloudCover={currentCloudCover} currentUVI={currentUVI} currentFeelsLike={currentFeelsLike} />
         </section>
