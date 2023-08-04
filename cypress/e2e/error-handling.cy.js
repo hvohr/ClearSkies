@@ -54,18 +54,38 @@ describe('Should have proper error handling in forms and fetch functions', () =>
   it('Should show an error image and message on home page when a fetch issue occurs', () => {
     cy.visit("http://localhost:3000/")
     cy.intercept("GET", 'https://api.openweathermap.org/data/3.0/onecall*', {
-      statusCode: 404,
+      statusCode: 500,
       fixture: "latLongData.json"
       }).as('fetchFail')
       .get('.fetch-failed-image, .fetch-failed-response').should('be.visible')
+      .get('nav').should('be.visible')
+      .get('.home-button').click()
+      .url("http://localhost:3000/")
   })
   it('Should show an error image and message on daily page when a fetch issue occurs', () => {
     cy.visit("http://localhost:3000/dailyforecast")
     cy.intercept("GET", 'https://api.openweathermap.org/data/3.0/onecall*', {
-      statusCode: 404,
+      statusCode: 500,
       fixture: "latLongData.json"
       }).as('fetchFail')
       .get('.fetch-failed-image, .fetch-failed-response').should('be.visible')
+      .get('nav').should('be.visible')
+      .get('.home-button').click()
+      .url("http://localhost:3000/")
+  })
+  it('Should show an error image and message on event page when a fetch issue occurs', () => {
+    cy.visit("http://localhost:3000/cityevents")
+    cy.intercept("GET", 'https://api.predicthq.com/v1/events/*', {
+      headers: {
+        "Authorization": 'Bearer TW0c0kaokUkgPralTFAAJubb6uep975yPPhUkEZo'
+      },
+      statusCode: 500,
+      fixture: "eventData.json"
+    }).as('eventFail')
+      .get('.fetch-failed-image, .fetch-failed-response').should('be.visible')
+      .get('nav').should('be.visible')
+      .get('.home-button').click()
+      .url("http://localhost:3000/")
   })
 })
 

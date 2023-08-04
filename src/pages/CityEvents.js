@@ -52,8 +52,8 @@ function CityEvents(props) {
 
   return (
     <section>
+      <NavBar />
       {!fetchError.error && <section>
-        <NavBar />
         <h1 className='event-title'>Upcoming Events</h1>
         <div className='radio-container'>
           <div className='radio-background-container' onChange={event => onChangeValue(event)}>
