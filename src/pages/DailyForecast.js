@@ -120,8 +120,8 @@ function DailyForecast(props) {
 }
 
 DailyForecast.propTypes = {
-  currentLat: PropTypes.string,
-  currentLong: PropTypes.string,
+  currentLat: PropTypes.any,
+  currentLong: PropTypes.any,
   currentCity: PropTypes.string,
   currentState: PropTypes.string
 }

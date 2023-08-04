@@ -165,8 +165,8 @@ function Home(props) {
 }
 
 Home.propTypes = {
-  currentLat: PropTypes.string,
-  currentLong: PropTypes.string,
+  currentLat: PropTypes.any,
+  currentLong: PropTypes.any,
   currentCity: PropTypes.string,
   currentState: PropTypes.string,
   category: PropTypes.string

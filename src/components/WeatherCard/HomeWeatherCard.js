@@ -38,12 +38,12 @@ function HomeWeatherCard(props) {
 HomeWeatherCard.propTypes = {
   changedState: PropTypes.string,
   currentWeatherIcon: PropTypes.string,
-  currentTemp: PropTypes.string,
+  currentTemp: PropTypes.any,
   currentDescription: PropTypes.string,
-  currentWindSpeed: PropTypes.string,
-  currentCloudCover: PropTypes.string,
-  currentUVI: PropTypes.string,
-  currentFeelsLike: PropTypes.string
+  currentWindSpeed: PropTypes.any,
+  currentCloudCover: PropTypes.any,
+  currentUVI: PropTypes.any,
+  currentFeelsLike: PropTypes.any
 }
 
 export default HomeWeatherCard

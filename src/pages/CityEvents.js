@@ -77,10 +77,10 @@ function CityEvents(props) {
 }
 
 CityEvents.propTypes = {
-  currentLat: PropTypes.string,
-  currentLong: PropTypes.string,
-  newLong: PropTypes.string,
-  newLat: PropTypes.string
+  currentLat: PropTypes.any,
+  currentLong: PropTypes.any,
+  newLong: PropTypes.any,
+  newLat: PropTypes.any
 }
 
 export default CityEvents
