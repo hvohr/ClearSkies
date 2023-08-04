@@ -1,0 +1,68 @@
+.current-weather-card,
+.more-information,
+input,
+button {
+  font-size: 25px;
+}
+
+.front-card-title {
+  font-size: 35px;
+  margin: 5px
+}
+
+.daily-top-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.daily-card-container {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  align-items: center;
+  justify-items: center;
+  margin-top: 30px;
+}
+
+.daily-small-container {
+  width: fit-content;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  font-size: 35px;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 3px solid rgba(25, 4, 108);
+}
+
+.extra-daily-info {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+.weather-icons {
+  height: 100px;
+  width: 100px;
+  margin: -10px;
+}
+
+.daily-forecast-title {
+  text-align: center;
+  text-shadow: -1px 1px 0 #000;
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-style: italic;
+  color: white;
+}
+
+.daily-summary {
+  font-size: 20px;
+  font-style: italic
+}
+
+.daily-titles {
+  margin: 0px;
+}

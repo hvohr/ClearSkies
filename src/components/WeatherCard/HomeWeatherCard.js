@@ -1,4 +1,4 @@
-import './HomeWeatherCard.css'
+import './WeatherCard.css'
 import { useState } from 'react'
 
 function HomeWeatherCard(props) {

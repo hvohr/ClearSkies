@@ -23,16 +23,6 @@
   justify-content: center;
 }
 
-.daily-card-container {
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
-  align-items: center;
-  justify-items: center;
-  margin-top: 30px;
-}
-
 .weather-alert {
   text-align: center;
   font-style: italic;
@@ -41,15 +31,6 @@
   margin-top: 0px;
 }
 
-.daily-small-container {
-  width: fit-content;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.4);
-  font-size: 35px;
-  box-sizing: border-box;
-  padding: 10px;
-  border: 3px solid rgba(25, 4, 108);
-}
 
 .nav-title {
   font-size: 55px;
@@ -63,13 +44,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.extra-daily-info {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  justify-content: space-around;
 }
 
 .radio-container {
@@ -101,16 +75,9 @@
   justify-content: center;
 }
 
-.empty-error {
-  text-align: center;
-  margin: 5px;
-  font-size: 22px;
-  color: rgb(0, 0, 0);
-  font-style: italic;
-}
-
-.error-container {
+.fetch-failed-container {
   display: flex;
+  flex-direction: column;
   align-content: center;
   justify-content: center;
   align-items: center;
@@ -118,9 +85,8 @@
   background-color:rgba(39, 40, 73, 0.688)
 }
 
-.fetch-failed-container {
+.error-container {
   display: flex;
-  flex-direction: column;
   align-content: center;
   justify-content: center;
   align-items: center;
@@ -179,7 +145,6 @@ label {
 h5 {
   margin: 5px;
 }
-
 
 .event-title {
   font-size: 40px;
@@ -258,118 +223,18 @@ h5 {
   transform-origin: bottom left;
 }
 
-.current-weather-card,
-.more-information,
-input,
-button {
-  font-size: 25px;
-}
-
-.front-card-title {
-  font-size: 35px;
-  margin: 5px
-}
-
-.daily-top-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.form-input{
-  padding: 5px;
-  margin-top: 5px;
-  border: none;
-  border-radius: 10px;
-  font-size: 25px;
-  border: 1px solid black;
-}
-
-.form-button,
-.more-info-buttons {
-  background-color: rgba(255, 255, 255, 0.869);
-  color: rgb(9, 9, 9);
-  border: none;
-  margin: 5px 0px 0px 5px;
-  border-radius: 10px;
-  padding: 5px;
-  border: 1px solid black;
-}
-
 .loading-icon {
   height: 40px;
   width: 40px;
   margin: 20px;
 }
 
-.weather-icons {
-  height: 100px;
-  width: 100px;
-  margin: -10px;
-}
-
 button {
   cursor: pointer;
 }
 
-.form-front {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-section {
-  display: flex;
-}
-
-.form-input {
-  display: flex;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  margin-left: 0px;
-}
-
 h3 {
   margin: 12px;
-}
-
-.city-options-container {
-  margin-top: 20px;
-  display: flex;
-  align-content: center;
-}
-
-.city-button {
-  margin: 10px;
-  background-color: rgba(255, 255, 255, 0.869);
-  color: rgb(9, 9, 9);
-  border: none;
-  border-radius: 10px;
-  padding: 5px;
-  border: 1px solid black;
-  transition: all .2s ease-in-out;
-}
-
-.city-button:hover {
-  transform: scale(1.1);
-}
-
-.daily-forecast-title {
-  text-align: center;
-  text-shadow: -1px 1px 0 #000;
-  font-size: 30px;
-  margin-bottom: 20px;
-  font-style: italic;
-  color: white;
-}
-
-.daily-summary {
-  font-size: 20px;
-  font-style: italic
-}
-
-.daily-titles {
-  margin: 0px;
 }
 
 .event-whole-container {

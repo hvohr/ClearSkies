@@ -1,4 +1,5 @@
 import '../../pages/pages.css'
+import './WeatherCard.css'
 
 function DailyWeatherCard(props) {
   let filterDays = props.daily.map((day) => {

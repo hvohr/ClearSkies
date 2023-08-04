@@ -1,3 +1,5 @@
+import './CityOptions.css'
+
 function CityOptions(props) {
   return (
     <section className='city-options-container'>
