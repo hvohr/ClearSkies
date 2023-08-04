@@ -52,17 +52,31 @@ describe('User should see a home page proper elements', () => {
       .wait('@cityData')
       .wait('@latLongData')
       .get('.daily-card-container').children().should('contain', "Denver, Colorado")
-      const date = new Date();
-      let day = date.getDate();
-      let month = date.getMonth() + 1;
-      let year = date.getFullYear();
-      let todayDate = `${month}/${day}/${year}`
-      const date2 = new Date();
-      let day2 = date2.getDate() + 1;
-      let month2 = date2.getMonth() + 1;
-      let year2 = date2.getFullYear();
-      let tomorrowDate = `${month2}/${day2}/${year2}`
-      cy.get('.daily-card-container > :nth-child(1) > :nth-child(2)').invoke('text').should('contain', todayDate)
-      cy.get('.daily-card-container > :nth-child(2) > :nth-child(2)').invoke('text').should('contain', tomorrowDate)
+    const date = new Date();
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    let todayDate = `${month}/${day}/${year}`
+    const date2 = new Date();
+    let day2 = date2.getDate() + 1;
+    let month2 = date2.getMonth() + 1;
+    let year2 = date2.getFullYear();
+    let tomorrowDate = `${month2}/${day2}/${year2}`
+    cy.get('.daily-card-container > :nth-child(1) > :nth-child(2)').invoke('text').should('contain', todayDate)
+      .get('.daily-card-container > :nth-child(2) > :nth-child(2)').invoke('text').should('contain', tomorrowDate)
+      .get(':nth-child(1) > .weather-icons, .daily-card-container > :nth-child(1) > :nth-child(4), :nth-child(1) > .daily-summary,:nth-child(1) > .extra-daily-info').should('be.visible')
+  })
+  it('Should display updated information when a new city is entered in the form', () => {
+    cy.visit("http://localhost:3000/dailyforecast")
+      .wait('@locationData')
+      .wait('@cityData')
+      .wait('@latLongData')
+      .get('.form-input').type('Denver')
+      .get('.form-button').click()
+      .get('.city-options-container').should('be.visible')
+      .get('.city-options-container').children().should('have.lengthOf', 4)
+      .get('.city-options-container > :nth-child(2)').click()
+      .get('.city-options-container').should('not.exist')
+      .get('.daily-titles').invoke('text').should('contain', "Denver, Iowa")
   })
 })
