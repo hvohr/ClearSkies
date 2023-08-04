@@ -15,7 +15,7 @@ beforeEach(() => {
   }).as('locationData')
 })
 
-describe('User should see a home page proper elements', () => {
+describe('User should see a functioning daily page with proper elements', () => {
   it('Should take a user from home to daily forecast page on dailyforecast button click', () => {
     cy.visit("http://localhost:3000/")
       .wait('@locationData')

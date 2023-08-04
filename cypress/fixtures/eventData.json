@@ -1,1247 +1,1253 @@
-[
-  {
-      "relevance": 0.9400873,
-      "id": "EHBaMcWo2xDhbK9HZj",
-      "title": "O.N.E The Duo",
-      "description": "",
-      "category": "community",
-      "labels": [
-          "concert",
-          "music"
-      ],
-      "rank": 40,
-      "local_rank": 52,
-      "phq_attendance": 300,
-      "entities": [
-          {
-              "entity_id": "jK6h5RKTgXMyYBTa7Abpka",
-              "name": "Your Mom's House",
-              "type": "venue",
-              "formatted_address": "Suite 1 608 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
-          }
-      ],
-      "duration": 0,
-      "start": "2023-10-03T00:30:00Z",
-      "end": "2023-10-03T00:30:00Z",
-      "updated": "2023-07-16T02:06:23Z",
-      "first_seen": "2023-07-16T01:35:15Z",
-      "timezone": "America/Denver",
-      "location": [
-          -104.9795145,
-          39.7367324
-      ],
-      "geo": {
-          "geometry": {
-              "coordinates": [
-                  -104.9795145,
-                  39.7367324
-              ],
-              "type": "Point"
-          },
-          "placekey": "22v-225@5q9-bqk-y7q"
-      },
-      "scope": "locality",
-      "country": "US",
-      "place_hierarchies": [
-          [
-              "6295630",
-              "6255149",
-              "6252001",
-              "5417618",
-              "5419396",
-              "5419384"
-          ]
-      ],
-      "state": "active",
-      "brand_safe": true,
-      "private": false,
-      "predicted_event_spend": 3787,
-      "predicted_event_spend_industries": {
-          "accommodation": 0,
-          "hospitality": 2666,
-          "transportation": 1121
-      }
-  },
-  {
-      "relevance": 0.9400873,
-      "id": "Es9gw5JjVJXxeeNGEq",
-      "title": "Geordie Kieffer and .wavrunner",
-      "description": "",
-      "category": "concerts",
-      "labels": [
-          "concert",
-          "music"
-      ],
-      "rank": 40,
-      "local_rank": 53,
-      "phq_attendance": 327,
-      "entities": [
-          {
-              "entity_id": "jK6h5RKTgXMyYBTa7Abpka",
-              "name": "Your Mom's House",
-              "type": "venue",
-              "formatted_address": "Suite 1 608 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
-          }
-      ],
-      "duration": 0,
-      "start": "2023-09-24T04:00:00Z",
-      "end": "2023-09-24T04:00:00Z",
-      "updated": "2023-08-02T07:46:06Z",
-      "first_seen": "2023-06-13T02:00:33Z",
-      "timezone": "America/Denver",
-      "location": [
-          -104.9795145,
-          39.7367324
-      ],
-      "geo": {
-          "geometry": {
-              "coordinates": [
-                  -104.9795145,
-                  39.7367324
-              ],
-              "type": "Point"
-          },
-          "placekey": "22v-225@5q9-bqk-y7q"
-      },
-      "scope": "locality",
-      "country": "US",
-      "place_hierarchies": [
-          [
-              "6295630",
-              "6255149",
-              "6252001",
-              "5417618",
-              "5419396",
-              "5419384"
-          ]
-      ],
-      "state": "active",
-      "brand_safe": true,
-      "private": false,
-      "predicted_event_spend": 6319,
-      "predicted_event_spend_industries": {
-          "accommodation": 0,
-          "hospitality": 3875,
-          "transportation": 2444
-      }
-  },
-  {
-      "relevance": 0.9400873,
-      "id": "BrJmCg5UQyn3gQoCgc",
-      "title": "VOLO",
-      "description": "",
-      "category": "community",
-      "labels": [
-          "concert",
-          "music"
-      ],
-      "rank": 40,
-      "local_rank": 52,
-      "phq_attendance": 300,
-      "entities": [
-          {
-              "entity_id": "jK6h5RKTgXMyYBTa7Abpka",
-              "name": "Your Mom's House",
-              "type": "venue",
-              "formatted_address": "Suite 1 608 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
-          }
-      ],
-      "duration": 0,
-      "start": "2023-09-23T03:00:00Z",
-      "end": "2023-09-23T03:00:00Z",
-      "updated": "2023-08-01T03:02:45Z",
-      "first_seen": "2023-07-02T01:16:30Z",
-      "timezone": "America/Denver",
-      "location": [
-          -104.9795145,
-          39.7367324
-      ],
-      "geo": {
-          "geometry": {
-              "coordinates": [
-                  -104.9795145,
-                  39.7367324
-              ],
-              "type": "Point"
-          },
-          "placekey": "22v-225@5q9-bqk-y7q"
-      },
-      "scope": "locality",
-      "country": "US",
-      "place_hierarchies": [
-          [
-              "6295630",
-              "6255149",
-              "6252001",
-              "5417618",
-              "5419396",
-              "5419384"
-          ]
-      ],
-      "state": "active",
-      "brand_safe": true,
-      "private": false,
-      "predicted_event_spend": 3787,
-      "predicted_event_spend_industries": {
-          "accommodation": 0,
-          "hospitality": 2666,
-          "transportation": 1121
-      }
-  },
-  {
-      "relevance": 0.9400873,
-      "id": "8PrWUv5sqfY7XUw8PB",
-      "title": "Ralfy The Plug",
-      "description": "",
-      "category": "community",
-      "labels": [
-          "concert",
-          "music"
-      ],
-      "rank": 40,
-      "local_rank": 52,
-      "phq_attendance": 300,
-      "entities": [
-          {
-              "entity_id": "jK6h5RKTgXMyYBTa7Abpka",
-              "name": "Your Mom's House",
-              "type": "venue",
-              "formatted_address": "Suite 1 608 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
-          }
-      ],
-      "duration": 0,
-      "start": "2023-09-18T02:00:00Z",
-      "end": "2023-09-18T02:00:00Z",
-      "updated": "2023-08-01T02:27:17Z",
-      "first_seen": "2023-08-01T00:56:48Z",
-      "timezone": "America/Denver",
-      "location": [
-          -104.9795145,
-          39.7367324
-      ],
-      "geo": {
-          "geometry": {
-              "coordinates": [
-                  -104.9795145,
-                  39.7367324
-              ],
-              "type": "Point"
-          },
-          "placekey": "22v-225@5q9-bqk-y7q"
-      },
-      "scope": "locality",
-      "country": "US",
-      "place_hierarchies": [
-          [
-              "6295630",
-              "6255149",
-              "6252001",
-              "5417618",
-              "5419396",
-              "5419384"
-          ]
-      ],
-      "state": "active",
-      "brand_safe": true,
-      "private": false,
-      "predicted_event_spend": 3787,
-      "predicted_event_spend_industries": {
-          "accommodation": 0,
-          "hospitality": 2666,
-          "transportation": 1121
-      }
-  },
-  {
-      "relevance": 0.9400873,
-      "id": "CaQiAmGZRFrhR66Q3A",
-      "title": "Meridian",
-      "description": "",
-      "category": "community",
-      "labels": [
-          "concert",
-          "music"
-      ],
-      "rank": 40,
-      "local_rank": 52,
-      "phq_attendance": 300,
-      "entities": [
-          {
-              "entity_id": "jK6h5RKTgXMyYBTa7Abpka",
-              "name": "Your Mom's House",
-              "type": "venue",
-              "formatted_address": "Suite 1 608 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
-          }
-      ],
-      "duration": 0,
-      "start": "2023-09-16T02:00:00Z",
-      "end": "2023-09-16T02:00:00Z",
-      "updated": "2023-08-03T05:57:53Z",
-      "first_seen": "2023-06-04T02:53:16Z",
-      "timezone": "America/Denver",
-      "location": [
-          -104.9795145,
-          39.7367324
-      ],
-      "geo": {
-          "geometry": {
-              "coordinates": [
-                  -104.9795145,
-                  39.7367324
-              ],
-              "type": "Point"
-          },
-          "placekey": "22v-225@5q9-bqk-y7q"
-      },
-      "scope": "locality",
-      "country": "US",
-      "place_hierarchies": [
-          [
-              "6295630",
-              "6255149",
-              "6252001",
-              "5417618",
-              "5419396",
-              "5419384"
-          ]
-      ],
-      "state": "active",
-      "brand_safe": true,
-      "private": false,
-      "predicted_event_spend": 3787,
-      "predicted_event_spend_industries": {
-          "accommodation": 0,
-          "hospitality": 2666,
-          "transportation": 1121
-      }
-  },
-  {
-      "relevance": 0.9400873,
-      "id": "Mse6VyYQjAosUamCct",
-      "title": "Tensas",
-      "description": "",
-      "category": "community",
-      "labels": [
-          "concert",
-          "music"
-      ],
-      "rank": 40,
-      "local_rank": 52,
-      "phq_attendance": 300,
-      "entities": [
-          {
-              "entity_id": "jK6h5RKTgXMyYBTa7Abpka",
-              "name": "Your Mom's House",
-              "type": "venue",
-              "formatted_address": "Suite 1 608 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
-          }
-      ],
-      "duration": 0,
-      "start": "2023-09-07T03:30:00Z",
-      "end": "2023-09-07T03:30:00Z",
-      "updated": "2023-07-16T06:47:44Z",
-      "first_seen": "2023-07-06T01:08:46Z",
-      "timezone": "America/Denver",
-      "location": [
-          -104.9795145,
-          39.7367324
-      ],
-      "geo": {
-          "geometry": {
-              "coordinates": [
-                  -104.9795145,
-                  39.7367324
-              ],
-              "type": "Point"
-          },
-          "placekey": "22v-225@5q9-bqk-y7q"
-      },
-      "scope": "locality",
-      "country": "US",
-      "place_hierarchies": [
-          [
-              "6295630",
-              "6255149",
-              "6252001",
-              "5417618",
-              "5419396",
-              "5419384"
-          ]
-      ],
-      "state": "active",
-      "brand_safe": true,
-      "private": false,
-      "predicted_event_spend": 3787,
-      "predicted_event_spend_industries": {
-          "accommodation": 0,
-          "hospitality": 2666,
-          "transportation": 1121
-      }
-  },
-  {
-      "relevance": 0.9400873,
-      "id": "8Wv5QN4NYechVirsXq",
-      "title": "Malcolm Whyz3, Jack Dawkins, Ason Yugen, and 3 others",
-      "description": "",
-      "category": "concerts",
-      "labels": [
-          "concert",
-          "music"
-      ],
-      "rank": 41,
-      "local_rank": 53,
-      "phq_attendance": 346,
-      "entities": [
-          {
-              "entity_id": "jK6h5RKTgXMyYBTa7Abpka",
-              "name": "Your Mom's House",
-              "type": "venue",
-              "formatted_address": "Suite 1 608 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
-          }
-      ],
-      "duration": 0,
-      "start": "2023-09-02T01:00:00Z",
-      "end": "2023-09-02T01:00:00Z",
-      "updated": "2023-08-02T23:46:11Z",
-      "first_seen": "2023-07-16T02:58:41Z",
-      "timezone": "America/Denver",
-      "location": [
-          -104.9795145,
-          39.7367324
-      ],
-      "geo": {
-          "geometry": {
-              "coordinates": [
-                  -104.9795145,
-                  39.7367324
-              ],
-              "type": "Point"
-          },
-          "placekey": "22v-225@5q9-bqk-y7q"
-      },
-      "scope": "locality",
-      "country": "US",
-      "place_hierarchies": [
-          [
-              "6295630",
-              "6255149",
-              "6252001",
-              "5417618",
-              "5419396",
-              "5419384"
-          ]
-      ],
-      "state": "active",
-      "brand_safe": true,
-      "private": false,
-      "predicted_event_spend": 10115,
-      "predicted_event_spend_industries": {
-          "accommodation": 1758,
-          "hospitality": 5125,
-          "transportation": 3232
-      }
-  },
-  {
-      "relevance": 0.9400873,
-      "id": "HA2ZCZoXCAfDomSghu",
-      "title": "PUZZLED with Ben Spalding, Tantok + more TBA",
-      "description": "",
-      "category": "concerts",
-      "labels": [
-          "concert",
-          "music"
-      ],
-      "rank": 31,
-      "local_rank": 44,
-      "phq_attendance": 117,
-      "entities": [
-          {
-              "entity_id": "jK6h5RKTgXMyYBTa7Abpka",
-              "name": "Your Mom's House",
-              "type": "venue",
-              "formatted_address": "Suite 1 608 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
-          }
-      ],
-      "duration": 18000,
-      "start": "2023-08-27T03:00:00Z",
-      "end": "2023-08-27T08:00:00Z",
-      "updated": "2023-07-28T04:18:45Z",
-      "first_seen": "2023-06-06T02:03:29Z",
-      "timezone": "America/Denver",
-      "location": [
-          -104.9795145,
-          39.7367324
-      ],
-      "geo": {
-          "geometry": {
-              "coordinates": [
-                  -104.9795145,
-                  39.7367324
-              ],
-              "type": "Point"
-          },
-          "placekey": "22v-222@5q9-bqk-y7q"
-      },
-      "scope": "locality",
-      "country": "US",
-      "place_hierarchies": [
-          [
-              "6295630",
-              "6255149",
-              "6252001",
-              "5417618",
-              "5419396",
-              "5419384"
-          ]
-      ],
-      "state": "active",
-      "brand_safe": true,
-      "private": false,
-      "predicted_event_spend": 4522,
-      "predicted_event_spend_industries": {
-          "accommodation": 0,
-          "hospitality": 2773,
-          "transportation": 1749
-      }
-  },
-  {
-      "relevance": 0.9392981,
-      "id": "D3LaEes8R4ZNKNfkEW",
-      "title": "Jelly Jam Variety Open Mic",
-      "description": "Join us at Cap Hill Jelly Cafe for a variety open mic showcasing the brightest & hardest working musicians, stand up comics, poets & more!",
-      "category": "performing-arts",
-      "labels": [
-          "concert",
-          "music",
-          "performing-arts"
-      ],
-      "rank": 31,
-      "local_rank": 44,
-      "phq_attendance": 113,
-      "entities": [
-          {
-              "entity_id": "373EfuwZASMBCjnwNgFnMQn",
-              "name": "Jelly Jam Variety Open Mic",
-              "type": "event-group",
-              "formatted_address": "Pearl Street, Denver, CO 80203, United States",
-              "category": "performing-arts",
-              "labels": [
-                  "concert",
-                  "event-group",
-                  "music",
-                  "performing-arts"
-              ],
-              "description": "Join us at Cap Hill Jelly Cafe for a variety open mic showcasing the brightest & hardest working musicians, stand up comics, poets & more!",
-              "timezone": "America/Denver"
-          }
-      ],
-      "duration": 10800,
-      "start": "2023-08-11T01:00:00Z",
-      "end": "2023-08-11T04:00:00Z",
-      "updated": "2023-08-04T02:22:23Z",
-      "first_seen": "2023-07-18T17:22:14Z",
-      "timezone": "America/Denver",
-      "location": [
-          -104.9797069,
-          39.7367423
-      ],
-      "geo": {
-          "geometry": {
-              "coordinates": [
-                  -104.9797069,
-                  39.7367423
-              ],
-              "type": "Point"
-          },
-          "placekey": "@5q9-bqk-y7q"
-      },
-      "scope": "locality",
-      "country": "US",
-      "place_hierarchies": [
-          [
-              "6295630",
-              "6255149",
-              "6252001",
-              "5417618",
-              "5419396",
-              "5419384"
-          ]
-      ],
-      "state": "active",
-      "brand_safe": true,
-      "private": false,
-      "predicted_event_spend": 2184,
-      "predicted_event_spend_industries": {
-          "accommodation": 0,
-          "hospitality": 1339,
-          "transportation": 845
-      }
-  },
-  {
-      "relevance": 0.93767005,
-      "id": "4UMfUV3LkHrFBddGTE",
-      "title": "Deth Rali",
-      "description": "",
-      "category": "concerts",
-      "labels": [
-          "concert",
-          "music"
-      ],
-      "rank": 39,
-      "local_rank": 52,
-      "phq_attendance": 281,
-      "entities": [
-          {
-              "entity_id": "n8nRWP6R5jEgvU2pXz3ksj",
-              "name": "Wax Trax Records",
-              "type": "venue",
-              "formatted_address": "638 E. 13th Ave.\nDenver, CO 80203\nUnited States of America"
-          }
-      ],
-      "duration": 0,
-      "start": "2023-08-06T18:00:00Z",
-      "end": "2023-08-06T18:00:00Z",
-      "updated": "2023-07-07T12:53:02Z",
-      "first_seen": "2023-05-04T01:58:27Z",
-      "timezone": "America/Denver",
-      "location": [
-          -104.9793124,
-          39.7368682
-      ],
-      "geo": {
-          "geometry": {
-              "coordinates": [
-                  -104.9793124,
-                  39.7368682
-              ],
-              "type": "Point"
-          },
-          "placekey": "233-222@5q9-bqk-y7q"
-      },
-      "scope": "locality",
-      "country": "US",
-      "place_hierarchies": [
-          [
-              "6295630",
-              "6255149",
-              "6252001",
-              "5417618",
-              "5419396",
-              "5419384"
-          ]
-      ],
-      "state": "active",
-      "brand_safe": true,
-      "private": false,
-      "predicted_event_spend": 5430,
-      "predicted_event_spend_industries": {
-          "accommodation": 0,
-          "hospitality": 3330,
-          "transportation": 2100
-      }
-  },
-  {
-      "relevance": 0.9283698,
-      "id": "DtETxgyUZb8cTnTwan",
-      "title": "White Rose Motor Oil",
-      "description": "",
-      "category": "community",
-      "labels": [
-          "concert",
-          "music"
-      ],
-      "rank": 0,
-      "local_rank": 0,
-      "phq_attendance": null,
-      "entities": [
-          {
-              "entity_id": "VW6WJqdPgSSeCkBW4bLc9C",
-              "name": "Bang Up to the Elephant",
-              "type": "venue",
-              "formatted_address": "1310 Pearl St\nDenver, CO 80203\nUnited States of America"
-          }
-      ],
-      "duration": 0,
-      "start": "2023-08-27T19:00:00Z",
-      "end": "2023-08-27T19:00:00Z",
-      "updated": "2023-06-23T04:31:16Z",
-      "first_seen": "2023-06-23T02:17:03Z",
-      "timezone": "America/Denver",
-      "location": [
-          -104.9796384,
-          39.7372436
-      ],
-      "geo": {
-          "geometry": {
-              "coordinates": [
-                  -104.9796384,
-                  39.7372436
-              ],
-              "type": "Point"
-          },
-          "placekey": "224-222@5q9-bqk-y7q"
-      },
-      "scope": "locality",
-      "country": "US",
-      "place_hierarchies": [
-          [
-              "6295630",
-              "6255149",
-              "6252001",
-              "5417618",
-              "5419396",
-              "5419384"
-          ]
-      ],
-      "state": "active",
-      "brand_safe": true,
-      "private": false
-  },
-  {
-      "relevance": 0.92557454,
-      "id": "8VXzEaXkW8rWmqrV2Z",
-      "title": "Cloudy Cabaret A Circus Burlesque Show",
-      "description": "Come clown around at the most sensual circus show in town!",
-      "category": "performing-arts",
-      "labels": [
-          "concert",
-          "music",
-          "performing-arts"
-      ],
-      "rank": 0,
-      "local_rank": 0,
-      "phq_attendance": null,
-      "entities": [],
-      "duration": 0,
-      "start": "2023-09-30T02:00:00Z",
-      "end": "2023-09-30T02:00:00Z",
-      "updated": "2023-07-19T19:42:15Z",
-      "first_seen": "2023-07-19T19:41:06Z",
-      "timezone": "America/Denver",
-      "location": [
-          -104.9832153,
-          39.7361379
-      ],
-      "geo": {
-          "geometry": {
-              "coordinates": [
-                  -104.9832153,
-                  39.7361379
-              ],
-              "type": "Point"
-          },
-          "placekey": "226-222@5q9-bqk-xyv"
-      },
-      "scope": "locality",
-      "country": "US",
-      "place_hierarchies": [
-          [
-              "6295630",
-              "6255149",
-              "6252001",
-              "5417618",
-              "5419396",
-              "5419384"
-          ]
-      ],
-      "state": "active",
-      "brand_safe": false,
-      "private": false
-  },
-  {
-      "relevance": 0.9246913,
-      "id": "4pWS8mTR6sr43qEcdf",
-      "title": "Lowdown's BrewGrass Festival",
-      "description": "Come Party with us for our summer BrewGrass Beer Fest!",
-      "category": "festivals",
-      "labels": [
-          "festival",
-          "music"
-      ],
-      "rank": 45,
-      "local_rank": 59,
-      "phq_attendance": 555,
-      "entities": [],
-      "duration": 43200,
-      "start": "2023-08-05T17:00:00Z",
-      "end": "2023-08-06T05:00:00Z",
-      "updated": "2023-07-12T08:12:39Z",
-      "first_seen": "2023-07-12T08:12:03Z",
-      "timezone": "America/Denver",
-      "location": [
-          -104.9857089,
-          39.7293165
-      ],
-      "geo": {
-          "geometry": {
-              "coordinates": [
-                  -104.9857089,
-                  39.7293165
-              ],
-              "type": "Point"
-          },
-          "placekey": "235@5q9-bqr-yvz"
-      },
-      "scope": "locality",
-      "country": "US",
-      "place_hierarchies": [
-          [
-              "6295630",
-              "6255149",
-              "6252001",
-              "5417618",
-              "5419396",
-              "5419384"
-          ]
-      ],
-      "state": "active",
-      "brand_safe": true,
-      "private": false,
-      "predicted_event_spend": 16226,
-      "predicted_event_spend_industries": {
-          "accommodation": 2820,
-          "hospitality": 8221,
-          "transportation": 5185
-      }
-  },
-  {
-      "relevance": 0.92382103,
-      "id": "BbJyHqpiDwG3ew8pE9",
-      "title": "That Damn Sasquatch",
-      "description": "",
-      "category": "concerts",
-      "labels": [
-          "concert",
-          "music"
-      ],
-      "rank": 39,
-      "local_rank": 54,
-      "phq_attendance": 290,
-      "entities": [
-          {
-              "entity_id": "DMw648NS43hsL4F7cRPqNu",
-              "name": "Lowdown Brewery + Kitchen",
-              "type": "venue",
-              "formatted_address": "800 Lincoln St\nDenver, CO 80203\nUnited States of America"
-          }
-      ],
-      "duration": 0,
-      "start": "2023-08-06T00:00:00Z",
-      "end": "2023-08-06T00:00:00Z",
-      "updated": "2023-07-07T10:38:42Z",
-      "first_seen": "2023-06-04T08:41:47Z",
-      "timezone": "America/Denver",
-      "location": [
-          -104.9857596,
-          39.7293173
-      ],
-      "geo": {
-          "geometry": {
-              "coordinates": [
-                  -104.9857596,
-                  39.7293173
-              ],
-              "type": "Point"
-          },
-          "placekey": "235@5q9-bqr-yvz"
-      },
-      "scope": "locality",
-      "country": "US",
-      "place_hierarchies": [
-          [
-              "6295630",
-              "6255149",
-              "6252001",
-              "5417618",
-              "5419396",
-              "5419384"
-          ]
-      ],
-      "state": "active",
-      "brand_safe": true,
-      "private": false,
-      "predicted_event_spend": 5603,
-      "predicted_event_spend_industries": {
-          "accommodation": 0,
-          "hospitality": 3436,
-          "transportation": 2167
-      }
-  },
-  {
-      "relevance": 0.9133192,
-      "id": "5gnKp8cw8a8b2JHgcZ",
-      "title": "Future Joy",
-      "description": "",
-      "category": "concerts",
-      "labels": [
-          "concert",
-          "music"
-      ],
-      "rank": 54,
-      "local_rank": 66,
-      "phq_attendance": 1510,
-      "entities": [
-          {
-              "entity_id": "VBBsXaaMizAAY8rpznyrSk",
-              "name": "The Black Box",
-              "type": "venue",
-              "formatted_address": "314 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
-          }
-      ],
-      "duration": 0,
-      "start": "2023-09-02T03:00:00Z",
-      "end": "2023-09-02T03:00:00Z",
-      "updated": "2023-08-01T01:05:39Z",
-      "first_seen": "2023-08-01T00:58:28Z",
-      "timezone": "America/Denver",
-      "location": [
-          -104.983157,
-          39.73679
-      ],
-      "geo": {
-          "geometry": {
-              "coordinates": [
-                  -104.983157,
-                  39.73679
-              ],
-              "type": "Point"
-          },
-          "placekey": "22d@5q9-bqk-xyv"
-      },
-      "scope": "locality",
-      "country": "US",
-      "place_hierarchies": [
-          [
-              "6295630",
-              "6255149",
-              "6252001",
-              "5417618",
-              "5419396",
-              "5419384"
-          ]
-      ],
-      "state": "active",
-      "brand_safe": true,
-      "private": false,
-      "predicted_event_spend": 44146,
-      "predicted_event_spend_industries": {
-          "accommodation": 7673,
-          "hospitality": 22367,
-          "transportation": 14106
-      }
-  },
-  {
-      "relevance": 0.9133192,
-      "id": "AeLSnZsJcooqj5vDhN",
-      "title": "Phaeleh",
-      "description": "Phaeleh is a mesmerizing concert event at The Black Box in Denver, Colorado, featuring the renowned producer and DJ known for his captivating blend of ambient dubstep and downtempo electronica. Prepare to be immersed in an ethereal audio-visual experience that seamlessly fuses intricate soundscapes with pulsating beats.",
-      "category": "concerts",
-      "labels": [
-          "concert",
-          "music"
-      ],
-      "rank": 52,
-      "local_rank": 64,
-      "phq_attendance": 1216,
-      "entities": [
-          {
-              "entity_id": "VBBsXaaMizAAY8rpznyrSk",
-              "name": "The Black Box",
-              "type": "venue",
-              "formatted_address": "314 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
-          }
-      ],
-      "duration": 0,
-      "start": "2023-08-23T03:00:00Z",
-      "end": "2023-08-23T03:00:00Z",
-      "updated": "2023-08-02T10:46:10Z",
-      "first_seen": "2023-06-26T01:04:50Z",
-      "timezone": "America/Denver",
-      "location": [
-          -104.983157,
-          39.73679
-      ],
-      "geo": {
-          "geometry": {
-              "coordinates": [
-                  -104.983157,
-                  39.73679
-              ],
-              "type": "Point"
-          },
-          "placekey": "22d@5q9-bqk-xyv"
-      },
-      "scope": "locality",
-      "country": "US",
-      "place_hierarchies": [
-          [
-              "6295630",
-              "6255149",
-              "6252001",
-              "5417618",
-              "5419396",
-              "5419384"
-          ]
-      ],
-      "state": "active",
-      "brand_safe": true,
-      "private": false,
-      "predicted_event_spend": 35551,
-      "predicted_event_spend_industries": {
-          "accommodation": 6179,
-          "hospitality": 18012,
-          "transportation": 11360
-      }
-  },
-  {
-      "relevance": 0.9133192,
-      "id": "3vzNmCjqvdjTXczh6m",
-      "title": "So Sus, Vavn, and fyoomz",
-      "description": "",
-      "category": "concerts",
-      "labels": [
-          "concert",
-          "music"
-      ],
-      "rank": 54,
-      "local_rank": 66,
-      "phq_attendance": 1536,
-      "entities": [
-          {
-              "entity_id": "VBBsXaaMizAAY8rpznyrSk",
-              "name": "The Black Box",
-              "type": "venue",
-              "formatted_address": "314 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
-          }
-      ],
-      "duration": 0,
-      "start": "2023-08-20T03:00:00Z",
-      "end": "2023-08-20T03:00:00Z",
-      "updated": "2023-07-16T03:05:29Z",
-      "first_seen": "2023-07-16T02:58:41Z",
-      "timezone": "America/Denver",
-      "location": [
-          -104.983157,
-          39.73679
-      ],
-      "geo": {
-          "geometry": {
-              "coordinates": [
-                  -104.983157,
-                  39.73679
-              ],
-              "type": "Point"
-          },
-          "placekey": "22d@5q9-bqk-xyv"
-      },
-      "scope": "locality",
-      "country": "US",
-      "place_hierarchies": [
-          [
-              "6295630",
-              "6255149",
-              "6252001",
-              "5417618",
-              "5419396",
-              "5419384"
-          ]
-      ],
-      "state": "active",
-      "brand_safe": true,
-      "private": false,
-      "predicted_event_spend": 44907,
-      "predicted_event_spend_industries": {
-          "accommodation": 7806,
-          "hospitality": 22752,
-          "transportation": 14349
-      }
-  },
-  {
-      "relevance": 0.9133192,
-      "id": "3rpaibJFHvraabaFWt",
-      "title": "Rendr",
-      "description": "",
-      "category": "concerts",
-      "labels": [
-          "concert",
-          "music"
-      ],
-      "rank": 54,
-      "local_rank": 66,
-      "phq_attendance": 1536,
-      "entities": [
-          {
-              "entity_id": "VBBsXaaMizAAY8rpznyrSk",
-              "name": "The Black Box",
-              "type": "venue",
-              "formatted_address": "314 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
-          }
-      ],
-      "duration": 0,
-      "start": "2023-08-19T03:00:00Z",
-      "end": "2023-08-19T03:00:00Z",
-      "updated": "2023-07-16T03:24:28Z",
-      "first_seen": "2023-07-16T02:58:41Z",
-      "timezone": "America/Denver",
-      "location": [
-          -104.983157,
-          39.73679
-      ],
-      "geo": {
-          "geometry": {
-              "coordinates": [
-                  -104.983157,
-                  39.73679
-              ],
-              "type": "Point"
-          },
-          "placekey": "22d@5q9-bqk-xyv"
-      },
-      "scope": "locality",
-      "country": "US",
-      "place_hierarchies": [
-          [
-              "6295630",
-              "6255149",
-              "6252001",
-              "5417618",
-              "5419396",
-              "5419384"
-          ]
-      ],
-      "state": "active",
-      "brand_safe": true,
-      "private": false,
-      "predicted_event_spend": 44907,
-      "predicted_event_spend_industries": {
-          "accommodation": 7806,
-          "hospitality": 22752,
-          "transportation": 14349
-      }
-  },
-  {
-      "relevance": 0.9133192,
-      "id": "FEQEThCKaoskH8hXEh",
-      "title": "The Black Box & Recon DNB present: Trace",
-      "description": "Join us at The Black Box in Denver, Colorado, for an electrifying night of drum and bass as The Black Box & Recon DNB proudly present: Trace. Immerse yourself in the pulsating beats and energetic tunes brought to you by some of the finest artists in the genre, making this an unforgettable event for all drum and bass enthusiasts.",
-      "category": "concerts",
-      "labels": [
-          "concert",
-          "music"
-      ],
-      "rank": 52,
-      "local_rank": 64,
-      "phq_attendance": 1216,
-      "entities": [
-          {
-              "entity_id": "VBBsXaaMizAAY8rpznyrSk",
-              "name": "The Black Box",
-              "type": "venue",
-              "formatted_address": "314 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
-          }
-      ],
-      "duration": 18000,
-      "start": "2023-08-13T03:00:00Z",
-      "end": "2023-08-13T08:00:00Z",
-      "updated": "2023-08-03T10:13:55Z",
-      "first_seen": "2023-07-02T13:34:10Z",
-      "timezone": "America/Denver",
-      "location": [
-          -104.983157,
-          39.73679
-      ],
-      "geo": {
-          "geometry": {
-              "coordinates": [
-                  -104.983157,
-                  39.73679
-              ],
-              "type": "Point"
-          },
-          "placekey": "22d@5q9-bqk-xyv"
-      },
-      "scope": "locality",
-      "country": "US",
-      "place_hierarchies": [
-          [
-              "6295630",
-              "6255149",
-              "6252001",
-              "5417618",
-              "5419396",
-              "5419384"
-          ]
-      ],
-      "state": "active",
-      "brand_safe": true,
-      "private": false,
-      "predicted_event_spend": 71102,
-      "predicted_event_spend_industries": {
-          "accommodation": 12359,
-          "hospitality": 36024,
-          "transportation": 22719
-      }
-  },
-  {
-      "relevance": 0.9133192,
-      "id": "BnpGohX7nTWM6GqJ2T",
-      "title": "Verzuz Song Battle  Live Host Mama Jones Ceolarry",
-      "description": "Record Breakers Verzuz Song Battle Hosted by Vh1 Mama Jones & CEOLARRY",
-      "category": "concerts",
-      "labels": [
-          "concert",
-          "music"
-      ],
-      "rank": 48,
-      "local_rank": 60,
-      "phq_attendance": 800,
-      "entities": [
-          {
-              "entity_id": "VBBsXaaMizAAY8rpznyrSk",
-              "name": "The Black Box",
-              "type": "venue",
-              "formatted_address": "314 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
-          }
-      ],
-      "duration": 10800,
-      "start": "2023-08-06T04:00:00Z",
-      "end": "2023-08-06T07:00:00Z",
-      "updated": "2023-07-26T03:39:31Z",
-      "first_seen": "2023-07-26T03:36:05Z",
-      "timezone": "America/Denver",
-      "location": [
-          -104.983157,
-          39.73679
-      ],
-      "geo": {
-          "geometry": {
-              "coordinates": [
-                  -104.983157,
-                  39.73679
-              ],
-              "type": "Point"
-          },
-          "placekey": "22d@5q9-bqk-xyv"
-      },
-      "scope": "locality",
-      "country": "US",
-      "place_hierarchies": [
-          [
-              "6295630",
-              "6255149",
-              "6252001",
-              "5417618",
-              "5419396",
-              "5419384"
-          ]
-      ],
-      "state": "active",
-      "brand_safe": true,
-      "private": false,
-      "predicted_event_spend": 46778,
-      "predicted_event_spend_industries": {
-          "accommodation": 8131,
-          "hospitality": 23700,
-          "transportation": 14947
-      }
-  }
-]
+{
+    "count": 2570,
+    "overflow": false,
+    "next": "https://api.predicthq.com/v1/events/?active.gte=2023-08-03&category=concerts%2Csports%2Ccommunity%2Cexpos%2Cfestivals%2Cperforming-arts&limit=20&location_around.origin=39.7314396%2C-104.9783718&offset=20&within=50mi%4039.7314396%2C-104.9783718",
+    "previous": null,
+    "results": [
+        {
+            "relevance": 0.9401874,
+            "id": "EHBaMcWo2xDhbK9HZj",
+            "title": "O.N.E The Duo",
+            "description": "",
+            "category": "community",
+            "labels": [
+                "concert",
+                "music"
+            ],
+            "rank": 40,
+            "local_rank": 52,
+            "phq_attendance": 300,
+            "entities": [
+                {
+                    "entity_id": "jK6h5RKTgXMyYBTa7Abpka",
+                    "name": "Your Mom's House",
+                    "type": "venue",
+                    "formatted_address": "Suite 1 608 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
+                }
+            ],
+            "duration": 0,
+            "start": "2023-10-03T00:30:00Z",
+            "end": "2023-10-03T00:30:00Z",
+            "updated": "2023-07-16T02:06:23Z",
+            "first_seen": "2023-07-16T01:35:15Z",
+            "timezone": "America/Denver",
+            "location": [
+                -104.9795145,
+                39.7367324
+            ],
+            "geo": {
+                "geometry": {
+                    "coordinates": [
+                        -104.9795145,
+                        39.7367324
+                    ],
+                    "type": "Point"
+                },
+                "placekey": "22v-225@5q9-bqk-y7q"
+            },
+            "scope": "locality",
+            "country": "US",
+            "place_hierarchies": [
+                [
+                    "6295630",
+                    "6255149",
+                    "6252001",
+                    "5417618",
+                    "5419396",
+                    "5419384"
+                ]
+            ],
+            "state": "active",
+            "brand_safe": true,
+            "private": false,
+            "predicted_event_spend": 3787,
+            "predicted_event_spend_industries": {
+                "accommodation": 0,
+                "hospitality": 2666,
+                "transportation": 1121
+            }
+        },
+        {
+            "relevance": 0.9401874,
+            "id": "Es9gw5JjVJXxeeNGEq",
+            "title": "Geordie Kieffer and .wavrunner",
+            "description": "",
+            "category": "concerts",
+            "labels": [
+                "concert",
+                "music"
+            ],
+            "rank": 40,
+            "local_rank": 53,
+            "phq_attendance": 327,
+            "entities": [
+                {
+                    "entity_id": "jK6h5RKTgXMyYBTa7Abpka",
+                    "name": "Your Mom's House",
+                    "type": "venue",
+                    "formatted_address": "Suite 1 608 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
+                }
+            ],
+            "duration": 0,
+            "start": "2023-09-24T04:00:00Z",
+            "end": "2023-09-24T04:00:00Z",
+            "updated": "2023-08-02T07:46:06Z",
+            "first_seen": "2023-06-13T02:00:33Z",
+            "timezone": "America/Denver",
+            "location": [
+                -104.9795145,
+                39.7367324
+            ],
+            "geo": {
+                "geometry": {
+                    "coordinates": [
+                        -104.9795145,
+                        39.7367324
+                    ],
+                    "type": "Point"
+                },
+                "placekey": "22v-225@5q9-bqk-y7q"
+            },
+            "scope": "locality",
+            "country": "US",
+            "place_hierarchies": [
+                [
+                    "6295630",
+                    "6255149",
+                    "6252001",
+                    "5417618",
+                    "5419396",
+                    "5419384"
+                ]
+            ],
+            "state": "active",
+            "brand_safe": true,
+            "private": false,
+            "predicted_event_spend": 6319,
+            "predicted_event_spend_industries": {
+                "accommodation": 0,
+                "hospitality": 3875,
+                "transportation": 2444
+            }
+        },
+        {
+            "relevance": 0.9401874,
+            "id": "BrJmCg5UQyn3gQoCgc",
+            "title": "VOLO",
+            "description": "",
+            "category": "community",
+            "labels": [
+                "concert",
+                "music"
+            ],
+            "rank": 40,
+            "local_rank": 52,
+            "phq_attendance": 300,
+            "entities": [
+                {
+                    "entity_id": "jK6h5RKTgXMyYBTa7Abpka",
+                    "name": "Your Mom's House",
+                    "type": "venue",
+                    "formatted_address": "Suite 1 608 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
+                }
+            ],
+            "duration": 0,
+            "start": "2023-09-23T03:00:00Z",
+            "end": "2023-09-23T03:00:00Z",
+            "updated": "2023-08-01T03:02:45Z",
+            "first_seen": "2023-07-02T01:16:30Z",
+            "timezone": "America/Denver",
+            "location": [
+                -104.9795145,
+                39.7367324
+            ],
+            "geo": {
+                "geometry": {
+                    "coordinates": [
+                        -104.9795145,
+                        39.7367324
+                    ],
+                    "type": "Point"
+                },
+                "placekey": "22v-225@5q9-bqk-y7q"
+            },
+            "scope": "locality",
+            "country": "US",
+            "place_hierarchies": [
+                [
+                    "6295630",
+                    "6255149",
+                    "6252001",
+                    "5417618",
+                    "5419396",
+                    "5419384"
+                ]
+            ],
+            "state": "active",
+            "brand_safe": true,
+            "private": false,
+            "predicted_event_spend": 3787,
+            "predicted_event_spend_industries": {
+                "accommodation": 0,
+                "hospitality": 2666,
+                "transportation": 1121
+            }
+        },
+        {
+            "relevance": 0.9401874,
+            "id": "8PrWUv5sqfY7XUw8PB",
+            "title": "Ralfy The Plug",
+            "description": "",
+            "category": "community",
+            "labels": [
+                "concert",
+                "music"
+            ],
+            "rank": 40,
+            "local_rank": 52,
+            "phq_attendance": 300,
+            "entities": [
+                {
+                    "entity_id": "jK6h5RKTgXMyYBTa7Abpka",
+                    "name": "Your Mom's House",
+                    "type": "venue",
+                    "formatted_address": "Suite 1 608 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
+                }
+            ],
+            "duration": 0,
+            "start": "2023-09-18T02:00:00Z",
+            "end": "2023-09-18T02:00:00Z",
+            "updated": "2023-08-01T02:27:17Z",
+            "first_seen": "2023-08-01T00:56:48Z",
+            "timezone": "America/Denver",
+            "location": [
+                -104.9795145,
+                39.7367324
+            ],
+            "geo": {
+                "geometry": {
+                    "coordinates": [
+                        -104.9795145,
+                        39.7367324
+                    ],
+                    "type": "Point"
+                },
+                "placekey": "22v-225@5q9-bqk-y7q"
+            },
+            "scope": "locality",
+            "country": "US",
+            "place_hierarchies": [
+                [
+                    "6295630",
+                    "6255149",
+                    "6252001",
+                    "5417618",
+                    "5419396",
+                    "5419384"
+                ]
+            ],
+            "state": "active",
+            "brand_safe": true,
+            "private": false,
+            "predicted_event_spend": 3787,
+            "predicted_event_spend_industries": {
+                "accommodation": 0,
+                "hospitality": 2666,
+                "transportation": 1121
+            }
+        },
+        {
+            "relevance": 0.9401874,
+            "id": "CaQiAmGZRFrhR66Q3A",
+            "title": "Meridian",
+            "description": "",
+            "category": "community",
+            "labels": [
+                "concert",
+                "music"
+            ],
+            "rank": 40,
+            "local_rank": 52,
+            "phq_attendance": 300,
+            "entities": [
+                {
+                    "entity_id": "jK6h5RKTgXMyYBTa7Abpka",
+                    "name": "Your Mom's House",
+                    "type": "venue",
+                    "formatted_address": "Suite 1 608 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
+                }
+            ],
+            "duration": 0,
+            "start": "2023-09-16T02:00:00Z",
+            "end": "2023-09-16T02:00:00Z",
+            "updated": "2023-08-03T05:57:53Z",
+            "first_seen": "2023-06-04T02:53:16Z",
+            "timezone": "America/Denver",
+            "location": [
+                -104.9795145,
+                39.7367324
+            ],
+            "geo": {
+                "geometry": {
+                    "coordinates": [
+                        -104.9795145,
+                        39.7367324
+                    ],
+                    "type": "Point"
+                },
+                "placekey": "22v-225@5q9-bqk-y7q"
+            },
+            "scope": "locality",
+            "country": "US",
+            "place_hierarchies": [
+                [
+                    "6295630",
+                    "6255149",
+                    "6252001",
+                    "5417618",
+                    "5419396",
+                    "5419384"
+                ]
+            ],
+            "state": "active",
+            "brand_safe": true,
+            "private": false,
+            "predicted_event_spend": 3787,
+            "predicted_event_spend_industries": {
+                "accommodation": 0,
+                "hospitality": 2666,
+                "transportation": 1121
+            }
+        },
+        {
+            "relevance": 0.9401874,
+            "id": "Mse6VyYQjAosUamCct",
+            "title": "Tensas",
+            "description": "",
+            "category": "community",
+            "labels": [
+                "concert",
+                "music"
+            ],
+            "rank": 40,
+            "local_rank": 52,
+            "phq_attendance": 300,
+            "entities": [
+                {
+                    "entity_id": "jK6h5RKTgXMyYBTa7Abpka",
+                    "name": "Your Mom's House",
+                    "type": "venue",
+                    "formatted_address": "Suite 1 608 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
+                }
+            ],
+            "duration": 0,
+            "start": "2023-09-07T03:30:00Z",
+            "end": "2023-09-07T03:30:00Z",
+            "updated": "2023-07-16T06:47:44Z",
+            "first_seen": "2023-07-06T01:08:46Z",
+            "timezone": "America/Denver",
+            "location": [
+                -104.9795145,
+                39.7367324
+            ],
+            "geo": {
+                "geometry": {
+                    "coordinates": [
+                        -104.9795145,
+                        39.7367324
+                    ],
+                    "type": "Point"
+                },
+                "placekey": "22v-225@5q9-bqk-y7q"
+            },
+            "scope": "locality",
+            "country": "US",
+            "place_hierarchies": [
+                [
+                    "6295630",
+                    "6255149",
+                    "6252001",
+                    "5417618",
+                    "5419396",
+                    "5419384"
+                ]
+            ],
+            "state": "active",
+            "brand_safe": true,
+            "private": false,
+            "predicted_event_spend": 3787,
+            "predicted_event_spend_industries": {
+                "accommodation": 0,
+                "hospitality": 2666,
+                "transportation": 1121
+            }
+        },
+        {
+            "relevance": 0.9401874,
+            "id": "8Wv5QN4NYechVirsXq",
+            "title": "Malcolm Whyz3, Jack Dawkins, Ason Yugen, and 3 others",
+            "description": "",
+            "category": "concerts",
+            "labels": [
+                "concert",
+                "music"
+            ],
+            "rank": 41,
+            "local_rank": 53,
+            "phq_attendance": 346,
+            "entities": [
+                {
+                    "entity_id": "jK6h5RKTgXMyYBTa7Abpka",
+                    "name": "Your Mom's House",
+                    "type": "venue",
+                    "formatted_address": "Suite 1 608 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
+                }
+            ],
+            "duration": 0,
+            "start": "2023-09-02T01:00:00Z",
+            "end": "2023-09-02T01:00:00Z",
+            "updated": "2023-08-02T23:46:11Z",
+            "first_seen": "2023-07-16T02:58:41Z",
+            "timezone": "America/Denver",
+            "location": [
+                -104.9795145,
+                39.7367324
+            ],
+            "geo": {
+                "geometry": {
+                    "coordinates": [
+                        -104.9795145,
+                        39.7367324
+                    ],
+                    "type": "Point"
+                },
+                "placekey": "22v-225@5q9-bqk-y7q"
+            },
+            "scope": "locality",
+            "country": "US",
+            "place_hierarchies": [
+                [
+                    "6295630",
+                    "6255149",
+                    "6252001",
+                    "5417618",
+                    "5419396",
+                    "5419384"
+                ]
+            ],
+            "state": "active",
+            "brand_safe": true,
+            "private": false,
+            "predicted_event_spend": 10115,
+            "predicted_event_spend_industries": {
+                "accommodation": 1758,
+                "hospitality": 5125,
+                "transportation": 3232
+            }
+        },
+        {
+            "relevance": 0.9401874,
+            "id": "HA2ZCZoXCAfDomSghu",
+            "title": "PUZZLED with Ben Spalding, Tantok + more TBA",
+            "description": "",
+            "category": "concerts",
+            "labels": [
+                "concert",
+                "music"
+            ],
+            "rank": 31,
+            "local_rank": 44,
+            "phq_attendance": 117,
+            "entities": [
+                {
+                    "entity_id": "jK6h5RKTgXMyYBTa7Abpka",
+                    "name": "Your Mom's House",
+                    "type": "venue",
+                    "formatted_address": "Suite 1 608 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
+                }
+            ],
+            "duration": 18000,
+            "start": "2023-08-27T03:00:00Z",
+            "end": "2023-08-27T08:00:00Z",
+            "updated": "2023-07-28T04:18:45Z",
+            "first_seen": "2023-06-06T02:03:29Z",
+            "timezone": "America/Denver",
+            "location": [
+                -104.9795145,
+                39.7367324
+            ],
+            "geo": {
+                "geometry": {
+                    "coordinates": [
+                        -104.9795145,
+                        39.7367324
+                    ],
+                    "type": "Point"
+                },
+                "placekey": "22v-222@5q9-bqk-y7q"
+            },
+            "scope": "locality",
+            "country": "US",
+            "place_hierarchies": [
+                [
+                    "6295630",
+                    "6255149",
+                    "6252001",
+                    "5417618",
+                    "5419396",
+                    "5419384"
+                ]
+            ],
+            "state": "active",
+            "brand_safe": true,
+            "private": false,
+            "predicted_event_spend": 4522,
+            "predicted_event_spend_industries": {
+                "accommodation": 0,
+                "hospitality": 2773,
+                "transportation": 1749
+            }
+        },
+        {
+            "relevance": 0.9394087,
+            "id": "D3LaEes8R4ZNKNfkEW",
+            "title": "Jelly Jam Variety Open Mic",
+            "description": "Join us at Cap Hill Jelly Cafe for a variety open mic showcasing the brightest & hardest working musicians, stand up comics, poets & more!",
+            "category": "performing-arts",
+            "labels": [
+                "concert",
+                "music",
+                "performing-arts"
+            ],
+            "rank": 31,
+            "local_rank": 44,
+            "phq_attendance": 113,
+            "entities": [
+                {
+                    "entity_id": "373EfuwZASMBCjnwNgFnMQn",
+                    "name": "Jelly Jam Variety Open Mic",
+                    "type": "event-group",
+                    "formatted_address": "Pearl Street, Denver, CO 80203, United States",
+                    "category": "performing-arts",
+                    "labels": [
+                        "concert",
+                        "event-group",
+                        "music",
+                        "performing-arts"
+                    ],
+                    "description": "Join us at Cap Hill Jelly Cafe for a variety open mic showcasing the brightest & hardest working musicians, stand up comics, poets & more!",
+                    "timezone": "America/Denver"
+                }
+            ],
+            "duration": 10800,
+            "start": "2023-08-11T01:00:00Z",
+            "end": "2023-08-11T04:00:00Z",
+            "updated": "2023-08-04T02:22:23Z",
+            "first_seen": "2023-07-18T17:22:14Z",
+            "timezone": "America/Denver",
+            "location": [
+                -104.9797069,
+                39.7367423
+            ],
+            "geo": {
+                "geometry": {
+                    "coordinates": [
+                        -104.9797069,
+                        39.7367423
+                    ],
+                    "type": "Point"
+                },
+                "placekey": "@5q9-bqk-y7q"
+            },
+            "scope": "locality",
+            "country": "US",
+            "place_hierarchies": [
+                [
+                    "6295630",
+                    "6255149",
+                    "6252001",
+                    "5417618",
+                    "5419396",
+                    "5419384"
+                ]
+            ],
+            "state": "active",
+            "brand_safe": true,
+            "private": false,
+            "predicted_event_spend": 2184,
+            "predicted_event_spend_industries": {
+                "accommodation": 0,
+                "hospitality": 1339,
+                "transportation": 845
+            }
+        },
+        {
+            "relevance": 0.93775964,
+            "id": "4UMfUV3LkHrFBddGTE",
+            "title": "Deth Rali",
+            "description": "",
+            "category": "concerts",
+            "labels": [
+                "concert",
+                "music"
+            ],
+            "rank": 39,
+            "local_rank": 52,
+            "phq_attendance": 281,
+            "entities": [
+                {
+                    "entity_id": "n8nRWP6R5jEgvU2pXz3ksj",
+                    "name": "Wax Trax Records",
+                    "type": "venue",
+                    "formatted_address": "638 E. 13th Ave.\nDenver, CO 80203\nUnited States of America"
+                }
+            ],
+            "duration": 0,
+            "start": "2023-08-06T18:00:00Z",
+            "end": "2023-08-06T18:00:00Z",
+            "updated": "2023-07-07T12:53:02Z",
+            "first_seen": "2023-05-04T01:58:27Z",
+            "timezone": "America/Denver",
+            "location": [
+                -104.9793124,
+                39.7368682
+            ],
+            "geo": {
+                "geometry": {
+                    "coordinates": [
+                        -104.9793124,
+                        39.7368682
+                    ],
+                    "type": "Point"
+                },
+                "placekey": "233-222@5q9-bqk-y7q"
+            },
+            "scope": "locality",
+            "country": "US",
+            "place_hierarchies": [
+                [
+                    "6295630",
+                    "6255149",
+                    "6252001",
+                    "5417618",
+                    "5419396",
+                    "5419384"
+                ]
+            ],
+            "state": "active",
+            "brand_safe": true,
+            "private": false,
+            "predicted_event_spend": 5430,
+            "predicted_event_spend_industries": {
+                "accommodation": 0,
+                "hospitality": 3330,
+                "transportation": 2100
+            }
+        },
+        {
+            "relevance": 0.92847884,
+            "id": "DtETxgyUZb8cTnTwan",
+            "title": "White Rose Motor Oil",
+            "description": "",
+            "category": "community",
+            "labels": [
+                "concert",
+                "music"
+            ],
+            "rank": 0,
+            "local_rank": 0,
+            "phq_attendance": null,
+            "entities": [
+                {
+                    "entity_id": "VW6WJqdPgSSeCkBW4bLc9C",
+                    "name": "Bang Up to the Elephant",
+                    "type": "venue",
+                    "formatted_address": "1310 Pearl St\nDenver, CO 80203\nUnited States of America"
+                }
+            ],
+            "duration": 0,
+            "start": "2023-08-27T19:00:00Z",
+            "end": "2023-08-27T19:00:00Z",
+            "updated": "2023-06-23T04:31:16Z",
+            "first_seen": "2023-06-23T02:17:03Z",
+            "timezone": "America/Denver",
+            "location": [
+                -104.9796384,
+                39.7372436
+            ],
+            "geo": {
+                "geometry": {
+                    "coordinates": [
+                        -104.9796384,
+                        39.7372436
+                    ],
+                    "type": "Point"
+                },
+                "placekey": "224-222@5q9-bqk-y7q"
+            },
+            "scope": "locality",
+            "country": "US",
+            "place_hierarchies": [
+                [
+                    "6295630",
+                    "6255149",
+                    "6252001",
+                    "5417618",
+                    "5419396",
+                    "5419384"
+                ]
+            ],
+            "state": "active",
+            "brand_safe": true,
+            "private": false
+        },
+        {
+            "relevance": 0.9258705,
+            "id": "8VXzEaXkW8rWmqrV2Z",
+            "title": "Cloudy Cabaret A Circus Burlesque Show",
+            "description": "Come clown around at the most sensual circus show in town!",
+            "category": "performing-arts",
+            "labels": [
+                "concert",
+                "music",
+                "performing-arts"
+            ],
+            "rank": 0,
+            "local_rank": 0,
+            "phq_attendance": null,
+            "entities": [],
+            "duration": 0,
+            "start": "2023-09-30T02:00:00Z",
+            "end": "2023-09-30T02:00:00Z",
+            "updated": "2023-07-19T19:42:15Z",
+            "first_seen": "2023-07-19T19:41:06Z",
+            "timezone": "America/Denver",
+            "location": [
+                -104.9832153,
+                39.7361379
+            ],
+            "geo": {
+                "geometry": {
+                    "coordinates": [
+                        -104.9832153,
+                        39.7361379
+                    ],
+                    "type": "Point"
+                },
+                "placekey": "226-222@5q9-bqk-xyv"
+            },
+            "scope": "locality",
+            "country": "US",
+            "place_hierarchies": [
+                [
+                    "6295630",
+                    "6255149",
+                    "6252001",
+                    "5417618",
+                    "5419396",
+                    "5419384"
+                ]
+            ],
+            "state": "active",
+            "brand_safe": false,
+            "private": false
+        },
+        {
+            "relevance": 0.92507666,
+            "id": "4pWS8mTR6sr43qEcdf",
+            "title": "Lowdown's BrewGrass Festival",
+            "description": "Come Party with us for our summer BrewGrass Beer Fest!",
+            "category": "festivals",
+            "labels": [
+                "festival",
+                "music"
+            ],
+            "rank": 45,
+            "local_rank": 59,
+            "phq_attendance": 555,
+            "entities": [],
+            "duration": 43200,
+            "start": "2023-08-05T17:00:00Z",
+            "end": "2023-08-06T05:00:00Z",
+            "updated": "2023-07-12T08:12:39Z",
+            "first_seen": "2023-07-12T08:12:03Z",
+            "timezone": "America/Denver",
+            "location": [
+                -104.9857089,
+                39.7293165
+            ],
+            "geo": {
+                "geometry": {
+                    "coordinates": [
+                        -104.9857089,
+                        39.7293165
+                    ],
+                    "type": "Point"
+                },
+                "placekey": "235@5q9-bqr-yvz"
+            },
+            "scope": "locality",
+            "country": "US",
+            "place_hierarchies": [
+                [
+                    "6295630",
+                    "6255149",
+                    "6252001",
+                    "5417618",
+                    "5419396",
+                    "5419384"
+                ]
+            ],
+            "state": "active",
+            "brand_safe": true,
+            "private": false,
+            "predicted_event_spend": 16226,
+            "predicted_event_spend_industries": {
+                "accommodation": 2820,
+                "hospitality": 8221,
+                "transportation": 5185
+            }
+        },
+        {
+            "relevance": 0.92420876,
+            "id": "BbJyHqpiDwG3ew8pE9",
+            "title": "That Damn Sasquatch",
+            "description": "",
+            "category": "concerts",
+            "labels": [
+                "concert",
+                "music"
+            ],
+            "rank": 39,
+            "local_rank": 54,
+            "phq_attendance": 290,
+            "entities": [
+                {
+                    "entity_id": "DMw648NS43hsL4F7cRPqNu",
+                    "name": "Lowdown Brewery + Kitchen",
+                    "type": "venue",
+                    "formatted_address": "800 Lincoln St\nDenver, CO 80203\nUnited States of America"
+                }
+            ],
+            "duration": 0,
+            "start": "2023-08-06T00:00:00Z",
+            "end": "2023-08-06T00:00:00Z",
+            "updated": "2023-07-07T10:38:42Z",
+            "first_seen": "2023-06-04T08:41:47Z",
+            "timezone": "America/Denver",
+            "location": [
+                -104.9857596,
+                39.7293173
+            ],
+            "geo": {
+                "geometry": {
+                    "coordinates": [
+                        -104.9857596,
+                        39.7293173
+                    ],
+                    "type": "Point"
+                },
+                "placekey": "235@5q9-bqr-yvz"
+            },
+            "scope": "locality",
+            "country": "US",
+            "place_hierarchies": [
+                [
+                    "6295630",
+                    "6255149",
+                    "6252001",
+                    "5417618",
+                    "5419396",
+                    "5419384"
+                ]
+            ],
+            "state": "active",
+            "brand_safe": true,
+            "private": false,
+            "predicted_event_spend": 5603,
+            "predicted_event_spend_industries": {
+                "accommodation": 0,
+                "hospitality": 3436,
+                "transportation": 2167
+            }
+        },
+        {
+            "relevance": 0.9136124,
+            "id": "5gnKp8cw8a8b2JHgcZ",
+            "title": "Future Joy",
+            "description": "",
+            "category": "concerts",
+            "labels": [
+                "concert",
+                "music"
+            ],
+            "rank": 54,
+            "local_rank": 66,
+            "phq_attendance": 1510,
+            "entities": [
+                {
+                    "entity_id": "VBBsXaaMizAAY8rpznyrSk",
+                    "name": "The Black Box",
+                    "type": "venue",
+                    "formatted_address": "314 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
+                }
+            ],
+            "duration": 0,
+            "start": "2023-09-02T03:00:00Z",
+            "end": "2023-09-02T03:00:00Z",
+            "updated": "2023-08-01T01:05:39Z",
+            "first_seen": "2023-08-01T00:58:28Z",
+            "timezone": "America/Denver",
+            "location": [
+                -104.983157,
+                39.73679
+            ],
+            "geo": {
+                "geometry": {
+                    "coordinates": [
+                        -104.983157,
+                        39.73679
+                    ],
+                    "type": "Point"
+                },
+                "placekey": "22d@5q9-bqk-xyv"
+            },
+            "scope": "locality",
+            "country": "US",
+            "place_hierarchies": [
+                [
+                    "6295630",
+                    "6255149",
+                    "6252001",
+                    "5417618",
+                    "5419396",
+                    "5419384"
+                ]
+            ],
+            "state": "active",
+            "brand_safe": true,
+            "private": false,
+            "predicted_event_spend": 44146,
+            "predicted_event_spend_industries": {
+                "accommodation": 7673,
+                "hospitality": 22367,
+                "transportation": 14106
+            }
+        },
+        {
+            "relevance": 0.9136124,
+            "id": "AeLSnZsJcooqj5vDhN",
+            "title": "Phaeleh",
+            "description": "Phaeleh is a mesmerizing concert event at The Black Box in Denver, Colorado, featuring the renowned producer and DJ known for his captivating blend of ambient dubstep and downtempo electronica. Prepare to be immersed in an ethereal audio-visual experience that seamlessly fuses intricate soundscapes with pulsating beats.",
+            "category": "concerts",
+            "labels": [
+                "concert",
+                "music"
+            ],
+            "rank": 52,
+            "local_rank": 64,
+            "phq_attendance": 1216,
+            "entities": [
+                {
+                    "entity_id": "VBBsXaaMizAAY8rpznyrSk",
+                    "name": "The Black Box",
+                    "type": "venue",
+                    "formatted_address": "314 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
+                }
+            ],
+            "duration": 0,
+            "start": "2023-08-23T03:00:00Z",
+            "end": "2023-08-23T03:00:00Z",
+            "updated": "2023-08-02T10:46:10Z",
+            "first_seen": "2023-06-26T01:04:50Z",
+            "timezone": "America/Denver",
+            "location": [
+                -104.983157,
+                39.73679
+            ],
+            "geo": {
+                "geometry": {
+                    "coordinates": [
+                        -104.983157,
+                        39.73679
+                    ],
+                    "type": "Point"
+                },
+                "placekey": "22d@5q9-bqk-xyv"
+            },
+            "scope": "locality",
+            "country": "US",
+            "place_hierarchies": [
+                [
+                    "6295630",
+                    "6255149",
+                    "6252001",
+                    "5417618",
+                    "5419396",
+                    "5419384"
+                ]
+            ],
+            "state": "active",
+            "brand_safe": true,
+            "private": false,
+            "predicted_event_spend": 35551,
+            "predicted_event_spend_industries": {
+                "accommodation": 6179,
+                "hospitality": 18012,
+                "transportation": 11360
+            }
+        },
+        {
+            "relevance": 0.9136124,
+            "id": "3vzNmCjqvdjTXczh6m",
+            "title": "So Sus, Vavn, and fyoomz",
+            "description": "",
+            "category": "concerts",
+            "labels": [
+                "concert",
+                "music"
+            ],
+            "rank": 54,
+            "local_rank": 66,
+            "phq_attendance": 1536,
+            "entities": [
+                {
+                    "entity_id": "VBBsXaaMizAAY8rpznyrSk",
+                    "name": "The Black Box",
+                    "type": "venue",
+                    "formatted_address": "314 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
+                }
+            ],
+            "duration": 0,
+            "start": "2023-08-20T03:00:00Z",
+            "end": "2023-08-20T03:00:00Z",
+            "updated": "2023-07-16T03:05:29Z",
+            "first_seen": "2023-07-16T02:58:41Z",
+            "timezone": "America/Denver",
+            "location": [
+                -104.983157,
+                39.73679
+            ],
+            "geo": {
+                "geometry": {
+                    "coordinates": [
+                        -104.983157,
+                        39.73679
+                    ],
+                    "type": "Point"
+                },
+                "placekey": "22d@5q9-bqk-xyv"
+            },
+            "scope": "locality",
+            "country": "US",
+            "place_hierarchies": [
+                [
+                    "6295630",
+                    "6255149",
+                    "6252001",
+                    "5417618",
+                    "5419396",
+                    "5419384"
+                ]
+            ],
+            "state": "active",
+            "brand_safe": true,
+            "private": false,
+            "predicted_event_spend": 44907,
+            "predicted_event_spend_industries": {
+                "accommodation": 7806,
+                "hospitality": 22752,
+                "transportation": 14349
+            }
+        },
+        {
+            "relevance": 0.9136124,
+            "id": "3rpaibJFHvraabaFWt",
+            "title": "Rendr",
+            "description": "",
+            "category": "concerts",
+            "labels": [
+                "concert",
+                "music"
+            ],
+            "rank": 54,
+            "local_rank": 66,
+            "phq_attendance": 1536,
+            "entities": [
+                {
+                    "entity_id": "VBBsXaaMizAAY8rpznyrSk",
+                    "name": "The Black Box",
+                    "type": "venue",
+                    "formatted_address": "314 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
+                }
+            ],
+            "duration": 0,
+            "start": "2023-08-19T03:00:00Z",
+            "end": "2023-08-19T03:00:00Z",
+            "updated": "2023-07-16T03:24:28Z",
+            "first_seen": "2023-07-16T02:58:41Z",
+            "timezone": "America/Denver",
+            "location": [
+                -104.983157,
+                39.73679
+            ],
+            "geo": {
+                "geometry": {
+                    "coordinates": [
+                        -104.983157,
+                        39.73679
+                    ],
+                    "type": "Point"
+                },
+                "placekey": "22d@5q9-bqk-xyv"
+            },
+            "scope": "locality",
+            "country": "US",
+            "place_hierarchies": [
+                [
+                    "6295630",
+                    "6255149",
+                    "6252001",
+                    "5417618",
+                    "5419396",
+                    "5419384"
+                ]
+            ],
+            "state": "active",
+            "brand_safe": true,
+            "private": false,
+            "predicted_event_spend": 44907,
+            "predicted_event_spend_industries": {
+                "accommodation": 7806,
+                "hospitality": 22752,
+                "transportation": 14349
+            }
+        },
+        {
+            "relevance": 0.9136124,
+            "id": "FEQEThCKaoskH8hXEh",
+            "title": "The Black Box & Recon DNB present: Trace",
+            "description": "Join us at The Black Box in Denver, Colorado, for an electrifying night of drum and bass as The Black Box & Recon DNB proudly present: Trace. Immerse yourself in the pulsating beats and energetic tunes brought to you by some of the finest artists in the genre, making this an unforgettable event for all drum and bass enthusiasts.",
+            "category": "concerts",
+            "labels": [
+                "concert",
+                "music"
+            ],
+            "rank": 52,
+            "local_rank": 64,
+            "phq_attendance": 1216,
+            "entities": [
+                {
+                    "entity_id": "VBBsXaaMizAAY8rpznyrSk",
+                    "name": "The Black Box",
+                    "type": "venue",
+                    "formatted_address": "314 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
+                }
+            ],
+            "duration": 18000,
+            "start": "2023-08-13T03:00:00Z",
+            "end": "2023-08-13T08:00:00Z",
+            "updated": "2023-08-03T10:13:55Z",
+            "first_seen": "2023-07-02T13:34:10Z",
+            "timezone": "America/Denver",
+            "location": [
+                -104.983157,
+                39.73679
+            ],
+            "geo": {
+                "geometry": {
+                    "coordinates": [
+                        -104.983157,
+                        39.73679
+                    ],
+                    "type": "Point"
+                },
+                "placekey": "22d@5q9-bqk-xyv"
+            },
+            "scope": "locality",
+            "country": "US",
+            "place_hierarchies": [
+                [
+                    "6295630",
+                    "6255149",
+                    "6252001",
+                    "5417618",
+                    "5419396",
+                    "5419384"
+                ]
+            ],
+            "state": "active",
+            "brand_safe": true,
+            "private": false,
+            "predicted_event_spend": 71102,
+            "predicted_event_spend_industries": {
+                "accommodation": 12359,
+                "hospitality": 36024,
+                "transportation": 22719
+            }
+        },
+        {
+            "relevance": 0.9136124,
+            "id": "BnpGohX7nTWM6GqJ2T",
+            "title": "Verzuz Song Battle  Live Host Mama Jones Ceolarry",
+            "description": "Record Breakers Verzuz Song Battle Hosted by Vh1 Mama Jones & CEOLARRY",
+            "category": "concerts",
+            "labels": [
+                "concert",
+                "music"
+            ],
+            "rank": 48,
+            "local_rank": 60,
+            "phq_attendance": 800,
+            "entities": [
+                {
+                    "entity_id": "VBBsXaaMizAAY8rpznyrSk",
+                    "name": "The Black Box",
+                    "type": "venue",
+                    "formatted_address": "314 East 13th Avenue\nDenver, CO 80203\nUnited States of America"
+                }
+            ],
+            "duration": 10800,
+            "start": "2023-08-06T04:00:00Z",
+            "end": "2023-08-06T07:00:00Z",
+            "updated": "2023-07-26T03:39:31Z",
+            "first_seen": "2023-07-26T03:36:05Z",
+            "timezone": "America/Denver",
+            "location": [
+                -104.983157,
+                39.73679
+            ],
+            "geo": {
+                "geometry": {
+                    "coordinates": [
+                        -104.983157,
+                        39.73679
+                    ],
+                    "type": "Point"
+                },
+                "placekey": "22d@5q9-bqk-xyv"
+            },
+            "scope": "locality",
+            "country": "US",
+            "place_hierarchies": [
+                [
+                    "6295630",
+                    "6255149",
+                    "6252001",
+                    "5417618",
+                    "5419396",
+                    "5419384"
+                ]
+            ],
+            "state": "active",
+            "brand_safe": true,
+            "private": false,
+            "predicted_event_spend": 46778,
+            "predicted_event_spend_industries": {
+                "accommodation": 8131,
+                "hospitality": 23700,
+                "transportation": 14947
+            }
+        }
+    ]
+}

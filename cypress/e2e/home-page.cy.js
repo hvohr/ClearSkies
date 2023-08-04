@@ -15,7 +15,7 @@ beforeEach(() => {
   }).as('locationData')
 })
 
-describe('User should see a home page proper elements', () => {
+describe('User should see a functioning home page with proper elements', () => {
   it('Should have proper header elements', () => {
     cy.visit("http://localhost:3000/")
       .wait('@locationData')

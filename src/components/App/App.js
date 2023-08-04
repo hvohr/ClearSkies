@@ -12,8 +12,6 @@ function App() {
   const [currentLong, setCurrentLong] = useState('')
   const [currentCity, setCurrentCity] = useState('')
   const [currentState, setCurrentState] = useState('')
-  const [events, setEvents] = useState([])
-  const [reload, setReload] = useState(sessionStorage.getItem('reload'))
   const [category, setCategory] = useState('concerts,sports,community,expos,festivals,performing-arts')
   const [newLat, setNewLat] = useState('')
   const [newLong, setNewLong] = useState('')
@@ -31,7 +29,6 @@ function App() {
     setCurrentLong(longitude)
   }
   function fetchCity() {
-    setReload(false)
     if (!currentLong || !currentLat) {
       return false
     } else
@@ -45,10 +42,6 @@ function App() {
     setCategory(newCategory)
   }
 
-  // function reloadPage() {
-  //   setReload((current) => !current)
-  //   sessionStorage.setItem('reload', reload)
-  // }
 
   useEffect(() => {
     lowercase()
@@ -65,12 +58,11 @@ function App() {
     <div>
       <section>
         <Routes>
-          <Route path='/' element={<Home fetchError={fetchError} currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong} setEvents={setEvents} category={category} setNewLat={setNewLat} setNewLong={setNewLong} />} />
-          <Route path='/dailyforecast/' element={<DailyForecast currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong}/>} />
-          <Route path='/cityevents/' element={<CityEvents events={events} setEvents={setEvents} newLong={newLong} newLat={newLat}/>} />
+          <Route path='/' element={<Home fetchError={fetchError} currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong} category={category} setNewLat={setNewLat} setNewLong={setNewLong} />} />
+          <Route path='/dailyforecast' element={<DailyForecast currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong}/>} />
+          <Route path='/cityevents' element={<CityEvents currentLat={currentLat} currentLong={currentLong} newLong={newLong} newLat={newLat}/>} />
           <Route path='*' element={<Error/>} />
         </Routes>
-        {/* {reload && <Navigate to='/home' />} */}
       </section>
     </div>
   );
