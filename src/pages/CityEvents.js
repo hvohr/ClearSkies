@@ -1,6 +1,8 @@
 import NavBar from './NavBar'
+import './pages.css'
 import { useEffect, useState } from 'react'
 import { fetchEvents, fetchLongLat } from '../components/apiCall'
+import {PropTypes} from 'prop-types'
 
 
 function CityEvents(props) {
@@ -25,7 +27,6 @@ function CityEvents(props) {
   })
 
   useEffect(() => {
-    console.log(events)
     fetchAllEvents()
   }, [props.currentLat, props.newLat, lowercase])
 
@@ -52,18 +53,18 @@ function CityEvents(props) {
   }
 
   return (
-    <section>
+    <section className='event-whole-container'>
       <NavBar />
       {!fetchError.error && <section>
         <h1 className='event-title'>Upcoming Events</h1>
         <div className='radio-container'>
           <div className='radio-background-container' onChange={event => onChangeValue(event)}>
-            <input type="radio" value="Concerts" name="category" /> Concerts
-            <input type="radio" value="Community" name="category" /> Community
-            <input type="radio" value="Expos" name="category" /> Expos
-            <input type="radio" value="Festivals" name="category" /> Festivals
-            <input type="radio" value="Sports" name="category" /> Sports
-            <input type="radio" value="Performing-Arts" name="category" /> Performing Arts</div>
+            <label><input className='radio' type="radio" value="Concerts" name="category" /> Concerts</label>
+            <label><input className='radio' type="radio" value="Community" name="category" /> Community</label>
+            <label><input className='radio' type="radio" value="Expos" name="category" /> Expos</label>
+            <label><input className='radio' type="radio" value="Festivals" name="category" /> Festivals</label>
+            <label><input className='radio' type="radio" value="Sports" name="category" /> Sports</label>
+            <label><input className='radio' type="radio" value="Performing-Arts" name="category" /> Performing Arts</label></div>
         </div>
         {!events && <h1 className='loading-events'>Loading Events....</h1>}
         <section className='filtered-events'>
@@ -73,6 +74,13 @@ function CityEvents(props) {
       {fetchError.error && <div className='fetch-failed-container'><h1 className='fetch-failed-response'>{`${fetchError.response}`}</h1><img alt="sad cloud raining inside a blue box" className='fetch-failed-image' src={require('../components/images/sad_cloud.png')}></img></div>}
     </section>
   )
+}
+
+CityEvents.propTypes = {
+  currentLat: PropTypes.any,
+  currentLong: PropTypes.any,
+  newLong: PropTypes.any,
+  newLat: PropTypes.any
 }
 
 export default CityEvents

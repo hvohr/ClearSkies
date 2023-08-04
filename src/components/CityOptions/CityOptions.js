@@ -1,3 +1,6 @@
+import './CityOptions.css'
+import {PropTypes} from 'prop-types'
+
 function CityOptions(props) {
   return (
     <section className='city-options-container'>
@@ -9,5 +12,10 @@ function CityOptions(props) {
     </section>
   )
 }
+
+CityOptions.propTypes = {
+  changed: PropTypes.string,
+  cityList: PropTypes.array
+ }
 
 export default CityOptions

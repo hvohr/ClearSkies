@@ -1,4 +1,6 @@
-import '../../pages/pages.css'
+import './WeatherCard.css'
+import {PropTypes} from 'prop-types'
+
 
 function DailyWeatherCard(props) {
   let filterDays = props.daily.map((day) => {
@@ -22,6 +24,13 @@ function DailyWeatherCard(props) {
       {props.changedState !== "..." && filterDays}
     </div>
   )
+}
+
+DailyWeatherCard.propTypes = {
+  date: PropTypes.string,
+  changedCity: PropTypes.string,
+  changedState: PropTypes.string,
+  daily: PropTypes.array
 }
 
 export default DailyWeatherCard

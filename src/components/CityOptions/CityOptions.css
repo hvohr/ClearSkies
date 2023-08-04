@@ -1,0 +1,20 @@
+.city-options-container {
+  margin-top: 20px;
+  display: flex;
+  align-content: center;
+}
+
+.city-button {
+  margin: 10px;
+  background-color: rgba(255, 255, 255, 0.869);
+  color: rgb(9, 9, 9);
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  border: 1px solid black;
+  transition: all .2s ease-in-out;
+}
+
+.city-button:hover {
+  transform: scale(1.1);
+}

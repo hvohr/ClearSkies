@@ -6,6 +6,8 @@ import HomeWeatherCard from '../components/WeatherCard/HomeWeatherCard'
 import Form from '../components/Form/Form'
 import CityOptions from '../components/CityOptions/CityOptions'
 import { Link } from 'react-router-dom'
+import {PropTypes} from 'prop-types'
+
 
 function Home(props) {
   const [currentTemp, setCurrentTemp] = useState('')
@@ -160,6 +162,14 @@ function Home(props) {
       {fetchError.error && <div className='fetch-failed-container'><h1 className='fetch-failed-response'>{`${fetchError.response}`}</h1><img alt="sad cloud raining inside a blue box" className='fetch-failed-image' src={require('../components/images/sad_cloud.png')}></img></div>}
     </div>
   )
+}
+
+Home.propTypes = {
+  currentLat: PropTypes.any,
+  currentLong: PropTypes.any,
+  currentCity: PropTypes.string,
+  currentState: PropTypes.string,
+  category: PropTypes.string
 }
 
 export default Home

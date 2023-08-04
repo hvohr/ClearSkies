@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import '../../pages/pages.css'
+import '../Form/Form.css'
 
 
 function DailyForm(props) {
