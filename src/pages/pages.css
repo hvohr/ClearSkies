@@ -29,6 +29,14 @@
   }
 }
 
+@media only screen and (min-width: 800px) {
+  .current-weather-container {
+    height: 50%;
+    width: 50%;
+  }
+}
+
+
 .conditional {
   font-size: 20px;
   color: aliceblue;
