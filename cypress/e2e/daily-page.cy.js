@@ -62,6 +62,10 @@ describe('User should see a functioning daily page with proper elements', () => 
       .wait('@cityData')
       .wait('@latLongData')
       .get('.form-input').type('Denver')
+      cy.intercept("GET", 'https://api.openweathermap.org/data/3.0/onecall*', {
+        statusCode: 200,
+        fixture: "newLatLongData.json"
+      }).as('newLatLongData')
       .get('.form-button').click()
       .get('.city-options-container').should('be.visible')
       .get('.city-options-container').children().should('have.lengthOf', 4)

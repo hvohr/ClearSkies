@@ -77,6 +77,10 @@ describe('User should see a functioning home page with proper elements', () => {
       .wait('@cityData')
       .wait('@latLongData')
       .get('.form-input').type('Denver')
+    cy.intercept("GET", 'https://api.openweathermap.org/data/3.0/onecall*', {
+      statusCode: 200,
+      fixture: "newLatLongData.json"
+    }).as('newLatLongData')
       .get('.form-button').click()
       .get('.city-options-container').should('be.visible')
       .get('.event-container').should('not.be.visible')
