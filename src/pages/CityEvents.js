@@ -1,4 +1,5 @@
 import NavBar from './NavBar'
+import './pages.css'
 import { useEffect, useState } from 'react'
 import { fetchEvents, fetchLongLat } from '../components/apiCall'
 
@@ -25,7 +26,6 @@ function CityEvents(props) {
   })
 
   useEffect(() => {
-    console.log(events)
     fetchAllEvents()
   }, [props.currentLat, props.newLat, lowercase])
 
@@ -52,7 +52,7 @@ function CityEvents(props) {
   }
 
   return (
-    <section>
+    <section className='event-whole-container'>
       <NavBar />
       {!fetchError.error && <section>
         <h1 className='event-title'>Upcoming Events</h1>
