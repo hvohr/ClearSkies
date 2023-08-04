@@ -33,6 +33,7 @@ function CityEvents(props) {
     if (props.newLat !== '') {
       fetchEvents(props.newLat, props.newLong, lowercase).then(
         data => {
+          console.log(data)
           setEvents(data.results)
         }
       ).catch(error => setFetchError({ error: true, response: error }))
