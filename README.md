@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# ClearSkies
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Abstract: 
+Welcome to ClearSkies! A weather application that lets a user know a cities current and daily weather. This app also lets you search cities and view real time weather information! It is only available to people in the US and to get the full experience, make sure you have location services turned on - this allows ClearSkies to obtain your current weather right outside your front door. This app also allows to a user to see what current events are happening in their city. A user can view a general list of events but they also have the option of filtering down if they wish to view only concerts or other similar categories. A user can see events in any city they enter on the home page! I hope you enjoy ClearSkies.
 
-## Available Scripts
+## Installation Instructions
+In order to clone this application:
+- Clone this repository using the SSH key into your local machine
+- cd (change directory) into the project.
+- Run `npm install`
+- Run `npm start` to see the localhost in your browser.
+- [Deploy Link](https://clearskies.vercel.app/) for deployed viewing
 
-In the project directory, you can run:
+### Preview of App:
+- Desktop View
+![Screen Shot 2023-08-04 at 5 04 14 PM](https://user-images.githubusercontent.com/123392693/258546866-a7612aa0-875f-44ff-98b8-a310dd6ca624.jpeg)
+![Screen Shot 2023-08-04 at 5 03 58 PM](https://user-images.githubusercontent.com/123392693/258546884-adec6a16-1b7b-44fd-8b46-f68b5ad3bb99.jpeg)
+![Screen Shot 2023-08-04 at 5 03 41 PM](https://user-images.githubusercontent.com/123392693/258546918-9b5c4cd5-1acd-4420-9fb6-57c04e56565a.jpeg)
 
-### `npm start`
+- Mobile View
+![Screen Shot 2023-08-04 at 5 04 35 PM](https://user-images.githubusercontent.com/123392693/258546842-1e295987-5edf-4405-9042-d0d100d475f8.jpeg)
+![Screen Shot 2023-08-04 at 5 04 57 PM](https://user-images.githubusercontent.com/123392693/258546904-44678648-7f01-4f4d-9c2e-7f0413144560.jpeg)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Context:
+I am currently in Mod 3 of the Turing Frontend Development Program. A total of 30 hours were spent on this Showcase project.
 
-### `npm test`
+## Contributors
+<table>
+     <tr>
+        <td> Hollis Vohr <a href="https://github.com/hvohr">Github</td>
+    </tr>
+    <tr>
+        <td><img src="https://avatars.githubusercontent.com/u/123392693?v=4" alt="Hollis GH img"
+    width="150" height="auto" /></td>
+</table>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Learning Goals:
+- Utilize foundational React concepts
+- Implement Cypress E2E Testing
+- Implement React Router
+- Write DRY, reusable code that follows SRP and trends toward function purity
+- Make network requests to retrieve data from the server and post data from the server.
+- Utilize REST Api's 
+- Maintain proper git workflow and practices.
 
-### `npm run build`
+### Tech Stack
+- JavaScript, CSS/HTML, Cypress, Webpack, React, React Router, FETCH API's
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Dependencies
+npm i
