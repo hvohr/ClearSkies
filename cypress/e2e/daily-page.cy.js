@@ -78,5 +78,6 @@ describe('User should see a home page proper elements', () => {
       .get('.city-options-container > :nth-child(2)').click()
       .get('.city-options-container').should('not.exist')
       .get('.daily-titles').invoke('text').should('contain', "Denver, Iowa")
+      .get(':nth-child(1) > .weather-icons, .daily-card-container > :nth-child(1) > :nth-child(4), :nth-child(1) > .daily-summary,:nth-child(1) > .extra-daily-info').should('be.visible')
   })
 })
