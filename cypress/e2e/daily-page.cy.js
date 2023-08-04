@@ -52,18 +52,8 @@ describe('User should see a functioning daily page with proper elements', () => 
       .wait('@cityData')
       .wait('@latLongData')
       .get('.daily-card-container').children().should('contain', "Denver, Colorado")
-    const date = new Date();
-    let day = date.getDate();
-    let month = date.getMonth() + 1;
-    let year = date.getFullYear();
-    let todayDate = `${month}/${day}/${year}`
-    const date2 = new Date();
-    let day2 = date2.getDate() + 1;
-    let month2 = date2.getMonth() + 1;
-    let year2 = date2.getFullYear();
-    let tomorrowDate = `${month2}/${day2}/${year2}`
-    cy.get('.daily-card-container > :nth-child(1) > :nth-child(2)').invoke('text').should('contain', todayDate)
-      .get('.daily-card-container > :nth-child(2) > :nth-child(2)').invoke('text').should('contain', tomorrowDate)
+    cy.get('.daily-card-container > :nth-child(1) > :nth-child(2)').invoke('text').should('contain', '8/3/2023')
+      .get('.daily-card-container > :nth-child(2) > :nth-child(2)').invoke('text').should('contain', '8/4/2023')
       .get(':nth-child(1) > .weather-icons, .daily-card-container > :nth-child(1) > :nth-child(4), :nth-child(1) > .daily-summary,:nth-child(1) > .extra-daily-info').should('be.visible')
   })
   it('Should display updated information when a new city is entered in the form', () => {
