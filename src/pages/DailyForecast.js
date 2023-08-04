@@ -4,6 +4,7 @@ import { fetchWeather, fetchLongLat } from '../components/apiCall'
 import CityOptions from '../components/CityOptions/CityOptions'
 import DailyWeatherCard from '../components/WeatherCard/DailyWeatherCard'
 import { useState, useEffect } from 'react'
+import {useParams} from 'react-router-dom'
 
 function DailyForecast(props) {
   const [changedCity, setChangedCity] = useState('')
@@ -27,7 +28,7 @@ function DailyForecast(props) {
 
     return `${day}, ${month} ${date}`
   }
-  
+
   function submitDailyCity(newCity) {
     setChangedCity(newCity.city)
     setChangedState("...")

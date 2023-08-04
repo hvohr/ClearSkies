@@ -66,8 +66,8 @@ function App() {
       <section>
         <Routes>
           <Route path='/' element={<Home fetchError={fetchError} currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong} setEvents={setEvents} category={category} setNewLat={setNewLat} setNewLong={setNewLong} />} />
-          <Route path='/dailyforecast' element={<DailyForecast currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong}/>} />
-          <Route path='/cityevents' element={<CityEvents events={events} setEvents={setEvents} newLong={newLong} newLat={newLat}/>} />
+          <Route path='/dailyforecast/' element={<DailyForecast currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong}/>} />
+          <Route path='/cityevents/' element={<CityEvents events={events} setEvents={setEvents} newLong={newLong} newLat={newLat}/>} />
           <Route path='*' element={<Error/>} />
         </Routes>
         {/* {reload && <Navigate to='/home' />} */}

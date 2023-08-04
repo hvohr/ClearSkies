@@ -71,7 +71,7 @@ describe('User should see a home page proper elements', () => {
       .get('.more-info-buttons').click()
       .get(".more-information > section > :nth-child(1), .more-information > section > :nth-child(2), .more-information > section > :nth-child(3), .more-information > section > :nth-child(4)").should('not.exist')
   })
-  it('Should give user city options when city is entered in form', () => {
+  it('Should give user city options when city is entered in form and then update form', () => {
     cy.visit("http://localhost:3000/")
       .wait('@locationData')
       .wait('@cityData')
