@@ -84,7 +84,7 @@ describe('User should see a functioning home page with proper elements', () => {
       .get('.city-options-container > :nth-child(4)').click()
       .get('.event-container').should('be.visible')
       .get('.current-weather-container').invoke('text')
-      .should('contain', 'Current Weather for Denver, Pennsylvania')
+      .should('contain', 'Current Weather for Denver, Iowa')
       .get('.current-weather-card > :nth-child(3), .current-weather-card > :nth-child(2), .current-weather-card > :nth-child(1)').should('be.visible')
   })
 })

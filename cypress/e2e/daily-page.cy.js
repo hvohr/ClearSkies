@@ -13,6 +13,21 @@ beforeEach(() => {
     statusCode: 200,
     fixture: "locationData.json"
   }).as('locationData')
+
+  cy.intercept("GET", 'https://api.openweathermap.org/data/3.0/onecall*', {
+    statusCode: 200,
+    fixture: "newLatLongData.json"
+  }).as('newLatLongData')
+
+  cy.intercept("GET", 'https://api.openweathermap.org/geo/1.0/direct*', {
+    statusCode: 200,
+    fixture: "NewCityData.json"
+  }).as('NewCityData')
+
+  cy.intercept("GET", 'https://api.openweathermap.org/geo/1.0/reverse*', {
+    statusCode: 200,
+    fixture: "newLocationData.json"
+  }).as('newLocationData')
 })
 
 describe('User should see a functioning daily page with proper elements', () => {
