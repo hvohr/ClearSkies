@@ -4,6 +4,7 @@ import { fetchWeather, fetchLongLat } from '../components/apiCall'
 import CityOptions from '../components/CityOptions/CityOptions'
 import DailyWeatherCard from '../components/WeatherCard/DailyWeatherCard'
 import { useState, useEffect } from 'react'
+import {useParams} from 'react-router-dom'
 
 function DailyForecast(props) {
   const [changedCity, setChangedCity] = useState('')
@@ -27,12 +28,6 @@ function DailyForecast(props) {
 
     return `${day}, ${month} ${date}`
   }
-
-  useEffect(() => {
-    window.onbeforeunload = function() {
-      return props.reload()
-    }
-  })
 
   function submitDailyCity(newCity) {
     setChangedCity(newCity.city)
@@ -111,6 +106,7 @@ function DailyForecast(props) {
           <h1 className='daily-forecast-title'>Next 8 Day Forecast</h1>
           <DailyForm submitDailyCity={submitDailyCity} checkChange={checkChange} />
           {invalid && <h2 className='empty-error'>Please enter a valid city</h2>}
+
           {(daily.length === 0 && props.changedState === "...") && <h1>Loading...</h1>}
           {(showButtons === true && changed === true) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
         </div>

@@ -1,21 +1,17 @@
 import NavBar from './NavBar'
 import { useEffect, useState } from 'react'
-import { fetchEvents } from '../components/apiCall'
+import { fetchEvents, fetchLongLat } from '../components/apiCall'
+
 
 function CityEvents(props) {
   const [lowercase, setLowercase] = useState('concerts,sports,community,expos,festivals,performing-arts')
   const [fetchError, setFetchError] = useState({ error: false, response: '' })
+  const [events, setEvents] = useState([])
 
-  useEffect(() => {
-    window.onbeforeunload = function() {
-      return props.reload()
-    }
-  })
-
-  let filteredEvents = props.events.map((list) => {
+  let filteredEvents = events.map((list) => {
     let d = new Date(list.start)
     return (
-      <section key={Date.now() + props.events.indexOf(list)} className='event-information-container'>
+      <section key={Date.now() + events.indexOf(list)} className='event-information-container'>
         <div className='event-title-container'>
           <h2 className='event-list-title'>{list.category} : {list.title} </h2>
           <h3 className='event-date'>{d.toDateString()}</h3>
@@ -28,21 +24,27 @@ function CityEvents(props) {
     )
   })
 
-  function fetchFilteredCityEvents() {
-    if (!props.newLat || !props.newLong || !lowercase) {
-      return false
-    } else {
+  useEffect(() => {
+    console.log(events)
+    fetchAllEvents()
+  }, [props.currentLat, props.newLat, lowercase])
+
+  function fetchAllEvents() {
+    if (props.newLat !== '') {
       fetchEvents(props.newLat, props.newLong, lowercase).then(
         data => {
-          props.setEvents(data.results)
+          console.log(data)
+          setEvents(data.results)
+        }
+      ).catch(error => setFetchError({ error: true, response: error }))
+    } else if (props.currentLat !== '') {
+      fetchEvents(props.currentLat, props.currentLong, lowercase).then(
+        data => {
+          setEvents(data.results)
         }
       ).catch(error => setFetchError({ error: true, response: error }))
     }
   }
-
-  useEffect(() => {
-    fetchFilteredCityEvents()
-  }, [lowercase])
 
   function onChangeValue(event) {
     let lowercase = event.target.value.toLowerCase()
@@ -51,8 +53,8 @@ function CityEvents(props) {
 
   return (
     <section>
+      <NavBar />
       {!fetchError.error && <section>
-        <NavBar />
         <h1 className='event-title'>Upcoming Events</h1>
         <div className='radio-container'>
           <div className='radio-background-container' onChange={event => onChangeValue(event)}>
@@ -63,7 +65,7 @@ function CityEvents(props) {
             <input type="radio" value="Sports" name="category" /> Sports
             <input type="radio" value="Performing-Arts" name="category" /> Performing Arts</div>
         </div>
-        {!props.events.length && <h1 className='loading-events'>Loading Events....</h1>}
+        {!events && <h1 className='loading-events'>Loading Events....</h1>}
         <section className='filtered-events'>
           {filteredEvents}
         </section>

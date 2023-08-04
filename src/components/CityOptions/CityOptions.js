@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 function CityOptions(props) {
   return (
     <section className='city-options-container'>
