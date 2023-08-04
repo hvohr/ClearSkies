@@ -81,7 +81,7 @@ describe('User should see a functioning home page with proper elements', () => {
       .get('.city-options-container').should('be.visible')
       .get('.event-container').should('not.be.visible')
       .get('.loading-icon').should('be.visible')
-      .get('.city-options-container > :nth-child(4)').click()
+      .get('.city-options-container > :nth-child(2)').click()
       .get('.event-container').should('be.visible')
       .get('.current-weather-container').invoke('text')
       .should('contain', 'Current Weather for Denver, Iowa')
