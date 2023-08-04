@@ -59,12 +59,12 @@ function CityEvents(props) {
         <h1 className='event-title'>Upcoming Events</h1>
         <div className='radio-container'>
           <div className='radio-background-container' onChange={event => onChangeValue(event)}>
-            <input type="radio" value="Concerts" name="category" /> Concerts
-            <input type="radio" value="Community" name="category" /> Community
-            <input type="radio" value="Expos" name="category" /> Expos
-            <input type="radio" value="Festivals" name="category" /> Festivals
-            <input type="radio" value="Sports" name="category" /> Sports
-            <input type="radio" value="Performing-Arts" name="category" /> Performing Arts</div>
+            <label><input className='radio' type="radio" value="Concerts" name="category" /> Concerts</label>
+            <label><input className='radio' type="radio" value="Community" name="category" /> Community</label>
+            <label><input className='radio' type="radio" value="Expos" name="category" /> Expos</label>
+            <label><input className='radio' type="radio" value="Festivals" name="category" /> Festivals</label>
+            <label><input className='radio' type="radio" value="Sports" name="category" /> Sports</label>
+            <label><input className='radio' type="radio" value="Performing-Arts" name="category" /> Performing Arts</label></div>
         </div>
         {!events && <h1 className='loading-events'>Loading Events....</h1>}
         <section className='filtered-events'>

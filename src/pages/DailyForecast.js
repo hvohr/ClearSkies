@@ -1,4 +1,6 @@
 import NavBar from '../pages/NavBar'
+import '../pages/pages.css'
+import '../components/WeatherCard/WeatherCard.css'
 import DailyForm from '../components/DailyForm/DailyForm'
 import { fetchWeather, fetchLongLat } from '../components/apiCall'
 import CityOptions from '../components/CityOptions/CityOptions'
