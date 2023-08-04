@@ -4,7 +4,7 @@ import { fetchWeather, fetchLongLat } from '../components/apiCall'
 import CityOptions from '../components/CityOptions/CityOptions'
 import DailyWeatherCard from '../components/WeatherCard/DailyWeatherCard'
 import { useState, useEffect } from 'react'
-import {useParams} from 'react-router-dom'
+import {PropTypes} from 'prop-types'
 
 function DailyForecast(props) {
   const [changedCity, setChangedCity] = useState('')
@@ -117,6 +117,13 @@ function DailyForecast(props) {
       {fetchError.error && <div className='fetch-failed-container'><h1 className='fetch-failed-response'>{`${fetchError.response}`}</h1><img alt="sad cloud raining inside a blue box" className='fetch-failed-image' src={require('../components/images/sad_cloud.png')}></img></div>}
     </section>
   )
+}
+
+DailyForecast.propTypes = {
+  currentLat: PropTypes.string,
+  currentLong: PropTypes.string,
+  currentCity: PropTypes.string,
+  currentState: PropTypes.string
 }
 
 

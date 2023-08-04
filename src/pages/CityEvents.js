@@ -2,6 +2,7 @@ import NavBar from './NavBar'
 import './pages.css'
 import { useEffect, useState } from 'react'
 import { fetchEvents, fetchLongLat } from '../components/apiCall'
+import {PropTypes} from 'prop-types'
 
 
 function CityEvents(props) {
@@ -73,6 +74,13 @@ function CityEvents(props) {
       {fetchError.error && <div className='fetch-failed-container'><h1 className='fetch-failed-response'>{`${fetchError.response}`}</h1><img alt="sad cloud raining inside a blue box" className='fetch-failed-image' src={require('../components/images/sad_cloud.png')}></img></div>}
     </section>
   )
+}
+
+CityEvents.propTypes = {
+  currentLat: PropTypes.string,
+  currentLong: PropTypes.string,
+  newLong: PropTypes.string,
+  newLat: PropTypes.string
 }
 
 export default CityEvents

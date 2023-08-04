@@ -1,5 +1,6 @@
 import './WeatherCard.css'
 import { useState } from 'react'
+import { PropTypes } from 'prop-types'
 
 function HomeWeatherCard(props) {
   const [moreInfo, setMoreInfo] = useState(true)
@@ -20,10 +21,10 @@ function HomeWeatherCard(props) {
   return (
     <div>
       <section className='current-weather-card'>
-       {(props.currentWeatherIcon && (props.changedState === "...") === false) && <img alt={`small current weather icon of ${props.currentDescription}`} className='weather-icons' src={(`https://openweathermap.org/img/wn/${props.currentWeatherIcon}@2x.png`)}></img>}
-       {props.changedState === "..." && <img className='loading-icon' alt="loading circle icon dashed design" src={require('../images/loading.png')}></img>}
-       {(props.changedState === "...") === false && <h3>{props.currentTemp} F</h3>}
-       {(props.changedState === "...") === false &&  <h3>{props.currentDescription}</h3>}
+        {(props.currentWeatherIcon && (props.changedState === "...") === false) && <img alt={`small current weather icon of ${props.currentDescription}`} className='weather-icons' src={(`https://openweathermap.org/img/wn/${props.currentWeatherIcon}@2x.png`)}></img>}
+        {props.changedState === "..." && <img className='loading-icon' alt="loading circle icon dashed design" src={require('../images/loading.png')}></img>}
+        {(props.changedState === "...") === false && <h3>{props.currentTemp} F</h3>}
+        {(props.changedState === "...") === false && <h3>{props.currentDescription}</h3>}
       </section>
       <section className='more-information'>
         {(!moreInfo) && moreInformation}
@@ -32,6 +33,17 @@ function HomeWeatherCard(props) {
       </section>
     </div>
   )
+}
+
+HomeWeatherCard.propTypes = {
+  changedState: PropTypes.string,
+  currentWeatherIcon: PropTypes.string,
+  currentTemp: PropTypes.string,
+  currentDescription: PropTypes.string,
+  currentWindSpeed: PropTypes.string,
+  currentCloudCover: PropTypes.string,
+  currentUVI: PropTypes.string,
+  currentFeelsLike: PropTypes.string
 }
 
 export default HomeWeatherCard
