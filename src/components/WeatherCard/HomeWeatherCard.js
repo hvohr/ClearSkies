@@ -4,7 +4,7 @@ import { PropTypes } from 'prop-types'
 
 function HomeWeatherCard(props) {
   const [moreInfo, setMoreInfo] = useState(true)
-  let moreInformation = <section>
+  let moreInformation = <section className='more-information-container'>
     {(props.changedState === "...") === false && <h3>Feels Like: &nbsp;&nbsp;  {props.currentFeelsLike} F</h3>}
     {(props.changedState === "...") === false && <h3>Cloud Cover:  &nbsp;&nbsp; {props.currentCloudCover}%</h3>}
     {(props.changedState === "...") === false && <h3>UV Index:  &nbsp;&nbsp; {props.currentUVI}</h3>}
