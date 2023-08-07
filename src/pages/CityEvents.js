@@ -10,6 +10,7 @@ function CityEvents(props) {
   const [fetchError, setFetchError] = useState({ error: false, response: '' })
   const [events, setEvents] = useState([])
 
+
 function googleSearch(query) {
   return window.open('http://google.com/search?q='+ query)
 }

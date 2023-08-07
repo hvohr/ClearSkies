@@ -20,6 +20,8 @@ function DailyForecast(props) {
   const [daily, setDaily] = useState([])
   const [fetchError, setFetchError] = useState({ error: false, response: '' })
   const [invalid, setInvalid] = useState(false)
+  const [alertMessageOff, setAlertMessageOff] = useState(true)
+
 
   const dateBuilder = (d) => {
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -108,11 +110,11 @@ function DailyForecast(props) {
       {!fetchError.error && <section>
         <div className='daily-top-container'>
           <h1 className='daily-forecast-title'>Next 8 Day Forecast</h1>
-          <DailyForm submitDailyCity={submitDailyCity} checkChange={checkChange} />
+          <DailyForm setAlertMessageOff={setAlertMessageOff} submitDailyCity={submitDailyCity} checkChange={checkChange} />
           {invalid && <h2 className='empty-error'>Please enter a valid city</h2>}
           {((!props.alert && daily.length === 0) || props.changedState === "...") && <h1>Loading...</h1>}
           {(showButtons === true && changed === true) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
-          {props.alert && <section className='user-location-warning'><div className='top-warning'><h1>No current location data available</h1><img className='location-icon' src={require('../components/images/block.png')}></img></div><h1 className='location-instructions'>Turn location services on to view current city weather</h1></section>}
+          {(alertMessageOff && props.alert) && <section className='user-location-warning'><div className='top-warning'><h1>No current location data available</h1><img className='location-icon' src={require('../components/images/block.png')}></img></div><h1 className='location-instructions'>Turn location services on to view current city weather</h1></section>}
         </div>
         <div>
           <DailyWeatherCard date={dateBuilder(new Date())} changedCity={changedCity} changedState={changedState} daily={daily} />

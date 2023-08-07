@@ -66,7 +66,6 @@ function Home(props) {
   }
 
   useEffect(() => {
-    console.log(props.alert)
     props.setNewLat(changedLat)
     props.setNewLong(changedLong)
   }, [changedLat, changedLong])
@@ -77,7 +76,6 @@ function Home(props) {
   }, [changedCity, changedState])
 
   useEffect(() => {
-    console.log(alertMessageOff)
     fetchNewWeather()
   }, [changedLong, changedLat])
 

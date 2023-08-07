@@ -14,6 +14,7 @@ function DailyForm(props) {
       city
     }
     props.submitDailyCity(newCity)
+    props.setAlertMessageOff(false)
     setEmpty(false)
     clearInput()
   }
