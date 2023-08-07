@@ -6,13 +6,14 @@ import HomeWeatherCard from '../components/WeatherCard/HomeWeatherCard'
 import Form from '../components/Form/Form'
 import CityOptions from '../components/CityOptions/CityOptions'
 import { Link } from 'react-router-dom'
-import {PropTypes} from 'prop-types'
+import { PropTypes } from 'prop-types'
 
 
 function Home(props) {
   const [currentTemp, setCurrentTemp] = useState('')
   const [changedCity, setChangedCity] = useState('')
   const [changedState, setChangedState] = useState('')
+  const [formCity, setFormCity] = useState('')
   const [alert, setAlert] = useState([])
   const [changedLat, setChangedLat] = useState('')
   const [changedLong, setChangedLong] = useState('')
@@ -48,10 +49,10 @@ function Home(props) {
       }).catch(error => setFetchError({ error: true, response: error }))
   }
   function findLongLat() {
-    if ((!changedCity && changed === false)) {
+    if ((!formCity && changed === false)) {
       return false
     }
-    fetchLongLat(changedCity).then(
+    fetchLongLat(formCity).then(
       data => {
         let filter = data.filter((d) => d.country === "US")
         if (filter.length === 0) {
@@ -107,14 +108,15 @@ function Home(props) {
       }).catch(error => setFetchError({ error: true, response: error }))
   }
 
-  function getNewCoordinates(longitude, latitude, state) {
+  function getNewCoordinates(longitude, latitude, city, state) {
     setChangedLat(latitude)
     setChangedLong(longitude)
+    setChangedCity(city)
     setChangedState(state)
   }
 
   function submitCity(newCity) {
-    setChangedCity(newCity.city)
+    setFormCity(newCity.city)
     setChangedState("...")
   }
 
@@ -136,7 +138,7 @@ function Home(props) {
         <section className='user-information'>
           <div className='loading-data-container'>
             <h3 className='current-city'>{props.currentCity} {props.currentState}</h3>
-            {(!props.alert &&!props.currentCity) && <h3 className='current-city'>Loading Location Data...</h3>}
+            {(!props.alert && !props.currentCity) && <h3 className='current-city'>Loading Location Data...</h3>}
             {props.alert && <h3 className='current-city-loading'>Unable to obtain current location</h3>}
           </div>
           <h3 className='current-date'>{dateBuilder(new Date())}</h3>
