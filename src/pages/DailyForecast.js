@@ -10,6 +10,7 @@ import {PropTypes} from 'prop-types'
 
 function DailyForecast(props) {
   const [changedCity, setChangedCity] = useState('')
+  const [formCity, setFormCity] = useState('')
   const [changedState, setChangedState] = useState('')
   const [changed, setChanged] = useState(false)
   const [showButtons, setShowedButtons] = useState(false)
@@ -32,7 +33,7 @@ function DailyForecast(props) {
   }
 
   function submitDailyCity(newCity) {
-    setChangedCity(newCity.city)
+    setFormCity(newCity.city)
     setChangedState("...")
   }
 
@@ -74,10 +75,10 @@ function DailyForecast(props) {
   }
 
   function findLongLat() {
-    if ((!changedCity && changed === false)) {
+    if ((!formCity && changed === false)) {
       return false
     }
-    fetchLongLat(changedCity).then(
+    fetchLongLat(formCity).then(
       data => {
         let filter = data.filter((d) => d.country === "US")
         if (filter.length === 0) {
@@ -89,9 +90,10 @@ function DailyForecast(props) {
       }).catch(error => setFetchError({ error: true, response: error }))
   }
 
-  function getNewCoordinates(longitude, latitude, state) {
+  function getNewCoordinates(longitude, latitude, city, state) {
     setChangedLat(latitude)
     setChangedLong(longitude)
+    setChangedCity(city)
     setChangedState(state)
   }
 
@@ -109,7 +111,7 @@ function DailyForecast(props) {
           <DailyForm submitDailyCity={submitDailyCity} checkChange={checkChange} />
           {invalid && <h2 className='empty-error'>Please enter a valid city</h2>}
 
-          {(daily.length === 0 && props.changedState === "...") && <h1>Loading...</h1>}
+          {(daily.length === 0 || props.changedState === "...") && <h1>Loading...</h1>}
           {(showButtons === true && changed === true) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
         </div>
         <div>
