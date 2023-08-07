@@ -1,7 +1,7 @@
 import NavBar from './NavBar'
 import './pages.css'
 import { useEffect, useState } from 'react'
-import { fetchEvents, fetchLongLat } from '../components/apiCall'
+import { fetchEvents } from '../components/apiCall'
 import {PropTypes} from 'prop-types'
 
 
@@ -9,6 +9,7 @@ function CityEvents(props) {
   const [lowercase, setLowercase] = useState('concerts,sports,community,expos,festivals,performing-arts')
   const [fetchError, setFetchError] = useState({ error: false, response: '' })
   const [events, setEvents] = useState([])
+  const [showFilters, setShowFilters] = useState(false)
 
 
 function googleSearch(query) {
@@ -62,7 +63,10 @@ function googleSearch(query) {
       <NavBar />
       {!fetchError.error && <section>
         <h1 className='event-title'>Upcoming Events</h1>
-        <div className='radio-container'>
+        <div className='filter-button-container'>
+        <button className='filter-button' onClick={() => setShowFilters(!showFilters)}>Filter By Category</button>
+        </div>
+        {showFilters && <div className='radio-container'>
           <div className='radio-background-container' onChange={event => onChangeValue(event)}>
             <label><input className='radio' type="radio" value="Concerts" name="category" /> Concerts</label>
             <label><input className='radio' type="radio" value="Community" name="category" /> Community</label>
@@ -70,7 +74,7 @@ function googleSearch(query) {
             <label><input className='radio' type="radio" value="Festivals" name="category" /> Festivals</label>
             <label><input className='radio' type="radio" value="Sports" name="category" /> Sports</label>
             <label><input className='radio' type="radio" value="Performing-Arts" name="category" /> Performing Arts</label></div>
-        </div>
+        </div>}
         {(events.length === 0 && props.alert) && <section className='user-location-warning'><div className='top-warning'><h1>No current location data available</h1><img className='location-icon' src={require('../components/images/block.png')}></img></div><h1 className='location-instructions'>Turn location services on to view current city weather</h1></section>}
         {(!props.alert && events.length === 0) && <h1 className='loading-events'>Loading Events....</h1>}
         <section className='filtered-events'>

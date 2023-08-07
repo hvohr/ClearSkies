@@ -289,6 +289,13 @@ label {
   justify-content: center;
 }
 
+.filter-button-container {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  margin: 0px;
+}
+
 .learn-more-button {
   background: none;
   text-shadow: -1px 1px 0 #000;
@@ -301,15 +308,33 @@ label {
   margin: 10px 0px 0px 0px;
   cursor: pointer;
   border-radius: 30px;
-  border: solid white;
+  border: 1px solid white;
   display: inline-block;
   position: relative;
 }
 
-.learn-more-button:hover {
+.filter-button {
+  background: none;
+  text-shadow: -1px 1px 0 #000;
+  text-align: center;
+  padding: 7px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(255, 251, 251);
+  margin: 10px 0px 0px 0px;
+  cursor: pointer;
+  border-radius: 0px;
+  border: 1px solid white;
+  display: inline-block;
+  position: relative;
+}
+
+.learn-more-button:hover,
+.filter-button:hover {
   background-color: white;
   color: black;
-  text-shadow: none;
+  text-shadow: -1px 1px 0 white;
   border: 1px solid rgba(55, 60, 205, 0.197)
 }
 
