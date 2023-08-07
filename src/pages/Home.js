@@ -28,6 +28,7 @@ function Home(props) {
   const [currentWeatherIcon, setCurrentWeatherIcon] = useState('')
   const [invalid, setInvalid] = useState(false)
   const [fetchError, setFetchError] = useState({ error: false, response: '' })
+  const [alertMessageOff, setAlertMessageOff] = useState(true)
 
   function fetchCityWeather() {
     if (!props.currentLong || !props.currentLat) {
@@ -143,8 +144,7 @@ function Home(props) {
           </div>
           <h3 className='current-date'>{dateBuilder(new Date())}</h3>
         </section>
-        {props.alert && <h1>No current location data available</h1>}
-        <Form submitCity={submitCity} checkChange={checkChange} />
+        <Form setAlertMessageOff={setAlertMessageOff} submitCity={submitCity} checkChange={checkChange} />
         {invalid && <h2 className='empty-error'>Please enter a valid city</h2>}
         {(showButtons === true && changed === true && !invalid) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
         <section className='event-container'>
@@ -153,15 +153,16 @@ function Home(props) {
             <button className='events-button'>View Events in {changedCity}</button>
           </Link>}
         </section>
-        <section className='current-weather-container'>
-          {(!props.alert && !changedCity) && <h1>Loading...</h1>}
+        {(!alertMessageOff || !props.alert) && <section className='current-weather-container'>
+          {(!alertMessageOff && !props.alert && !changedCity) && <h1>Loading...</h1>}
           <div className='alert-container'>
             {(alert.length !== 0 && !showButtons) && alert.alerts.map((a) => <h3 key={Date.now() + alert.alerts.indexOf(a)} style={{ border: "2px solid red" }} className='weather-alert'>{a.event}</h3>)}
           </div>
           {(changedCity && changedState !== '...') && <h1 className='front-card-title'>Current Weather for {changedCity}, {changedState}</h1>}
           <HomeWeatherCard showButtons={showButtons} invalid={invalid} changedState={changedState} currentWeatherIcon={currentWeatherIcon} currentTemp={currentTemp} currentDescription={currentDescription} currentWindSpeed={currentWindSpeed}
             currentCloudCover={currentCloudCover} currentUVI={currentUVI} currentFeelsLike={currentFeelsLike} />
-        </section>
+        </section>}
+        {(alertMessageOff && props.alert) && <section className='user-location-warning'><div className='top-warning'><h1>No current location data available</h1><img className='location-icon' src={require('../components/images/block.png')}></img></div><h1 className='location-instructions'>Turn location services on to view current city weather</h1></section>}
       </main>}
       {fetchError.error && <div className='fetch-failed-container'><h1 className='fetch-failed-response'>{`${fetchError.response}`}</h1><img alt="sad cloud raining inside a blue box" className='fetch-failed-image' src={require('../components/images/sad_cloud.png')}></img></div>}
     </div>
