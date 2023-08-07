@@ -153,7 +153,7 @@ function Home(props) {
             <button className='events-button'>View Events in {changedCity}</button>
           </Link>}
         </section>
-        {(!alertMessageOff && props.alert) && <section className='current-weather-container'>
+        {(!alertMessageOff || !props.alert) && <section className='current-weather-container'>
           {(!alertMessageOff && !props.alert && !changedCity) && <h1>Loading...</h1>}
           <div className='alert-container'>
             {(alert.length !== 0 && !showButtons) && alert.alerts.map((a) => <h3 key={Date.now() + alert.alerts.indexOf(a)} style={{ border: "2px solid red" }} className='weather-alert'>{a.event}</h3>)}
