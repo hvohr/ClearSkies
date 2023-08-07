@@ -10,6 +10,10 @@ function CityEvents(props) {
   const [fetchError, setFetchError] = useState({ error: false, response: '' })
   const [events, setEvents] = useState([])
 
+function googleSearch(query) {
+  return window.open('http://google.com/search?q='+ query)
+}
+
   let filteredEvents = events.map((list) => {
     let d = new Date(list.start)
     return (
@@ -20,7 +24,7 @@ function CityEvents(props) {
         </div>
         <div>
           {list.entities.length === 0 && <h3>No Available Information</h3>}
-          {list.entities.map((l) => <div key={Date.now() + list.entities.indexOf(l)}><h3>{l.type}: {l.name}</h3><h3>{l.formatted_address}</h3></div>)}
+          {list.entities.map((l) => <div key={Date.now() + list.entities.indexOf(l)}><h3>{l.type}: {l.name}</h3><h3>{l.formatted_address}</h3><button className='learn-more-button' onClick={() => googleSearch(`${l.name} ${list.title}`)}>Learn More</button></div>)}
         </div>
       </section >
     )

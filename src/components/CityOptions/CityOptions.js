@@ -5,7 +5,6 @@ function CityOptions(props) {
   return (
     <section className='city-options-container'>
       {(props.cityList.length !== 0 && props.changed === true) && props.cityList.map((city) => <button onClick={() => {
-        console.log(city)
           props.showedButtons()
           props.getNewCoordinates(city.lon, city.lat, city.name, city.state)
           props.setButtonList([])

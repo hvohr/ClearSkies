@@ -96,13 +96,13 @@
 
 .event-information-container {
   font-size: 20px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .event-title-container {
   display: flex;
   text-align: center;
-  margin: 40px;
+  margin: 30px;
   border: 2px solid white;
   background-color: rgb(255, 255, 255);
   border-radius: 20px;
@@ -263,6 +263,30 @@ label {
 .daily-button:hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+.learn-more-button {
+  background: none;
+  text-shadow: -1px 1px 0 #000;
+  text-align: center;
+  padding: 7px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(255, 251, 251);
+  margin: 10px 0px 0px 0px;
+  cursor: pointer;
+  border-radius: 30px;
+  border: solid white;
+  display: inline-block;
+  position: relative;
+}
+
+.learn-more-button:hover {
+background-color:white;
+color: black;
+text-shadow: none;
+border: 1px solid rgba(55, 60, 205, 0.197)
 }
 
 .loading-icon {
