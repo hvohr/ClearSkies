@@ -14,9 +14,11 @@
     font-size: 20px;
     margin: 0 auto;
   }
+
   .more-information-container {
     font-size: 16px;
   }
+
   .nav-bar,
   .user-information {
     display: flex;
@@ -265,6 +267,27 @@ label {
   transform-origin: bottom left;
 }
 
+.location-instructions {
+  font-style: italic;
+  font-size: 20px;
+  margin-top: 0px;
+}
+
+.location-icon {
+  height: 30px;
+  margin-left: 10px;
+  width: 30px;
+}
+
+.top-warning {
+  font-size: 20px;
+  display: flex;
+  font-style: italic;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
 .learn-more-button {
   background: none;
   text-shadow: -1px 1px 0 #000;
@@ -283,10 +306,10 @@ label {
 }
 
 .learn-more-button:hover {
-background-color:white;
-color: black;
-text-shadow: none;
-border: 1px solid rgba(55, 60, 205, 0.197)
+  background-color: white;
+  color: black;
+  text-shadow: none;
+  border: 1px solid rgba(55, 60, 205, 0.197)
 }
 
 .loading-icon {

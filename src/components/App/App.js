@@ -62,7 +62,7 @@ function App() {
       <section>
         <Routes>
           <Route path='/' element={<Home alert={alert} setAlert={setAlert} fetchError={fetchError} currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong} category={category} setNewLat={setNewLat} setNewLong={setNewLong} />} />
-          <Route path='/dailyforecast' element={<DailyForecast currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong}/>} />
+          <Route path='/dailyforecast' element={<DailyForecast alert={alert} currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong}/>} />
           <Route path='/cityevents' element={<CityEvents currentLat={currentLat} currentLong={currentLong} newLong={newLong} newLat={newLat}/>} />
           <Route path='*' element={<Error/>} />
         </Routes>
