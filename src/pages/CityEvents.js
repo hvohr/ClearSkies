@@ -24,7 +24,8 @@ function googleSearch(query) {
         </div>
         <div>
           {list.entities.length === 0 && <h3>No Available Information</h3>}
-          {list.entities.map((l) => <div key={Date.now() + list.entities.indexOf(l)}><h3>{l.type}: {l.name}</h3><h3>{l.formatted_address}</h3><button className='learn-more-button' onClick={() => googleSearch(`${l.name} ${list.title}`)}>Learn More</button></div>)}
+          {list.entities.map((l) => <div key={Date.now() + list.entities.indexOf(l)}><h3>{l.type}: {l.name}</h3><h3>{l.formatted_address}</h3></div>)}
+          <button className='learn-more-button' onClick={() => googleSearch(`${list.title}`)}>Learn More</button>
         </div>
       </section >
     )
