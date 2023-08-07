@@ -73,7 +73,7 @@ function Home(props) {
   useEffect(() => {
     findLongLat()
     fetchNewWeather()
-  }, [changedCity, changedState])
+  }, [changedCity, changedState, formCity])
 
   useEffect(() => {
     fetchNewWeather()
@@ -118,6 +118,7 @@ function Home(props) {
 
   function submitCity(newCity) {
     setFormCity(newCity.city)
+    setButtonList([])
     setChangedState("...")
   }
 
@@ -146,7 +147,7 @@ function Home(props) {
         </section>
         <Form setAlertMessageOff={setAlertMessageOff} submitCity={submitCity} checkChange={checkChange} />
         {invalid && <h2 className='empty-error'>Please enter a valid city</h2>}
-        {(showButtons === true && changed === true && !invalid) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
+        {(showButtons === true && changed === true && !invalid) && <CityOptions changed={changed} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
         <section className='event-container'>
           {(changedCity && !showButtons) && <Link to='/cityevents'>
             <img className='event-logo' alt="small map icon" src={require('../components/images/marker.png')} />
