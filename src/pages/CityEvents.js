@@ -71,7 +71,7 @@ function googleSearch(query) {
             <label><input className='radio' type="radio" value="Sports" name="category" /> Sports</label>
             <label><input className='radio' type="radio" value="Performing-Arts" name="category" /> Performing Arts</label></div>
         </div>
-        {!events && <h1 className='loading-events'>Loading Events....</h1>}
+        {events.length === 0 && <h1 className='loading-events'>Loading Events....</h1>}
         <section className='filtered-events'>
           {filteredEvents}
         </section>
