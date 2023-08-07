@@ -71,7 +71,8 @@ function googleSearch(query) {
             <label><input className='radio' type="radio" value="Sports" name="category" /> Sports</label>
             <label><input className='radio' type="radio" value="Performing-Arts" name="category" /> Performing Arts</label></div>
         </div>
-        {events.length === 0 && <h1 className='loading-events'>Loading Events....</h1>}
+        {props.alert && <section className='user-location-warning'><div className='top-warning'><h1>No current location data available</h1><img className='location-icon' src={require('../components/images/block.png')}></img></div><h1 className='location-instructions'>Turn location services on to view current city weather</h1></section>}
+        {(!props.alert && events.length === 0) && <h1 className='loading-events'>Loading Events....</h1>}
         <section className='filtered-events'>
           {filteredEvents}
         </section>

@@ -269,6 +269,7 @@ label {
 
 .location-instructions {
   font-style: italic;
+  text-align: center;
   font-size: 20px;
   margin-top: 0px;
 }

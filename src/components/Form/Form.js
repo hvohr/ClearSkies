@@ -12,6 +12,7 @@ function Form(props) {
       city
     }
     props.submitCity(newCity)
+    props.setAlertMessageOff(false)
     setEmpty(false)
     clearInput()
   }
