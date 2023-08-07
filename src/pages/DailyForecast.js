@@ -36,6 +36,7 @@ function DailyForecast(props) {
 
   function submitDailyCity(newCity) {
     setFormCity(newCity.city)
+    setButtonList([])
     setChangedState("...")
   }
 
@@ -65,7 +66,7 @@ function DailyForecast(props) {
   useEffect(() => {
     findLongLat()
     fetchNewDailyWeather()
-  }, [changedCity, changedState])
+  }, [changedCity, changedState, formCity])
 
   useEffect(() => {
     fetchNewDailyWeather()
@@ -113,7 +114,7 @@ function DailyForecast(props) {
           <DailyForm setAlertMessageOff={setAlertMessageOff} submitDailyCity={submitDailyCity} checkChange={checkChange} />
           {invalid && <h2 className='empty-error'>Please enter a valid city</h2>}
           {((!props.alert && daily.length === 0) || props.changedState === "...") && <h1>Loading...</h1>}
-          {(showButtons === true && changed === true) && <CityOptions changed={changed} setButtonList={setButtonList} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
+          {(!invalid && showButtons === true && changed === true) && <CityOptions changed={changed} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
           {(alertMessageOff && props.alert) && <section className='user-location-warning'><div className='top-warning'><h1>No current location data available</h1><img className='location-icon' src={require('../components/images/block.png')}></img></div><h1 className='location-instructions'>Turn location services on to view current city weather</h1></section>}
         </div>
         <div>
