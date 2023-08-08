@@ -19,7 +19,6 @@ describe('Should have proper error handling in forms and fetch functions', () =>
   it('Should not let a user enter wrong information into home form', () => {
     cy.visit("http://localhost:3000/")
       .wait('@locationData')
-      .wait('@cityData')
       .wait('@latLongData')
       .get('.form-button').click()
       .get('.empty-error').should('be.visible')
@@ -33,7 +32,6 @@ describe('Should have proper error handling in forms and fetch functions', () =>
   it('Should not let a user enter wrong information into daily form', () => {
     cy.visit("http://localhost:3000/dailyforecast")
       .wait('@locationData')
-      .wait('@cityData')
       .wait('@latLongData')
       .get('.form-button').click()
       .get('.empty-error').should('be.visible')
