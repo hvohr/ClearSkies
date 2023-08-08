@@ -19,7 +19,6 @@ describe('User should see a functioning home page with proper elements', () => {
   it('Should have proper header elements', () => {
     cy.visit("http://localhost:3000/")
       .wait('@locationData')
-      .wait('@cityData')
       .wait('@latLongData')
       .get(".conditional-container")
       .contains("ClearSkies")
@@ -31,7 +30,6 @@ describe('User should see a functioning home page with proper elements', () => {
   it('Should have updated local information', () => {
     cy.visit("http://localhost:3000/")
       .wait('@locationData')
-      .wait('@cityData')
       .wait('@latLongData')
     const d = new Date()
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -50,7 +48,6 @@ describe('User should see a functioning home page with proper elements', () => {
   it('Should contain form elements', () => {
     cy.visit("http://localhost:3000/")
       .wait('@locationData')
-      .wait('@cityData')
       .wait('@latLongData')
       .get('form').should('be.visible')
       .get('.form-input').should('be.visible')
@@ -60,7 +57,6 @@ describe('User should see a functioning home page with proper elements', () => {
   it('Should contain current weather front-page elements', () => {
     cy.visit("http://localhost:3000/")
       .wait('@locationData')
-      .wait('@cityData')
       .wait('@latLongData')
       .get('.current-weather-container').should('be.visible')
       .get('.current-weather-container').invoke('text')
@@ -74,13 +70,8 @@ describe('User should see a functioning home page with proper elements', () => {
   it('Should give user city options when city is entered in form and then update form', () => {
     cy.visit("http://localhost:3000/")
       .wait('@locationData')
-      .wait('@cityData')
       .wait('@latLongData')
       .get('.form-input').type('Denver')
-    cy.intercept("GET", 'https://api.openweathermap.org/data/3.0/onecall*', {
-      statusCode: 200,
-      fixture: "newLatLongData.json"
-    }).as('newLatLongData')
       .get('.form-button').click()
       .get('.city-options-container').should('be.visible')
       .get('.event-container').should('not.be.visible')
