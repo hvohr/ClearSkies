@@ -19,7 +19,6 @@ describe('User should see a functioning daily page with proper elements', () => 
   it('Should take a user from home to daily forecast page on dailyforecast button click', () => {
     cy.visit("http://localhost:3000/")
       .wait('@locationData')
-      .wait('@cityData')
       .wait('@latLongData')
       .get('.daily-button').click()
       .url('/dailyforecast')
@@ -27,7 +26,6 @@ describe('User should see a functioning daily page with proper elements', () => 
   it('Should have proper header elements', () => {
     cy.visit("http://localhost:3000/dailyforecast")
       .wait('@locationData')
-      .wait('@cityData')
       .wait('@latLongData')
       .get(".conditional-container")
       .contains("ClearSkies")
@@ -39,7 +37,6 @@ describe('User should see a functioning daily page with proper elements', () => 
   it('Should contain all proper page elements', () => {
     cy.visit("http://localhost:3000/dailyforecast")
       .wait('@locationData')
-      .wait('@cityData')
       .wait('@latLongData')
       .get('.daily-top-container').invoke('text')
       .should('contain', "Next 8 Day Forecast")
@@ -49,7 +46,6 @@ describe('User should see a functioning daily page with proper elements', () => 
   it('Should contain proper specific daily card elements for each day', () => {
     cy.visit("http://localhost:3000/dailyforecast")
       .wait('@locationData')
-      .wait('@cityData')
       .wait('@latLongData')
       .get('.daily-card-container').children().should('contain', "Denver, Colorado")
     cy.get('.daily-card-container > :nth-child(1) > :nth-child(2)').invoke('text').should('contain', '8/3/2023')
@@ -59,7 +55,6 @@ describe('User should see a functioning daily page with proper elements', () => 
   it('Should display updated information when a new city is entered in the form', () => {
     cy.visit("http://localhost:3000/dailyforecast")
       .wait('@locationData')
-      .wait('@cityData')
       .wait('@latLongData')
       .get('.form-input').type('Denver')
       cy.intercept("GET", 'https://api.openweathermap.org/data/3.0/onecall*', {
