@@ -3,7 +3,6 @@ import Home from '../../pages/Home'
 import { fetchCityName } from '../apiCall'
 import { useState, useEffect } from 'react'
 import DailyForecast from '../../pages/DailyForecast';
-import CityEvents from '../../pages/CityEvents'
 import Error from '../../pages/Error'
 
 function App() {
@@ -63,7 +62,6 @@ function App() {
         <Routes>
           <Route path='/' element={<Home alert={alert} setAlert={setAlert} fetchError={fetchError} currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong} category={category} setNewLat={setNewLat} setNewLong={setNewLong} />} />
           <Route path='/dailyforecast' element={<DailyForecast alert={alert} setAlert={setAlert} currentCity={currentCity} currentState={currentState} currentLat={currentLat} currentLong={currentLong}/>} />
-          <Route path='/cityevents' element={<CityEvents currentLat={currentLat} alert={alert} setAlert={setAlert} currentLong={currentLong} newLong={newLong} newLat={newLat}/>} />
           <Route path='*' element={<Error/>} />
         </Routes>
       </section>

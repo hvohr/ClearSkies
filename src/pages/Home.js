@@ -148,12 +148,6 @@ function Home(props) {
         <Form setAlertMessageOff={setAlertMessageOff} submitCity={submitCity} checkChange={checkChange} />
         {invalid && <h2 className='empty-error'>Please enter a valid city</h2>}
         {(showButtons === true && changed === true && !invalid) && <CityOptions changed={changed} showedButtons={setShowedButtons} cityList={buttonList} getNewCoordinates={getNewCoordinates} />}
-        <section className='event-container'>
-          {(changedCity && !showButtons) && <Link to='/cityevents'>
-            <img className='event-logo' alt="small map icon" src={require('../components/images/marker.png')} />
-            <button className='events-button'>View Events in {changedCity}</button>
-          </Link>}
-        </section>
         {(!alertMessageOff || !props.alert) && <section className='current-weather-container'>
           {(!alertMessageOff && !props.alert && !changedCity) && <h1>Loading...</h1>}
           <div className='alert-container'>
