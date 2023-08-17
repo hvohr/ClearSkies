@@ -1,7 +1,7 @@
 # ClearSkies
 
 ## Abstract: 
-Welcome to ClearSkies! A weather application that lets a user know a cities current and daily weather. This app also lets you search cities and view real time weather information! It is only available to people in the US and to get the full experience, make sure you have location services turned on - this allows ClearSkies to obtain your current weather right outside your front door. This app also allows to a user to see what current events are happening in their city. A user can view a general list of events but they also have the option of filtering down if they wish to view only concerts or other similar categories. A user can see events in any city they enter on the home page! I hope you enjoy ClearSkies.
+Welcome to ClearSkies! A weather application that lets a user know a cities current and daily weather. This app also lets you search cities and view real time weather information! It is only available to people in the US and to get the full experience, make sure you have location services turned on - this allows ClearSkies to obtain your current weather right outside your front door. I hope you enjoy ClearSkies.
 
 ## Installation Instructions
 In order to clone this application:
@@ -13,17 +13,17 @@ In order to clone this application:
 
 ### Preview of App:
 - Desktop View
-![Screen Shot 2023-08-04 at 5 04 14 PM](https://user-images.githubusercontent.com/123392693/258546866-a7612aa0-875f-44ff-98b8-a310dd6ca624.jpeg)
-![Screen Shot 2023-08-04 at 5 03 58 PM](https://user-images.githubusercontent.com/123392693/258546884-adec6a16-1b7b-44fd-8b46-f68b5ad3bb99.jpeg)
-![Screen Shot 2023-08-04 at 5 03 41 PM](https://user-images.githubusercontent.com/123392693/258546918-9b5c4cd5-1acd-4420-9fb6-57c04e56565a.jpeg)
+![Screen Shot 2023-08-16 at 8 38 01 PM](https://user-images.githubusercontent.com/123392693/261181701-378b9be3-f568-41b6-8c36-f290597b46f3.jpeg)
+![Screen Shot 2023-08-16 at 8 38 16 PM](https://user-images.githubusercontent.com/123392693/261181703-fdbabc7a-73a5-4488-87ab-dc116634b2dc.jpeg)
+
 
 - Mobile View
-![Screen Shot 2023-08-04 at 5 04 35 PM](https://user-images.githubusercontent.com/123392693/258546842-1e295987-5edf-4405-9042-d0d100d475f8.jpeg)
-![Screen Shot 2023-08-04 at 5 04 57 PM](https://user-images.githubusercontent.com/123392693/258546904-44678648-7f01-4f4d-9c2e-7f0413144560.jpeg)
+![Screen Shot 2023-08-16 at 8 40 29 PM](https://user-images.githubusercontent.com/123392693/261181930-cf5039cc-5626-433b-94c5-2570695f49e1.jpeg)
+![Screen Shot 2023-08-16 at 8 40 40 PM](https://user-images.githubusercontent.com/123392693/261181934-9083d8ce-5926-4a78-8718-45065bf7ae13.jpeg)
 
 
 ### Context:
-I am currently in Mod 3 of the Turing Frontend Development Program. A total of 30 hours were spent on this Showcase project.
+I am currently in Mod 3 of the Turing Frontend Development Program. A total of 20 hours were spent on this Showcase project.
 
 ## Contributors
 <table>
